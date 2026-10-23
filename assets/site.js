@@ -63,15 +63,15 @@
       ctx.drawImage(src,sx,0,sw,src.height,x,0,w,h);const g=ctx.createLinearGradient(x,0,x+w,0);
       g.addColorStop(0,'rgba(255,235,210,.10)');g.addColorStop(.35,'rgba(255,255,255,0)');g.addColorStop(.85,'rgba(0,0,0,.28)');g.addColorStop(1,'rgba(0,0,0,.4)');ctx.fillStyle=g;ctx.fillRect(x,0,w,h);}}
   const painters={
-    motion(c,img){const[w,h]=fit(c);const ctx=c.getContext('2d');ctx.fillStyle='#1F2424';ctx.fillRect(0,0,w,h);if(!img)return;
+    motion(c,img){const[w,h]=fit(c);const ctx=c.getContext('2d');ctx.fillStyle='#5B2A38';ctx.fillRect(0,0,w,h);if(!img)return;
       const fx=parseFloat(c.dataset.fx||.62),fy=parseFloat(c.dataset.fy||.25);
       const src=cover(img,w,h,fx,fy);const tone=document.createElement('canvas');tone.width=w;tone.height=h;const t=tone.getContext('2d');
       t.filter='grayscale(1) sepia(.12) brightness(1.05) contrast(1.12)';t.drawImage(src,0,0);t.filter='none';
       ctx.drawImage(tone,0,0);},
-    reed(c,img){const[w,h]=fit(c);const ctx=c.getContext('2d');ctx.fillStyle='#1F2424';ctx.fillRect(0,0,w,h);if(!img)return;
+    reed(c,img){const[w,h]=fit(c);const ctx=c.getContext('2d');ctx.fillStyle='#5B2A38';ctx.fillRect(0,0,w,h);if(!img)return;
       const src=cover(img,w,h,.5,parseFloat(c.dataset.fy||.7));const to=parseFloat(c.dataset.to||1);
-      ctx.filter='saturate(.7)';ctx.drawImage(src,0,0);ctx.filter='none';reed(src,ctx,0,w*to,h,Math.max(14,w/40),1.1);
-      ctx.fillStyle='rgba(24,28,28,.38)';ctx.fillRect(0,0,w,h);if(to<1){ctx.fillStyle='rgba(229,227,220,.3)';ctx.fillRect(Math.round(w*to),0,1,h);}}
+      ctx.filter='saturate(.55)';ctx.drawImage(src,0,0);ctx.filter='none';reed(src,ctx,0,w*to,h,Math.max(14,w/40),1.1);
+      ctx.fillStyle='rgba(91,42,56,.5)';ctx.fillRect(0,0,w,h);if(to<1){ctx.fillStyle='rgba(229,227,220,.3)';ctx.fillRect(Math.round(w*to),0,1,h);}}
   };
   const canvases=$$('canvas[data-paint]');
   Promise.all(canvases.map(c=>loadImg(c.dataset.src))).then(imgs=>{

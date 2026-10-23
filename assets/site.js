@@ -14,9 +14,11 @@
     if(d.event==='calendly.event_scheduled')track('calendly_scheduled',{page:document.body.dataset.page||''});});
 
   /* ---- mobile drawer ---- */
-  const drawer=$('#drawer'), open=$('[data-open-drawer]'), close=$('[data-close-drawer]');
-  function setDrawer(on){if(!drawer)return;drawer.hidden=!on;document.body.style.overflow=on?'hidden':'';open&&open.setAttribute('aria-expanded',on);if(on)close&&close.focus();else open&&open.focus();}
-  open&&open.addEventListener('click',()=>setDrawer(true));
+  const drawer=$('#drawer'), close=$('[data-close-drawer]'); let opener=null;
+  function setDrawer(on,btn){if(!drawer)return;drawer.hidden=!on;document.body.style.overflow=on?'hidden':'';
+    $$('[data-open-drawer]').forEach(b=>b.setAttribute('aria-expanded',on));
+    if(on){opener=btn||null;close&&close.focus();}else if(opener){opener.focus();}}
+  $$('[data-open-drawer]').forEach(b=>b.addEventListener('click',()=>setDrawer(true,b)));
   close&&close.addEventListener('click',()=>setDrawer(false));
   addEventListener('keydown',e=>{if(e.key==='Escape'&&drawer&&!drawer.hidden)setDrawer(false);});
   $$('#drawer a').forEach(a=>a.addEventListener('click',()=>setDrawer(false)));

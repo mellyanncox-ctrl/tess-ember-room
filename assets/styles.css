@@ -290,3 +290,7 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 
 /* closing line: fully bold */
 .close .letter{font-weight:700}
+
+/* homepage hero menu button (top left) */
+.hero .hero-menu{justify-self:start;align-self:start;background:none;border:1px solid rgba(255,255,255,.75);color:#fff;border-radius:999px;padding:.75em 1.4em;cursor:pointer;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:background .2s}
+.hero .hero-menu:hover{background:rgba(255,255,255,.14)}

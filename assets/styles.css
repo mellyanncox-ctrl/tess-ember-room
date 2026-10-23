@@ -283,3 +283,6 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
   .poster.split .tint{display:none}
   .poster.split .in{padding-block:36px 48px}
 }
+.poster.split .in{grid-template-rows:auto}
+.poster.split .panel{align-self:center}
+.split-prose{color:var(--bone);font-size:clamp(1.02rem,1.3vw,1.14rem);gap:.9em}

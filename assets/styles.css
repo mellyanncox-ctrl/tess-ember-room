@@ -294,3 +294,7 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 /* homepage hero menu button (top left) */
 .hero .hero-menu{justify-self:start;align-self:start;background:none;border:1px solid rgba(255,255,255,.75);color:#fff;border-radius:999px;padding:.75em 1.4em;cursor:pointer;font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;transition:background .2s}
 .hero .hero-menu:hover{background:rgba(255,255,255,.14)}
+
+/* menu: dimmed wattle from her photo */
+.drawer{isolation:isolate;background:#2a2a1e}
+.drawer::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/wattle-blur.jpg) 50% 50%/cover no-repeat;filter:brightness(.5)}

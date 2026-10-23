@@ -70,8 +70,8 @@
       ctx.drawImage(tone,0,0);},
     reed(c,img){const[w,h]=fit(c);const ctx=c.getContext('2d');ctx.fillStyle='#5B2A38';ctx.fillRect(0,0,w,h);if(!img)return;
       const src=cover(img,w,h,.5,parseFloat(c.dataset.fy||.7));const to=parseFloat(c.dataset.to||1);
-      ctx.filter='saturate(.55)';ctx.drawImage(src,0,0);ctx.filter='none';reed(src,ctx,0,w*to,h,Math.max(14,w/40),1.1);
-      ctx.fillStyle='rgba(91,42,56,.5)';ctx.fillRect(0,0,w,h);if(to<1){ctx.fillStyle='rgba(229,227,220,.3)';ctx.fillRect(Math.round(w*to),0,1,h);}}
+      ctx.drawImage(src,0,0);reed(src,ctx,0,w*to,h,Math.max(14,w/40),1.1);
+      ctx.fillStyle='rgba(0,0,0,.22)';ctx.fillRect(0,0,w,h);if(to<1){ctx.fillStyle='rgba(229,227,220,.3)';ctx.fillRect(Math.round(w*to),0,1,h);}}
   };
   const canvases=$$('canvas[data-paint]');
   Promise.all(canvases.map(c=>loadImg(c.dataset.src))).then(imgs=>{

@@ -298,3 +298,6 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 /* menu: dimmed wattle from her photo */
 .drawer{isolation:isolate;background:#2a2a1e}
 .drawer::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/wattle-blur.jpg) 50% 50%/cover no-repeat;filter:brightness(.5)}
+
+/* menu links in the sans, not the serif */
+.drawer nav a{font-family:var(--sans);font-style:normal;font-weight:400;text-transform:uppercase;letter-spacing:.06em;font-size:clamp(1.5rem,5.4vw,2.4rem);line-height:1.3}

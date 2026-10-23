@@ -130,6 +130,7 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .img-path{background-image:url(img/forest-path.jpg)!important}
 .img-light{background-image:url(img/forest-light.jpg)!important}
 .img-tess{background-image:url(img/tess.jpg)!important}
+.img-wattle{background-image:url(img/wattle-blur.jpg)!important}
 
 /* letter block */
 .letter{align-self:center;justify-self:center;width:min(100%,32rem);display:grid;gap:1.4em;font-family:var(--mont);font-weight:300;font-size:clamp(1.02rem,1.75vw,1.28rem);line-height:1.28;letter-spacing:.015em;text-transform:uppercase;text-align:justify;hyphens:none}

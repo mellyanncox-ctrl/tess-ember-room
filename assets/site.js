@@ -53,6 +53,41 @@
     if(!f.reportValidity())return;track('contact_submit',{page:document.body.dataset.page||''});
     const done=f.querySelector('.done');f.querySelectorAll('input,select,button').forEach(el=>el.disabled=true);if(done)done.hidden=false;}));
 
+
+  /* ---- booking widget: Calendly inline, one event type at a time ---- */
+  const cal=$('[data-cal]');
+  if(cal){
+    const BASE='https://calendly.com/tess-fowler/';
+    const SVC={
+      call:{lengths:[['15min','initial-chat']],note:'15min phone chat to get to know my work better.'},
+      individual:{lengths:[['90min','first-psychotherapy-appointment-90mins'],['60min','1-hour-psychotherapy-appointment'],['Online','1-1-online-psychotherapy-session']],note:'$180 90mins (required for initial client’s first session) · $150 60mins'},
+      couples:{lengths:[['90min','couples-initial-session'],['60min','couples-session-1hr']],note:'$210 90mins (Initial clients are required to book the 90min for first session) · $180 60mins'},
+      rest:{lengths:[['60min','1-1-somatic-reset-session'],['90min','60min-1-1-deep-rest-session-clone']],note:'Available Tuesday, Friday, Saturday or Sunday @ 5.30pm or 7.30pm.'}
+    };
+    const tabs=$$('.pill-tab',cal), lens=$('.cal-lengths',cal), note=$('.cal-note',cal), frame=$('iframe',cal), wrap=$('.cal-frame',cal);
+    let current='';
+    function src(slug){const q=new URLSearchParams({embed_domain:location.hostname||'tess.theserviceedit.com',embed_type:'Inline',background_color:'ffffff',text_color:'303636',primary_color:'5b2a38'});return BASE+slug+'?'+q;}
+    function load(slug){if(slug===current)return;current=slug;wrap.classList.add('loading');frame.src=src(slug);
+      track('booking_widget_view',{page:document.body.dataset.page||'',service:slug});}
+    frame.addEventListener('load',()=>wrap.classList.remove('loading'));
+    function pickLen(slug){$$('button',lens).forEach(b=>b.setAttribute('aria-pressed',b.dataset.slug===slug));load(slug);}
+    function pick(svc,focus){const d=SVC[svc]||SVC.call;
+      tabs.forEach(t=>{const on=t.dataset.svc===svc;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on&&focus)t.focus();});
+      lens.innerHTML='';lens.hidden=d.lengths.length<2;
+      d.lengths.forEach(([label,slug])=>{const b=document.createElement('button');b.type='button';b.className='len';b.textContent=label;b.dataset.slug=slug;
+        b.addEventListener('click',()=>pickLen(slug));lens.appendChild(b);});
+      note.textContent=d.note;pickLen(d.lengths[0][1]);}
+    tabs.forEach((t,i)=>{t.addEventListener('click',()=>pick(t.dataset.svc));
+      t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();pick(tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length].dataset.svc,true);}});});
+    $$('[data-cal-open]').forEach(a=>a.addEventListener('click',()=>pick(a.dataset.calOpen)));
+    /* Calendly reports its content height; size the frame to match so there is no inner scroll */
+    addEventListener('message',e=>{if(e.origin!=='https://calendly.com')return;const d=e.data||{};
+      if(d.event==='calendly.page_height'&&d.payload&&d.payload.height){const h=parseInt(d.payload.height,10);if(h>300)frame.style.height=h+'px';}});
+    /* load only when the widget is near the screen */
+    const start=()=>{if(!current)pick((location.hash.match(/^#(individual|couples|rest)$/)||[])[1]||'call');};
+    if('IntersectionObserver'in window){const io=new IntersectionObserver(([en])=>{if(en.isIntersecting){start();io.disconnect();}},{rootMargin:'600px'});io.observe(cal);}else start();
+  }
+
   /* ---- canvases: portrait (sharp, black and white), reeded glass ---- */
   function loadImg(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=src;});}
   function fit(c){const d=Math.min(devicePixelRatio||1,2);c.width=Math.round(c.clientWidth*d);c.height=Math.round(c.clientHeight*d);return[c.width,c.height];}

@@ -319,3 +319,22 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .poster.faqs .card-foot{display:grid;gap:18px;justify-items:center;text-align:center;font-family:var(--read);font-size:1.06rem;line-height:1.55;padding-top:6px}
 .poster.faqs .card-foot b{color:var(--ink)}
 .split-prose .cred{margin-top:.6em;padding-top:1em;border-top:1px solid rgba(255,255,255,.25);font-family:var(--mont);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;line-height:1.7}
+
+/* Booking widget (book page) */
+.booking{background:var(--stone);color:var(--char);padding-block:clamp(56px,8vw,104px)}
+.booking .wrap{display:grid;gap:clamp(24px,3vw,36px)}
+.booking .mark{color:var(--ink);max-width:34ch;line-height:1.6}
+.cal{display:grid;gap:16px;justify-items:center;width:min(100%,1060px);margin:0 auto}
+.cal-tabs,.cal-lengths{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.pill-tab,.cal .len{font-family:var(--mont);font-weight:500;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.pill-tab{padding:.95em 1.5em;border:1px solid rgba(91,42,56,.35);background:transparent;color:var(--ink)}
+.pill-tab[aria-selected=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.cal .len{padding:.7em 1.2em;border:1px solid rgba(48,54,54,.25);background:#fff;color:var(--char)}
+.cal .len[aria-pressed=true]{border-color:var(--terra-deep);color:var(--terra-deep);box-shadow:inset 0 0 0 1px var(--terra-deep)}
+.cal-note{font-family:var(--read);font-size:1.02rem;text-align:center;max-width:52ch;min-height:1.5em}
+.cal-frame{position:relative;width:100%;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 30px 80px -50px rgba(48,54,54,.55)}
+.cal-frame iframe{display:block;width:100%;height:720px;border:0;transition:height .2s}
+.cal-frame.loading::after{content:"Loading calendar…";position:absolute;inset:0;display:grid;place-items:center;background:#fff;font-family:var(--mont);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(48,54,54,.6)}
+.cal-fallback{font-family:var(--read);font-size:.95rem;color:rgba(48,54,54,.75)}
+.cal-fallback a{color:var(--ink);text-underline-offset:3px}
+@media (max-width:700px){.cal-frame iframe{height:1000px}.pill-tab{padding:.85em 1.15em}}

@@ -9,7 +9,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=202610250930">
+<link rel="stylesheet" href="assets/styles.css?v=202610250940">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Ember Room","description":"Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.","address":{"@type":"PostalAddress","streetAddress":"43 Edward Street","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"},"email":"hello@tessfowler.com.au","founder":{"@type":"Person","name":"Tess Fowler","jobTitle":"Counsellor and somatic therapist"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Friday","Saturday"]}],"potentialAction":{"@type":"ReserveAction","target":"https://calendly.com/tess-fowler","name":"Book a free 15-minute call"}}
 </script>
@@ -67,7 +67,7 @@
     </div>
     <p class="facts cap">Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p>
     <div class="br">
-      <a class="btn" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="hero">Book a 15min Call</a>
+      <a class="btn" href="#book-now" data-cal-open="call" data-track="book_call_click" data-service="hero">Book a 15min Call</a>
     </div>
   </div>
 </section>
@@ -85,7 +85,7 @@
           <p class="what">Individual Counselling and Somatic Therapy sessions offer an in depth chance to discover long held beliefs and behaviours that have been established over a life time, and work with both the body and the mind to discover new ways of being that create more ease, freedom and autonomy in your life.</p>
           <p class="price"><span>$180 90mins (required for initial client’s first session)</span> <span>$150 60mins</span></p>
           <div class="acts">
-            <a class="btn" style="white-space:normal;text-align:center" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="individual">Book a free 15 min chat or your first session here</a>
+            <a class="btn" style="white-space:normal;text-align:center" href="#book-now" data-cal-open="individual" data-track="book_call_click" data-service="individual">Book a free 15 min chat or your first session here</a>
           </div>
         </div>
         <div class="row route" id="couples">
@@ -93,7 +93,7 @@
           <p class="what">Relationship Counselling and Somatic Therapy Sessions offer the opportunity to address struggles within your relationship that cause tension and disconnection, and find ways to establish healthy new ways of relating to each other that result in better intimacy, connection and companionship and helps your love reignite.</p>
           <p class="price"><span>$210 90mins (Initial clients are required to book the 90min for first session)</span> <span>$180 60mins</span></p>
           <div class="acts">
-            <a class="btn" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_session_click" data-service="couples">Book a session here</a>
+            <a class="btn" href="#book-now" data-cal-open="couples" data-track="book_session_click" data-service="couples">Book a session here</a>
           </div>
         </div>
         <div class="row route" id="rest">
@@ -101,10 +101,28 @@
           <p class="what">Experience a personally curated blend of gentle somatic therapy exercises, soothing sounds and live vocals to help your body settle into a state of deep restoration. <span>Available Tuesday, Friday, Saturday or Sunday @ 5.30pm or 7.30pm.</span></p>
           <p class="price"><span>$150 for 60min session</span> <span>$180 for 90 min session</span></p>
           <div class="acts">
-            <a class="btn" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_session_click" data-service="guided-rest">Book Now</a>
+            <a class="btn" href="#book-now" data-cal-open="rest" data-track="book_session_click" data-service="guided-rest">Book Now</a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking g" id="book-now" aria-labelledby="book-now-h">
+  <div class="wrap">
+    <h2 class="mark" id="book-now-h">Book a free 15 min chat or your first session here</h2>
+    <div class="cal" data-cal>
+      <div class="cal-tabs" role="tablist" aria-label="Choose a session">
+        <button class="pill-tab" role="tab" aria-selected="true" data-svc="call">15min Call</button>
+        <button class="pill-tab" role="tab" aria-selected="false" data-svc="individual">Individual</button>
+        <button class="pill-tab" role="tab" aria-selected="false" data-svc="couples">Couples</button>
+        <button class="pill-tab" role="tab" aria-selected="false" data-svc="rest">Guided Rest</button>
+      </div>
+      <div class="cal-lengths" aria-label="Session length"></div>
+      <p class="cal-note"></p>
+      <div class="cal-frame"><iframe title="Book with Tess Fowler on Calendly" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      <p class="cal-fallback">Booking calendar not loading? <a href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="widget-fallback">Open it on Calendly</a></p>
     </div>
   </div>
 </section>
@@ -128,7 +146,7 @@
     </div>
     <div class="prose">
       <p>On my booking page you’re welcome to book in a complimentary 15 min phone chat to ask me any questions you may have.</p>
-      <p><a class="btn" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="contact">Book a 15min Call</a></p>
+      <p><a class="btn" href="#book-now" data-cal-open="call" data-track="book_call_click" data-service="contact">Book a 15min Call</a></p>
       <h3>The Ember Room</h3>
       <p>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p>
       <p class="quiet">Based on Kaurna Land / Adelaide, South Australia</p>
@@ -144,7 +162,7 @@
     <div style="align-self:center;display:grid;gap:34px;justify-items:center">
       <div class="letter" style="width:min(100%,25rem);font-size:clamp(1.2rem,2.2vw,1.55rem)"><p id="close-h">Set up a complimentary chat <b>to ask me more.</b></p></div>
       <div class="actions">
-        <a class="btn" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="close">Book a 15min Call</a>
+        <a class="btn" href="#book-now" data-cal-open="call" data-track="book_call_click" data-service="close">Book a 15min Call</a>
       </div>
     </div>
     <div class="trio"><span>Tuesdays, Fridays and Saturdays</span><span>43 Edward Street, Norwood, SA</span><span>Kaurna Land / Adelaide</span></div>
@@ -170,6 +188,6 @@
 <div class="bookbar"><a class="btn" href="book.html" data-track="book_call_click" data-service="bookbar">Book a 15min Call</a></div>
 <!-- /FOOTER -->
 
-<script src="assets/site.js?v=202610231700"></script>
+<script src="assets/site.js?v=202610250940"></script>
 </body>
 </html>

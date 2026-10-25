@@ -338,3 +338,4 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .cal-fallback{font-family:var(--read);font-size:.95rem;color:rgba(48,54,54,.75)}
 .cal-fallback a{color:var(--ink);text-underline-offset:3px}
 @media (max-width:700px){.cal-frame iframe{height:1000px}.pill-tab{padding:.85em 1.15em}}
+.booking{scroll-margin-top:64px}

@@ -71,7 +71,7 @@
       track('booking_widget_view',{page:document.body.dataset.page||'',service:slug});}
     frame.addEventListener('load',()=>wrap.classList.remove('loading'));
     function pickLen(slug){$$('button',lens).forEach(b=>b.setAttribute('aria-pressed',b.dataset.slug===slug));load(slug);}
-    function pick(svc,focus){const d=SVC[svc]||SVC.call;
+    function pick(svc,focus){if(!SVC[svc])svc='call';const d=SVC[svc];
       tabs.forEach(t=>{const on=t.dataset.svc===svc;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on&&focus)t.focus();});
       lens.innerHTML='';lens.hidden=d.lengths.length<2;
       d.lengths.forEach(([label,slug])=>{const b=document.createElement('button');b.type='button';b.className='len';b.textContent=label;b.dataset.slug=slug;
@@ -84,7 +84,7 @@
     addEventListener('message',e=>{if(e.origin!=='https://calendly.com')return;const d=e.data||{};
       if(d.event==='calendly.page_height'&&d.payload&&d.payload.height){const h=parseInt(d.payload.height,10);if(h>300)frame.style.height=h+'px';}});
     /* load only when the widget is near the screen */
-    const start=()=>{if(!current)pick((location.hash.match(/^#(individual|couples|rest)$/)||[])[1]||'call');};
+    const start=()=>{if(!current)pick(new URLSearchParams(location.search).get('s')||(location.hash.match(/^#(individual|couples|rest)$/)||[])[1]||'call');};
     if('IntersectionObserver'in window){const io=new IntersectionObserver(([en])=>{if(en.isIntersecting){start();io.disconnect();}},{rootMargin:'600px'});io.observe(cal);}else start();
   }
 

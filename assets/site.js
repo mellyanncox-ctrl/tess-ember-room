@@ -76,7 +76,7 @@
       lens.innerHTML='';lens.hidden=d.lengths.length<2;
       d.lengths.forEach(([label,slug])=>{const b=document.createElement('button');b.type='button';b.className='len';b.textContent=label;b.dataset.slug=slug;
         b.addEventListener('click',()=>pickLen(slug));lens.appendChild(b);});
-      note.textContent=d.note;pickLen(d.lengths[0][1]);}
+      note.textContent=d.note;const want=(pick.len||'').toLowerCase();pick.len='';const hit=d.lengths.find(l=>l[0].toLowerCase()===want);pickLen((hit||d.lengths[0])[1]);}
     tabs.forEach((t,i)=>{t.addEventListener('click',()=>pick(t.dataset.svc));
       t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();pick(tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length].dataset.svc,true);}});});
     $$('[data-cal-open]').forEach(a=>a.addEventListener('click',()=>pick(a.dataset.calOpen)));
@@ -84,7 +84,7 @@
     addEventListener('message',e=>{if(e.origin!=='https://calendly.com')return;const d=e.data||{};
       if(d.event==='calendly.page_height'&&d.payload&&d.payload.height){const h=parseInt(d.payload.height,10);if(h>300)frame.style.height=h+'px';}});
     /* load only when the widget is near the screen */
-    const start=()=>{if(!current)pick(new URLSearchParams(location.search).get('s')||(location.hash.match(/^#(individual|couples|rest)$/)||[])[1]||'call');};
+    const start=()=>{const qs=new URLSearchParams(location.search);pick.len=qs.get('l')||'';if(!current)pick(new URLSearchParams(location.search).get('s')||(location.hash.match(/^#(individual|couples|rest)$/)||[])[1]||'call');};
     if('IntersectionObserver'in window){const io=new IntersectionObserver(([en])=>{if(en.isIntersecting){start();io.disconnect();}},{rootMargin:'600px'});io.observe(cal);}else start();
   }
 

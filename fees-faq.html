@@ -9,7 +9,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
-<link rel="stylesheet" href="assets/styles.css?v=202610231705">
+<link rel="stylesheet" href="assets/styles.css?v=202610250930">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Ember Room","description":"Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.","address":{"@type":"PostalAddress","streetAddress":"43 Edward Street","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"},"email":"hello@tessfowler.com.au","founder":{"@type":"Person","name":"Tess Fowler","jobTitle":"Counsellor and somatic therapist"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Friday","Saturday"]}],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Individual somatic therapy and counselling","serviceType":"Somatic therapy"},"priceSpecification":[{"@type":"PriceSpecification","price":"150","priceCurrency":"AUD","description":"60 minutes"},{"@type":"PriceSpecification","price":"180","priceCurrency":"AUD","description":"90 minutes"}]},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Couples therapy","serviceType":"Relationship counselling"},"priceSpecification":[{"@type":"PriceSpecification","price":"180","priceCurrency":"AUD","description":"60 minutes"},{"@type":"PriceSpecification","price":"210","priceCurrency":"AUD","description":"90 minutes"}]},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Guided Rest session"},"priceSpecification":[{"@type":"PriceSpecification","price":"150","priceCurrency":"AUD","description":"60 minutes"},{"@type":"PriceSpecification","price":"180","priceCurrency":"AUD","description":"90 minutes"}]}]}
 </script>
@@ -25,7 +25,7 @@
       <a href="somatic-therapy-norwood.html">Individual</a>
       <a href="couples-therapy-adelaide.html">Couples</a>
       <a href="people-pleasing.html">People pleasing</a>
-      <a href="fees-faq.html" aria-current="page">Fees</a>
+      <a href="fees-faq.html" aria-current="page">Fees &amp; FAQ</a>
       <a href="about.html">About</a>
     </nav>
     <a class="btn" href="book.html" data-track="book_call_click" data-service="header">Book a 15min Call</a>
@@ -40,7 +40,7 @@
     <a href="couples-therapy-adelaide.html">Couples</a>
     <a href="people-pleasing.html">People pleasing</a>
     <a href="guided-rest.html">Guided Rest</a>
-    <a href="fees-faq.html" aria-current="page">Fees</a>
+    <a href="fees-faq.html" aria-current="page">Fees &amp; FAQ</a>
     <a href="about.html">About Tess</a>
   </nav>
   <a class="btn" href="book.html" data-track="book_call_click" data-service="drawer">Book a 15min Call</a>
@@ -55,13 +55,13 @@
     <p class="tl cap">The Ember Room</p>
     <p class="tr cap">Based on Kaurna Land /<br>Adelaide, South Australia</p>
     <div class="mid">
-      <h1>Fees</h1>
+      <h1>Fees &amp; FAQ</h1>
       <p class="sub">All sessions are 60 or 90 minutes.</p>
     </div>
     <p class="facts cap">Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p>
     <div class="br">
       <a class="btn" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="fees">Book a 15min Call</a>
-      <a class="btn ghost" href="#november">Explore options now</a>
+      <a class="btn ghost" href="#faq">Five questions about therapy</a>
     </div>
   </div>
 </section>
@@ -82,17 +82,24 @@
   </div>
 </section>
 
-<section class="poster g" aria-labelledby="book-h">
-  <div class="bg img-light" style="--pos:30% 70%;--blur:28px;--bri:.55"></div><div class="tint"></div><div class="grain"></div>
+<section class="poster faqs g" id="faq" aria-labelledby="faq-h">
+  <div class="bg img-path" style="--pos:50% 55%;--blur:4px;--bri:.85" role="img" aria-label="Forest, softly blurred"></div><div class="grain"></div>
   <div class="in">
-    <h2 class="mark" id="book-h">Book a 15min Call</h2>
-    <div style="align-self:center;display:grid;gap:34px;justify-items:center">
-      <div class="letter"><p>On my booking page you’re welcome to book in <b>a complimentary 15 min phone chat</b> to ask me any questions you may have.</p></div>
-      <div class="actions">
-        <a class="btn" style="white-space:normal;text-align:center" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="fees">Book a free 15 min chat or your first session here</a>
+    <h2 class="mark" id="faq-h">Five questions about therapy</h2>
+    <div class="card">
+      <p class="card-sub">(You might have asked yourself)</p>
+      <div class="faq">
+        <details id="faq-1"><summary><span><span class="no">No.1</span>How do I know if I need it?</span></summary><div class="a"><p>You don't need a crisis to justify going. If you're constantly stressed, stuck in the same patterns, snapping at people you love, avoiding things that matter, or just feel “off” and can't name why, that's enough.</p><p>Therapy isn't only for trauma or breakdowns. It's for anyone who wants to understand themselves better, build better habits, or just have a space that's fully theirs.</p></div></details>
+        <details id="faq-2"><summary><span><span class="no">No.2</span>How long does it take to work?</span></summary><div class="a"><p>Some people feel a shift after 2-3 sessions from finally being seen &amp; heard. But real, lasting change usually takes months, not weeks.</p><p>There's no finish line, but research suggests noticeable improvement for many people happens somewhere between 8 and 20 sessions, depending on what you're working through.</p><p>Like a gym session, you don’t expect ‘results’ instantly, they accumulate over time, but you certainly can feel better right away!</p></div></details>
+        <details id="faq-3"><summary><span><span class="no">No.3</span>How often do I need to go?</span></summary><div class="a"><p>Fortnightly (every 2 weeks) is the ideal starting point, especially early on – it builds momentum, familiarity, and safety, while giving enough time to work independently between sessions.</p><p>If you're in crisis or working through something heavy, weekly can be better.</p><p>But, it’s entirely your call how often you want (and practically can) be there. Anything is better than nothing! So even once a month can offer significant support.</p></div></details>
+        <details id="faq-4"><summary><span><span class="no">No.4</span>Is online as effective?</span></summary><div class="a"><p>Multiple studies have found online sessions can be just as effective as in-person for most people. What matters more is the connection you have with your therapist.</p><p>Online therapy removes a lot of barriers – commute time, location, mobility issues – which means more people actually show up.</p><p>I have often enjoyed being in my own space for online sessions. If you feel comfortable and understood, then the screens don't matter.</p></div></details>
+        <details id="faq-5"><summary><span><span class="no">No.5</span>What if I run out of things to say?</span></summary><div class="a"><p>Fortunately, I can talk plenty 😉</p><p>I jest… but in all seriousness, silence and exploring uncertainty is just as much a part of the gold as hearing about all the problems.</p><p>And the ‘I’m not sure what to talk about’ days can often end up being the most profound and powerful sessions clients have.</p></div></details>
+      </div>
+      <div class="card-foot">
+        <p>On my booking page you’re welcome to book in <b>a complimentary 15 min phone chat</b> to ask me any questions you may have.</p>
+        <a class="btn" style="white-space:normal;text-align:center" href="https://calendly.com/tess-fowler" target="_blank" rel="noopener" data-track="book_call_click" data-service="fees-faq">Book a free 15 min chat or your first session here</a>
       </div>
     </div>
-    <div class="trio"><span>Somatic Therapy &amp; Counselling</span><span>Couples Therapy</span><span>Guided Rest Sessions</span></div>
   </div>
 </section>
 
@@ -136,7 +143,7 @@
     <div class="cols">
       <div><h2>The Ember Room</h2><p>Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)</p></div>
       <div><h2>Visit</h2><p>The Ember Room:<br>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p></div>
-      <div><h2>Explore</h2><ul><li><a href="somatic-therapy-norwood.html">Individual therapy</a></li><li><a href="couples-therapy-adelaide.html">Couples therapy</a></li><li><a href="people-pleasing.html">People pleasing</a></li><li><a href="guided-rest.html">Guided Rest</a></li><li><a href="fees-faq.html">Fees</a></li><li><a href="about.html">About Tess</a></li></ul></div>
+      <div><h2>Explore</h2><ul><li><a href="somatic-therapy-norwood.html">Individual therapy</a></li><li><a href="couples-therapy-adelaide.html">Couples therapy</a></li><li><a href="people-pleasing.html">People pleasing</a></li><li><a href="guided-rest.html">Guided Rest</a></li><li><a href="fees-faq.html">Fees &amp; FAQ</a></li><li><a href="about.html">About Tess</a></li></ul></div>
       <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>hello@tessfowler.com.au</p><p style="margin-top:12px"><a class="btn" href="book.html" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
     </div>
     <p class="crisis">The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14.</p>

@@ -386,3 +386,28 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .poster.split.clean .split-prose .cred{border-top-color:rgba(48,54,54,.2);color:var(--ink)}
 .poster.split.clean .in{padding-right:52%}
 @media (max-width:900px){.poster.split.clean .in{padding-right:0}}
+
+/* About hero with a real photo: plum text side, photo with a hard edge, no overlay */
+.page-hero.with-photo{background:var(--ink-2);min-height:min(86svh,800px)}
+.page-hero.with-photo .photo{position:absolute;top:0;right:0;width:46%;height:100%;object-fit:cover;object-position:50% 30%;max-width:none}
+.page-hero.with-photo .layer{grid-template-columns:1fr;padding-right:calc(46% + clamp(24px,4vw,64px))}
+.page-hero.with-photo .tl,.page-hero.with-photo .tr{display:none}
+.page-hero.with-photo .mid{grid-area:auto;align-self:center;justify-self:start;text-align:left;justify-items:start}
+.page-hero.with-photo h1{text-shadow:none}
+.page-hero.with-photo .sub{font-style:normal;font-family:var(--read);color:var(--terra);max-width:26ch}
+.page-hero.with-photo .facts,.page-hero.with-photo .br{grid-area:auto;justify-self:start}
+@media (max-width:900px){
+  .page-hero.with-photo{display:block;min-height:0}
+  .page-hero.with-photo .photo{position:relative;width:100%;height:min(70vh,560px)}
+  .page-hero.with-photo .layer{padding-right:0;padding-block:32px 40px}
+}
+/* story photo on the left so it doesn't mirror the hero */
+.poster.split.clean.flip .photo{right:auto;left:0}
+.poster.split.clean.flip .in{padding-right:0;padding-left:52%}
+@media (max-width:900px){.poster.split.clean.flip .in{padding-left:0}}
+.page-hero.with-photo .layer{display:flex;flex-direction:column;justify-content:center;gap:28px;padding-block:clamp(48px,7vw,96px)}
+.page-hero.with-photo .photo{object-position:0% 30%}
+.page-hero.with-photo .br{justify-content:flex-start;margin-top:8px}
+.page-hero.with-photo .layer{align-items:flex-start}
+.page-hero.with-photo .mid,.page-hero.with-photo .facts,.page-hero.with-photo .br{margin:0;align-self:flex-start;justify-self:auto;max-width:none}
+.page-hero.with-photo .br{width:auto}

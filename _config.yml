@@ -1,0 +1,15 @@
+title: The Ember Room
+permalink: /journal/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

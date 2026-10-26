@@ -1,0 +1,30 @@
+# Pages CMS (https://pagescms.org): a simple editor so Tess can write Journal posts in her browser
+media:
+  input: assets/journal
+  output: /assets/journal
+content:
+  - name: journal
+    label: Journal
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [ title, date ]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: excerpt
+        label: Short summary (shows on the Journal page)
+        type: text
+      - name: image
+        label: Cover image (optional)
+        type: image
+      - name: body
+        label: Post
+        type: rich-text

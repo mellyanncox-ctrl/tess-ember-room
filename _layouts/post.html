@@ -1,0 +1,114 @@
+---
+---
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<base href="/">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ page.title }} | The Ember Room</title>
+<meta name="description" content="{{ page.excerpt | strip_html | strip | escape }}">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
+<link rel="stylesheet" href="assets/styles.css?v=202610261440">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"The Ember Room","description":"Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.","address":{"@type":"PostalAddress","streetAddress":"43 Edward Street","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"},"email":"hello@tessfowler.com.au","founder":{"@type":"Person","name":"Tess Fowler","jobTitle":"Counsellor and somatic therapist"},"makesOffer":[{"@type":"Offer","name":"NOvember: full journey","description":"A month for the people pleasers ready to find their NO, reconnect with themselves, and create more capacity to say YES to the life, relationships and experiences they actually want.","price":"140","priceCurrency":"AUD","url":"https://www.tessfowler.com.au/novemberjourney"},{"@type":"Offer","name":"NOvember with 2 × 90-min sessions","description":"FULL JOURNEY + 2 PSYCHOTHERAPY SESSIONS (valued at $360)","price":"440","priceCurrency":"AUD","url":"https://www.tessfowler.com.au/novemberjourney"}]}
+</script>
+</head>
+<body data-page="journal-post">
+<a class="skip" href="{{ page.url }}#main">Skip to content</a>
+
+<!-- HEADER (shared) -->
+<header class="site-head g">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">The Ember Room<span>Tess Fowler</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="somatic-therapy-norwood.html">Individual</a>
+      <a href="couples-therapy-adelaide.html">Couples</a>
+      <a href="people-pleasing.html">People pleasing</a>
+      <a href="fees-faq.html">Fees &amp; FAQ</a>
+      <a href="journal/" aria-current="page">Journal</a>
+      <a href="about.html">About</a>
+    </nav>
+    <a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="header">Book a 15min Call</a>
+    <button class="menu-btn" type="button" data-open-drawer aria-controls="drawer" aria-expanded="false">Menu</button>
+  </div>
+</header>
+<div class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top"><a class="wordmark" href="index.html">The Ember Room<span>Tess Fowler</span></a><button class="menu-btn" type="button" data-close-drawer style="display:inline-flex">Close</button></div>
+  <nav aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="somatic-therapy-norwood.html">Individual</a>
+    <a href="couples-therapy-adelaide.html">Couples</a>
+    <a href="people-pleasing.html">People pleasing</a>
+    <a href="guided-rest.html">Guided Rest</a>
+    <a href="fees-faq.html">Fees &amp; FAQ</a>
+    <a href="journal/" aria-current="page">Journal</a>
+    <a href="about.html">About Tess</a>
+  </nav>
+  <a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="drawer">Book a 15min Call</a>
+</div>
+<!-- /HEADER -->
+
+<main id="main">
+
+<section class="page-hero journal-hero g">
+  <div class="bg" style="--pos:60% 55%;--blur:14px"></div><div class="tint"></div><div class="grain"></div>
+  <div class="layer">
+    <p class="tl cap"><a href="journal/" style="text-decoration:none">Journal</a></p>
+    <p class="tr cap">{{ page.date | date: "%-d %B %Y" }}</p>
+    <div class="mid">
+      <h1>{{ page.title }}</h1>
+    </div>
+    <p class="facts cap">Written by Tess Fowler</p>
+  </div>
+</section>
+
+<article class="article g">
+  {% if page.image %}<img class="article-img" src="{{ page.image }}" alt="">{% endif %}
+  <div class="article-body">
+{{ content }}
+    <p class="article-sign">Tess x</p>
+  </div>
+</article>
+
+<section class="poster close g" aria-labelledby="close-h">
+  <div class="bg img-wattle" style="--blur:0px;--bri:.68;--pos:50% 50%" role="img" aria-label="Wattle in flower, softly blurred"></div>
+  <div class="tint"></div><div class="grain"></div>
+  <div class="in">
+    <p class="mark">Work with me</p>
+    <div style="align-self:center;display:grid;gap:34px;justify-items:center">
+      <div class="letter" style="width:min(100%,25rem);font-size:clamp(1.2rem,2.2vw,1.55rem)"><p id="close-h">Set up a complimentary chat <b>to ask me more.</b></p></div>
+      <div class="actions">
+        <a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="journal">Book a 15min Call</a>
+        <a class="btn ghost" href="journal/">More from the Journal</a>
+      </div>
+    </div>
+    <div class="trio"><span>Tuesdays, Fridays and Saturdays</span><span>Norwood, SA</span><span>Online</span></div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER (shared) -->
+<footer class="site-foot g">
+  <div class="wrap">
+    <div class="cols">
+      <div><h2>The Ember Room</h2><p>Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)</p></div>
+      <div><h2>Visit</h2><p>The Ember Room:<br>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p></div>
+      <div><h2>Explore</h2><ul><li><a href="somatic-therapy-norwood.html">Individual therapy</a></li><li><a href="couples-therapy-adelaide.html">Couples therapy</a></li><li><a href="people-pleasing.html">People pleasing</a></li><li><a href="guided-rest.html">Guided Rest</a></li><li><a href="fees-faq.html">Fees &amp; FAQ</a></li><li><a href="journal/">Journal</a></li><li><a href="about.html">About Tess</a></li></ul></div>
+      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>hello@tessfowler.com.au</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
+    </div>
+    <p class="crisis">The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14.</p>
+    <p class="ack">Based on Kaurna Land / Adelaide, South Australia</p>
+    <div class="legal"><a href="privacy.html">Privacy</a><a href="https://www.hcscc.sa.gov.au/" target="_blank" rel="noopener">SA Code of Conduct for health care workers</a><span>© The Ember Room</span></div>
+  </div>
+</footer>
+<div class="bookbar"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="bookbar">Book a 15min Call</a></div>
+<!-- /FOOTER -->
+
+<script src="assets/site.js?v=202610251010"></script>
+</body>
+</html>

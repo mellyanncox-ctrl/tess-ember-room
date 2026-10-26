@@ -351,3 +351,28 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .portrait-arch img{width:100%;height:100%;object-fit:cover;display:block}
 .poster.has-portrait .grain{border-radius:0}
 @media (max-width:760px){.poster.has-portrait{padding-top:0}.portrait-arch{position:relative;left:auto;top:auto;transform:none;margin:56px auto 0;width:min(62vw,240px)}}
+
+/* ---------- Journal ---------- */
+.journal-hero{min-height:min(56svh,520px)}
+.journal-hero h1{max-width:20ch;font-size:clamp(2rem,4.6vw,3.6rem)}
+.journal-list{background:var(--stone);color:var(--char);padding-block:clamp(56px,8vw,110px)}
+.journal-list .wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:28px}
+.journal-card{display:grid;gap:12px;align-content:start;text-decoration:none;color:inherit;background:var(--stone-2);border-radius:18px;padding:30px;transition:transform .2s}
+.journal-card:hover{transform:translateY(-3px)}
+.journal-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px}
+.journal-card .cap{color:var(--terra-deep)}
+.journal-card h2{font-family:var(--sans);font-weight:400;font-size:1.5rem;line-height:1.15;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
+.journal-card .ex{font-family:var(--read);font-size:1.05rem;line-height:1.55}
+.journal-card .more{font-family:var(--mont);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.article{background:var(--stone);color:var(--char);padding:clamp(56px,8vw,110px) 20px}
+.article-img{display:block;width:min(100%,860px);margin:0 auto 48px;border-radius:16px}
+.article-body{max-width:66ch;margin:0 auto;font-family:var(--read);font-size:clamp(1.08rem,1.4vw,1.2rem);line-height:1.7}
+.article-body p{margin:0 0 1.1em}
+.article-body h2{font-family:var(--mont);font-weight:700;font-size:.9rem;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);margin:2.2em 0 1em}
+.article-body h3{font-family:var(--sans);font-weight:500;font-size:1.2rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:1.8em 0 .8em}
+.article-body strong{color:var(--ink)}
+.article-body blockquote{margin:1.6em 0;padding-left:1.2em;border-left:2px solid var(--terra);color:var(--ink)}
+.article-body ul,.article-body ol{margin:0 0 1.1em 1.2em}
+.article-body img{max-width:100%;border-radius:12px;margin:1em 0}
+.article-body a{color:var(--ink);text-underline-offset:3px}
+.article-sign{font-family:var(--mont);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;color:var(--terra-deep);margin-top:2em!important}

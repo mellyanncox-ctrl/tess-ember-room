@@ -344,3 +344,7 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 #focus .sequence h3{padding-top:.5em}
 #focus .sequence p{padding-top:.3em}
 @media (max-width:760px){#focus .sequence li{grid-template-columns:3.4rem minmax(0,1fr);gap:8px 14px}#focus .sequence .num{font-size:2.2rem}#focus .sequence h3{padding-top:.35em}#focus .sequence p{grid-column:1/-1;padding-top:0}}
+
+/* hero byline with portrait */
+.hero .byline{display:inline-flex;align-items:center;gap:.6em}
+.hero .avatar{width:clamp(44px,4.4vw,60px);height:clamp(44px,4.4vw,60px);border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.85);box-shadow:0 4px 18px rgba(0,0,0,.35)}

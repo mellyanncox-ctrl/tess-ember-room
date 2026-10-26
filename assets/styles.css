@@ -304,9 +304,8 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 
 /* Instagram additions: hero tagline, focus areas, FAQ card, credentials */
 .hero .tag{font-family:var(--mont);font-weight:500;font-size:clamp(.72rem,1.1vw,.86rem);letter-spacing:.2em;text-transform:uppercase;color:#fff;max-width:30ch;line-height:1.6;text-shadow:0 2px 18px rgba(0,0,0,.45);margin-top:6px}
-.sequence .more{display:inline-block;margin-top:.5em;font-family:var(--mont);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-underline-offset:4px;white-space:nowrap}
-.sequence p .more:only-child{margin-top:0}
-.poster.charcoal .sequence-note{color:rgba(255,255,255,.82);max-width:46ch;font-style:italic}
+.sequence .more{display:table;margin-top:.9em;font-family:var(--mont);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-underline-offset:4px;white-space:nowrap}
+.poster.charcoal .sequence-note{color:rgba(255,255,255,.82);max-width:46ch;font-style:normal}
 .poster.faqs .in{grid-template-rows:auto 1fr}
 .poster.faqs .mark{text-shadow:0 1px 14px rgba(0,0,0,.35)}
 .poster.faqs .card{align-self:center;justify-self:center;width:min(100%,46rem);background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(14px) saturate(1.05);backdrop-filter:blur(14px) saturate(1.05);color:var(--char);border-radius:14px;padding:clamp(24px,4vw,48px);display:grid;gap:22px;box-shadow:0 30px 80px -40px rgba(0,0,0,.45)}
@@ -339,3 +338,9 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .cal-fallback a{color:var(--ink);text-underline-offset:3px}
 @media (max-width:700px){.cal-frame iframe{height:1000px}.pill-tab{padding:.85em 1.15em}}
 .booking{scroll-margin-top:64px}
+
+/* focus list: top-aligned rows, number beside the label */
+#focus .sequence li{align-items:start;grid-template-columns:minmax(0,.45fr) minmax(0,1fr) minmax(0,1.5fr)}
+#focus .sequence h3{padding-top:.5em}
+#focus .sequence p{padding-top:.3em}
+@media (max-width:760px){#focus .sequence li{grid-template-columns:3.4rem minmax(0,1fr);gap:8px 14px}#focus .sequence .num{font-size:2.2rem}#focus .sequence h3{padding-top:.35em}#focus .sequence p{grid-column:1/-1;padding-top:0}}

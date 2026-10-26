@@ -376,3 +376,13 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .article-body img{max-width:100%;border-radius:12px;margin:1em 0}
 .article-body a{color:var(--ink);text-underline-offset:3px}
 .article-sign{font-family:var(--mont);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;color:var(--terra-deep);margin-top:2em!important}
+
+/* clean split (About story): stone text side, photo with a hard edge, no overlay */
+.poster.split.clean{background:var(--stone);color:var(--char)}
+.poster.split.clean .tint{display:none}
+.poster.split.clean .grain{opacity:.08;mix-blend-mode:multiply}
+.poster.split.clean .panel h2{font-family:var(--sans);font-style:normal;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:.02em;text-transform:uppercase;color:var(--ink);margin-bottom:.7em}
+.poster.split.clean .split-prose{color:var(--char)}
+.poster.split.clean .split-prose .cred{border-top-color:rgba(48,54,54,.2);color:var(--ink)}
+.poster.split.clean .in{padding-right:52%}
+@media (max-width:900px){.poster.split.clean .in{padding-right:0}}

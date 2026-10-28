@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en-AU">
 <head>
@@ -11,7 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
 <link rel="stylesheet" href="assets/styles.css?v=202610261625b">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Tess Fowler","jobTitle":"Counsellor and somatic therapist","email":"hello@tessfowler.com.au","address":{"@type":"PostalAddress","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"},"worksFor":{"@type":"ProfessionalService","name":"The Ember Room","address":{"@type":"PostalAddress","streetAddress":"43 Edward Street","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"}}}
+{"@context":"https://schema.org","@type":"Person","name":"Tess Fowler","jobTitle":"Counsellor and somatic therapist","email":"{{ site.data.practice.email }}","address":{"@type":"PostalAddress","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"},"worksFor":{"@type":"ProfessionalService","name":"The Ember Room","address":{"@type":"PostalAddress","streetAddress":"{{ site.data.practice.street }}","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"}}}
 </script>
 </head>
 <body data-page="about">
@@ -111,7 +113,7 @@
         <a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="about">Book a 15min Call</a>
       </div>
     </div>
-    <div class="trio"><span>Tuesdays, Fridays and Saturdays</span><span>Norwood, SA</span><span>Based on Kaurna Land</span></div>
+    <div class="trio"><span>{{ site.data.practice.days }}</span><span>Norwood, SA</span><span>Based on Kaurna Land</span></div>
   </div>
 </section>
 
@@ -122,9 +124,9 @@
   <div class="wrap">
     <div class="cols">
       <div><h2>The Ember Room</h2><p>Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)</p></div>
-      <div><h2>Visit</h2><p>The Ember Room:<br>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p></div>
+      <div><h2>Visit</h2><p>The Ember Room:<br>{{ site.data.practice.days }}<br>{{ site.data.practice.street }}, Norwood, SA</p></div>
       <div><h2>Explore</h2><ul><li><a href="somatic-therapy-norwood.html">Individual therapy</a></li><li><a href="couples-therapy-adelaide.html">Couples therapy</a></li><li><a href="people-pleasing.html">Online course</a></li><li><a href="guided-rest.html">Guided Rest</a></li><li><a href="fees-faq.html">Fees &amp; FAQ</a></li><li><a href="journal/">Journal</a></li><li><a href="about.html">About Tess</a></li></ul></div>
-      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>hello@tessfowler.com.au</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
+      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>{{ site.data.practice.email }}</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
     </div>
     <p class="crisis">The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14.</p>
     <p class="ack">Based on Kaurna Land / Adelaide, South Australia</p>

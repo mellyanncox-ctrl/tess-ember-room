@@ -1,4 +1,5 @@
-# Pages CMS (https://pagescms.org): a simple editor so Tess can write Journal posts in her browser
+# Pages CMS (https://pagescms.org): a simple editor so Tess can update her site in the browser.
+# Journal posts, fees and practice details, and the Fees & FAQ questions. Layout and design stay locked.
 media:
   input: assets/journal
   output: /assets/journal
@@ -28,3 +29,95 @@ content:
       - name: body
         label: Post
         type: rich-text
+  - name: practice
+    label: Fees, days and contact
+    type: file
+    path: _data/practice.yml
+    format: yaml
+    fields:
+      - name: days
+        label: Days you see clients
+        type: string
+        required: true
+      - name: street
+        label: Street address
+        type: string
+        required: true
+      - name: email
+        label: Email address
+        type: string
+        required: true
+      - name: fees
+        label: Session fees (dollars, numbers only)
+        type: object
+        fields:
+          - name: individual_60
+            label: Individual, 60 minutes
+            type: number
+            options:
+              min: 0
+          - name: individual_90
+            label: Individual, 90 minutes
+            type: number
+            options:
+              min: 0
+          - name: couples_60
+            label: Couples, 60 minutes
+            type: number
+            options:
+              min: 0
+          - name: couples_90
+            label: Couples, 90 minutes
+            type: number
+            options:
+              min: 0
+          - name: rest_60
+            label: Guided Rest, 60 minutes
+            type: number
+            options:
+              min: 0
+          - name: rest_90
+            label: Guided Rest, 90 minutes
+            type: number
+            options:
+              min: 0
+      - name: course
+        label: Find Your No prices (dollars, numbers only)
+        type: object
+        fields:
+          - name: price
+            label: Full journey
+            type: number
+            options:
+              min: 0
+          - name: with_sessions
+            label: Full journey with 2 sessions
+            type: number
+            options:
+              min: 0
+          - name: sessions_value
+            label: Usual value of the 2 sessions
+            type: number
+            options:
+              min: 0
+  - name: faq
+    label: Fees & FAQ questions
+    type: file
+    path: _data/faq.yml
+    format: yaml
+    fields:
+      - name: questions
+        label: Questions (shown in this order)
+        type: object
+        list: true
+        fields:
+          - name: question
+            label: Question
+            type: string
+            required: true
+          - name: answer
+            label: Answer
+            type: rich-text
+            required: true
+            options:
+              format: html

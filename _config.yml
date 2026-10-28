@@ -1,5 +1,4 @@
 title: The Ember Room
-permalink: /journal/:title/
 markdown: kramdown
 kramdown:
   input: GFM
@@ -13,3 +12,4 @@ defaults:
       type: posts
     values:
       layout: post
+      permalink: /journal/:title/

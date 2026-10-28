@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en-AU">
 <head>
@@ -10,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
 <link rel="stylesheet" href="assets/styles.css?v=202610261625b">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "The Ember Room", "description": "Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.", "address": {"@type": "PostalAddress", "streetAddress": "43 Edward Street", "addressLocality": "Norwood", "addressRegion": "SA", "postalCode": "5067", "addressCountry": "AU"}, "email": "hello@tessfowler.com.au", "founder": {"@type": "Person", "name": "Tess Fowler", "jobTitle": "Counsellor and somatic therapist"}, "makesOffer": [{"@type": "Offer", "name": "Find Your No: full journey", "description": "For the people pleasers ready to find their NO, reconnect with themselves, and create more capacity to say YES to the life, relationships and experiences they actually want.", "price": "140", "priceCurrency": "AUD", "url": "https://www.tessfowler.com.au/novemberjourney"}, {"@type": "Offer", "name": "Find Your No with 2 × 90-min sessions", "description": "FULL JOURNEY + 2 PSYCHOTHERAPY SESSIONS (valued at $360)", "price": "440", "priceCurrency": "AUD", "url": "https://www.tessfowler.com.au/novemberjourney"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "The Ember Room", "description": "Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.", "address": {"@type": "PostalAddress", "streetAddress": "{{ site.data.practice.street }}", "addressLocality": "Norwood", "addressRegion": "SA", "postalCode": "5067", "addressCountry": "AU"}, "email": "{{ site.data.practice.email }}", "founder": {"@type": "Person", "name": "Tess Fowler", "jobTitle": "Counsellor and somatic therapist"}, "makesOffer": [{"@type": "Offer", "name": "Find Your No: full journey", "description": "For the people pleasers ready to find their NO, reconnect with themselves, and create more capacity to say YES to the life, relationships and experiences they actually want.", "price": "140", "priceCurrency": "AUD", "url": "https://www.tessfowler.com.au/novemberjourney"}, {"@type": "Offer", "name": "Find Your No with 2 × 90-min sessions", "description": "FULL JOURNEY + 2 PSYCHOTHERAPY SESSIONS (valued at ${{ site.data.practice.course.sessions_value }})", "price": "440", "priceCurrency": "AUD", "url": "https://www.tessfowler.com.au/novemberjourney"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Find Your No", "description": "A self-guided, unique four week experience for the people pleasers ready to find their NO, reconnect with themselves, and create more capacity to say YES to the life, relationships and experiences they actually want.", "provider": {"@type": "Organization", "name": "The Ember Room", "sameAs": "https://www.tessfowler.com.au"}, "inLanguage": "en-AU", "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "P4W", "instructor": {"@type": "Person", "name": "Tess Fowler"}}, "offers": {"@type": "Offer", "category": "Paid", "price": "140", "priceCurrency": "AUD", "url": "https://www.tessfowler.com.au/novemberjourney"}}</script>
 </head>
 <body data-page="people-pleasing">
@@ -59,9 +61,9 @@
       <h1>Find Your No.</h1>
       <p class="sub">For the people pleasers ready to find their NO, reconnect with themselves, and create more capacity to say YES to the life, relationships and experiences they actually want.</p>
     </div>
-    <p class="facts cap">Online course · four weeks · start any day · $140</p>
+    <p class="facts cap">Online course · four weeks · start any day · ${{ site.data.practice.course.price }}</p>
     <div class="br">
-      <a class="btn" href="#options">Start the journey · $140</a>
+      <a class="btn" href="#options">Start the journey · ${{ site.data.practice.course.price }}</a>
       <a class="btn ghost" href="#free">Try week one free</a>
     </div>
   </div>
@@ -202,12 +204,12 @@
           <p>The Full NOvember journey allows you to learn and experience with structure and embodied practice. You’ll receive a workbook/journal to fill out as you go, extra bonus video content and a collection of guided audio practices alongside the daily email letters, to help you integrate the work into your everyday life, not just understand it intellectually.</p>
           <p>All materials will be given to you with life time access so you can move through the course in real time or at your own pace and revisit the lessons later down the track.</p>
           <p><a class="btn" href="https://www.tessfowler.com.au/novemberjourney" target="_blank" rel="noopener" data-track="november_checkout_click" data-service="full_journey">Purchase Full Journey</a></p>
-        </div><p class="price"><span>$140</span></p></div>
+        </div><p class="price"><span>${{ site.data.practice.course.price }}</span></p></div>
         <div class="row"><h3>Full Journey + 2 sessions</h3><div class="what" style="display:grid;gap:.8em">
           <p>For those ready to take the leap and have a more personalised experience, this option offers 2× 90m psychotherapy sessions at reduced rates ($30 off each session), to give you greater individual insight and professional expertise in exploring the specific patterns underneath your people-pleasing and apply the work to your real life with tailored 1:1 support.</p>
           <p>Sessions to be booked within six weeks of starting. Online or in person at The Ember Room - Adelaide.</p>
           <p><a class="btn" href="https://www.tessfowler.com.au/novemberjourney" target="_blank" rel="noopener" data-track="november_checkout_click" data-service="with_sessions" style="white-space:normal;text-align:center">Purchase Full Journey with 2x Private Sessions</a></p>
-        </div><p class="price"><span>$440</span><span>+ 2 Psychotherapy Sessions (valued at $360)</span></p></div>
+        </div><p class="price"><span>${{ site.data.practice.course.with_sessions }}</span><span>+ 2 Psychotherapy Sessions (valued at ${{ site.data.practice.course.sessions_value }})</span></p></div>
       </div>
       <div class="course-faq">
         <div><h3>Is this therapy?</h3><p>No. It’s a self-guided course. If you’d like personal support, add the two private sessions.</p></div>
@@ -257,7 +259,7 @@
     <div style="align-self:center;display:grid;gap:34px;justify-items:center">
       <div class="letter" style="width:min(100%,25rem);font-size:clamp(1.2rem,2.2vw,1.55rem)"><p id="close-h">This is NOvember. <b>It’s about building the capacity to say ‘no’ when necessary so there’s more capacity for ‘yes’ when it counts.</b></p></div>
       <div class="actions">
-        <a class="btn" href="#options" data-track="course_click" data-service="course_close">Start the journey · $140</a>
+        <a class="btn" href="#options" data-track="course_click" data-service="course_close">Start the journey · ${{ site.data.practice.course.price }}</a>
       </div>
     </div>
     <div class="trio"><span>Start any day</span><span>The Ember Room - Adelaide</span><span>Online or in person</span></div>
@@ -278,7 +280,7 @@
       <label class="sr" for="free-email">Your email</label>
       <input id="free-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
       <button class="btn" type="submit">Send me week one</button>
-      <p class="done" hidden>Thank you. Sign-ups open shortly. Until then, email hello@tessfowler.com.au and I’ll send week one to you.</p>
+      <p class="done" hidden>Thank you. Sign-ups open shortly. Until then, email {{ site.data.practice.email }} and I’ll send week one to you.</p>
     </form>
   </div>
 </section>
@@ -287,9 +289,9 @@
   <div class="wrap">
     <div class="cols">
       <div><h2>The Ember Room</h2><p>Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)</p></div>
-      <div><h2>Visit</h2><p>The Ember Room:<br>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p></div>
+      <div><h2>Visit</h2><p>The Ember Room:<br>{{ site.data.practice.days }}<br>{{ site.data.practice.street }}, Norwood, SA</p></div>
       <div><h2>Explore</h2><ul><li><a href="somatic-therapy-norwood.html">Individual therapy</a></li><li><a href="couples-therapy-adelaide.html">Couples therapy</a></li><li><a href="people-pleasing.html">Online course</a></li><li><a href="guided-rest.html">Guided Rest</a></li><li><a href="fees-faq.html">Fees &amp; FAQ</a></li><li><a href="journal/">Journal</a></li><li><a href="about.html">About Tess</a></li></ul></div>
-      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>hello@tessfowler.com.au</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
+      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>{{ site.data.practice.email }}</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
     </div>
     <p class="crisis">The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14.</p>
     <p class="ack">Based on Kaurna Land / Adelaide, South Australia</p>

@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en-AU">
 <head>
@@ -81,11 +83,11 @@
       <h2 id="who-h">Who I am</h2>
     </div>
     <div class="prose">
-      <p>The Ember Room is the counselling and somatic therapy practice of Tess Fowler, at 43 Edward Street, Norwood SA 5067, with online sessions across Australia. In this policy, "I", "me" and "my" mean Tess Fowler and The Ember Room. <mark class="confirm">Confirm: legal business name and ABN</mark></p>
+      <p>The Ember Room is the counselling and somatic therapy practice of Tess Fowler, at {{ site.data.practice.street }}, Norwood SA 5067, with online sessions across Australia. In this policy, "I", "me" and "my" mean Tess Fowler and The Ember Room. <mark class="confirm">Confirm: legal business name and ABN</mark></p>
       <p>Because I provide a health service, the information I hold about you includes health information. Under the Privacy Act 1988 (Cth), health information is sensitive information, and it gets extra protection. The Australian Privacy Principles (APPs) apply to health service providers whatever the size of the business, so the small business exemption doesn't apply to me.</p>
       <p>This policy explains what I collect, why, how I look after it, and what you can ask of me.</p>
       <h3 id="contact-h">How to contact me</h3>
-      <p>For any privacy question, request or complaint, email me at hello@tessfowler.com.au. <mark class="confirm">Confirm: postal address for privacy requests, if different</mark></p>
+      <p>For any privacy question, request or complaint, email me at {{ site.data.practice.email }}. <mark class="confirm">Confirm: postal address for privacy requests, if different</mark></p>
     </div>
   </div>
 </section>
@@ -177,7 +179,7 @@
       <p>You can ask for a copy of the information I hold about you, or ask me to correct anything that's wrong or out of date. Email me and I'll respond within 30 days. <mark class="confirm">Confirm: response time, and whether any fee applies for copies</mark></p>
       <p>In rare cases the law allows me to refuse access, for example where giving it would put someone's safety at serious risk. If that happens, I'll explain why in writing.</p>
       <h3>Complaints</h3>
-      <p>If you're unhappy with how I've handled your information, please tell me first at hello@tessfowler.com.au. I'll take it seriously and reply in writing. <mark class="confirm">Confirm: complaint response time</mark></p>
+      <p>If you're unhappy with how I've handled your information, please tell me first at {{ site.data.practice.email }}. I'll take it seriously and reply in writing. <mark class="confirm">Confirm: complaint response time</mark></p>
       <p>If you're not satisfied with my response, you can contact:</p>
       <ul>
         <li>the Office of the Australian Information Commissioner (OAIC): <a href="https://www.oaic.gov.au" target="_blank" rel="noopener">oaic.gov.au</a></li>
@@ -196,7 +198,7 @@
   <div class="in">
     <p class="mark">Questions</p>
     <div style="align-self:center;display:grid;gap:34px;justify-items:center">
-      <div class="letter" style="width:min(100%,25rem);font-size:clamp(1.2rem,2.2vw,1.55rem)"><p id="close-h">Questions about your information? <b>Email me at hello@tessfowler.com.au.</b></p></div>
+      <div class="letter" style="width:min(100%,25rem);font-size:clamp(1.2rem,2.2vw,1.55rem)"><p id="close-h">Questions about your information? <b>Email me at {{ site.data.practice.email }}.</b></p></div>
       <div class="actions">
         <a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="privacy">Book a free 15-min call</a>
         <a class="btn ghost" href="fees-faq.html">Fees &amp; FAQ</a>
@@ -213,9 +215,9 @@
   <div class="wrap">
     <div class="cols">
       <div><h2>The Ember Room</h2><p>Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)</p></div>
-      <div><h2>Visit</h2><p>The Ember Room:<br>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p></div>
+      <div><h2>Visit</h2><p>The Ember Room:<br>{{ site.data.practice.days }}<br>{{ site.data.practice.street }}, Norwood, SA</p></div>
       <div><h2>Explore</h2><ul><li><a href="somatic-therapy-norwood.html">Individual therapy</a></li><li><a href="couples-therapy-adelaide.html">Couples therapy</a></li><li><a href="people-pleasing.html">Online course</a></li><li><a href="guided-rest.html">Guided Rest</a></li><li><a href="fees-faq.html">Fees &amp; FAQ</a></li><li><a href="journal/">Journal</a></li><li><a href="about.html">About Tess</a></li></ul></div>
-      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>hello@tessfowler.com.au</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
+      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>{{ site.data.practice.email }}</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
     </div>
     <p class="crisis">The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14.</p>
     <p class="ack">Based on Kaurna Land / Adelaide, South Australia</p>

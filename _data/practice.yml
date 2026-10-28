@@ -1,0 +1,15 @@
+# Practice details. Change a value here and it updates on every page.
+email: hello@tessfowler.com.au
+street: 43 Edward Street
+days: Tuesdays, Fridays and Saturdays
+fees:
+  individual_60: 150
+  individual_90: 180
+  couples_60: 180
+  couples_90: 210
+  rest_60: 150
+  rest_90: 180
+course:
+  price: 140
+  with_sessions: 440
+  sessions_value: 360

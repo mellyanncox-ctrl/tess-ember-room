@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en-AU">
 <head>
@@ -11,7 +13,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
 <link rel="stylesheet" href="assets/styles.css?v=202610261625b">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"The Ember Room","description":"Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.","address":{"@type":"PostalAddress","streetAddress":"43 Edward Street","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"},"email":"hello@tessfowler.com.au","founder":{"@type":"Person","name":"Tess Fowler","jobTitle":"Counsellor and somatic therapist"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Friday","Saturday"]}],"potentialAction":{"@type":"ReserveAction","target":"https://calendly.com/tess-fowler","name":"Book a free 15-minute call"}}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"The Ember Room","description":"Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.","address":{"@type":"PostalAddress","streetAddress":"{{ site.data.practice.street }}","addressLocality":"Norwood","addressRegion":"SA","postalCode":"5067","addressCountry":"AU"},"email":"{{ site.data.practice.email }}","founder":{"@type":"Person","name":"Tess Fowler","jobTitle":"Counsellor and somatic therapist"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Friday","Saturday"]}],"potentialAction":{"@type":"ReserveAction","target":"https://calendly.com/tess-fowler","name":"Book a free 15-minute call"}}
 </script>
 <style>
 /* book.html only: route rows with a full-width action line, anchor offset under the sticky header, two-up call steps */
@@ -67,7 +69,7 @@
       <h1>Work with me</h1>
       <p class="sub">Set up a complimentary chat to ask me more.</p>
     </div>
-    <p class="facts cap">Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p>
+    <p class="facts cap">{{ site.data.practice.days }}<br>{{ site.data.practice.street }}, Norwood, SA</p>
     <div class="br">
       <a class="btn" href="#book-now" data-cal-open="call" data-track="book_call_click" data-service="hero">Book a 15min Call</a>
     </div>
@@ -85,7 +87,7 @@
         <div class="row route" id="individual">
           <h3>Somatic Therapy &amp; Counselling</h3>
           <p class="what">Individual Counselling and Somatic Therapy sessions offer an in depth chance to discover long held beliefs and behaviours that have been established over a life time, and work with both the body and the mind to discover new ways of being that create more ease, freedom and autonomy in your life.</p>
-          <p class="price"><span>$180 90mins (required for initial client’s first session)</span> <span>$150 60mins</span></p>
+          <p class="price"><span>${{ site.data.practice.fees.individual_90 }} 90mins (required for initial client’s first session)</span> <span>${{ site.data.practice.fees.individual_60 }} 60mins</span></p>
           <div class="acts">
             <a class="btn" style="white-space:normal;text-align:center" href="#book-now" data-cal-open="individual" data-track="book_call_click" data-service="individual">Book a free 15 min chat or your first session here</a>
           </div>
@@ -93,7 +95,7 @@
         <div class="row route" id="couples">
           <h3>Couples Therapy</h3>
           <p class="what">Relationship Counselling and Somatic Therapy Sessions offer the opportunity to address struggles within your relationship that cause tension and disconnection, and find ways to establish healthy new ways of relating to each other that result in better intimacy, connection and companionship and helps your love reignite.</p>
-          <p class="price"><span>$210 90mins (Initial clients are required to book the 90min for first session)</span> <span>$180 60mins</span></p>
+          <p class="price"><span>${{ site.data.practice.fees.couples_90 }} 90mins (Initial clients are required to book the 90min for first session)</span> <span>${{ site.data.practice.fees.couples_60 }} 60mins</span></p>
           <div class="acts">
             <a class="btn" href="#book-now" data-cal-open="couples" data-track="book_session_click" data-service="couples">Book a session here</a>
           </div>
@@ -101,7 +103,7 @@
         <div class="row route" id="rest">
           <h3>Guided Rest Sessions</h3>
           <p class="what">Experience a personally curated blend of gentle somatic therapy exercises, soothing sounds and live vocals to help your body settle into a state of deep restoration. <span>Available Tuesday, Friday, Saturday or Sunday @ 5.30pm or 7.30pm.</span></p>
-          <p class="price"><span>$150 for 60min session</span> <span>$180 for 90 min session</span></p>
+          <p class="price"><span>${{ site.data.practice.fees.rest_60 }} for 60min session</span> <span>${{ site.data.practice.fees.rest_90 }} for 90 min session</span></p>
           <div class="acts">
             <a class="btn" href="#book-now" data-cal-open="rest" data-track="book_session_click" data-service="guided-rest">Book Now</a>
           </div>
@@ -109,7 +111,7 @@
         <div class="row route" id="course">
           <h3>Not ready for therapy?</h3>
           <p class="what">Start with Find Your No, a self-guided, unique four week online experience for the people pleasers ready to find their NO.</p>
-          <p class="price"><span>$140 online course</span></p>
+          <p class="price"><span>${{ site.data.practice.course.price }} online course</span></p>
           <div class="acts">
             <a class="btn" href="people-pleasing.html#options" data-track="course_click" data-service="book">Explore the online course</a>
           </div>
@@ -144,7 +146,7 @@
     <div class="letter">
       <p>Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, <b>I offer in person and online individual therapy and couples therapy sessions.</b></p>
     </div>
-    <div class="trio"><span>Tuesdays, Fridays and Saturdays</span><span>43 Edward Street, Norwood, SA</span><span>Kaurna Land / Adelaide</span></div>
+    <div class="trio"><span>{{ site.data.practice.days }}</span><span>{{ site.data.practice.street }}, Norwood, SA</span><span>Kaurna Land / Adelaide</span></div>
   </div>
 </section>
 
@@ -152,12 +154,12 @@
   <div class="wrap">
     <div class="lede">
       <h2 id="contact-h">Contact me via email</h2>
-      <p class="mail">hello@tessfowler.com.au</p>
+      <p class="mail">{{ site.data.practice.email }}</p>
     </div>
     <div class="prose">
       <p>On my booking page you’re welcome to book in a complimentary 15 min phone chat to ask me any questions you may have.</p>
       <h3>The Ember Room</h3>
-      <p>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p>
+      <p>{{ site.data.practice.days }}<br>{{ site.data.practice.street }}, Norwood, SA</p>
       <p class="quiet">Based on Kaurna Land / Adelaide, South Australia</p>
     </div>
   </div>
@@ -174,7 +176,7 @@
         <a class="btn" href="#book-now" data-cal-open="call" data-track="book_call_click" data-service="close">Book a 15min Call</a>
       </div>
     </div>
-    <div class="trio"><span>Tuesdays, Fridays and Saturdays</span><span>43 Edward Street, Norwood, SA</span><span>Kaurna Land / Adelaide</span></div>
+    <div class="trio"><span>{{ site.data.practice.days }}</span><span>{{ site.data.practice.street }}, Norwood, SA</span><span>Kaurna Land / Adelaide</span></div>
   </div>
 </section>
 
@@ -185,9 +187,9 @@
   <div class="wrap">
     <div class="cols">
       <div><h2>The Ember Room</h2><p>Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)</p></div>
-      <div><h2>Visit</h2><p>The Ember Room:<br>Tuesdays, Fridays and Saturdays<br>43 Edward Street, Norwood, SA</p></div>
+      <div><h2>Visit</h2><p>The Ember Room:<br>{{ site.data.practice.days }}<br>{{ site.data.practice.street }}, Norwood, SA</p></div>
       <div><h2>Explore</h2><ul><li><a href="somatic-therapy-norwood.html">Individual therapy</a></li><li><a href="couples-therapy-adelaide.html">Couples therapy</a></li><li><a href="people-pleasing.html">Online course</a></li><li><a href="guided-rest.html">Guided Rest</a></li><li><a href="fees-faq.html">Fees &amp; FAQ</a></li><li><a href="journal/">Journal</a></li><li><a href="about.html">About Tess</a></li></ul></div>
-      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>hello@tessfowler.com.au</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
+      <div><h2>Contact</h2><p>If you have any questions, please don't hesitate to reach out.<br>{{ site.data.practice.email }}</p><p style="margin-top:12px"><a class="btn" href="book.html#book-now" data-track="book_call_click" data-service="footer">Book a 15min Call</a></p></div>
     </div>
     <p class="crisis">The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14.</p>
     <p class="ack">Based on Kaurna Land / Adelaide, South Australia</p>

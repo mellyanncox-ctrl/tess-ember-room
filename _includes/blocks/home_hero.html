@@ -1,19 +1,19 @@
 {%- assign sec = include.s -%}
 <section data-s="{{ include.n | minus: 1 }}" class="hero" aria-labelledby="home-h">
-  <div class="bg" role="img" aria-label="{{ sec.image_label }}"{% if sec.image %} style="background-image:url('{{ sec.image }}')"{% endif %}></div>
+  <div class="bg" data-ebg="image" role="img" aria-label="{{ sec.image_label }}"{% if sec.image %} style="background-image:url('{{ sec.image }}')"{% endif %}></div>
   <div class="shade"></div>
   <div class="grain"></div>
   <div class="layer g">
     <button class="tl cap hero-menu" type="button" data-open-drawer aria-controls="drawer" aria-expanded="false">Menu</button>
-    <p class="tr cap" data-e="top_right" data-et="lines">{% include fill.html t=sec.top_right br=true %}</p>
+    {% if sec.top_right %}<p class="tr cap" data-e="top_right" data-et="lines">{% include fill.html t=sec.top_right br=true %}</p>{% endif %}
     <div class="mid">
-      <h1 id="home-h" data-e="title">{{ sec.title }}</h1>
-      <p class="sub" data-e="byline">{{ sec.byline }}</p>
-      <p class="tag" data-e="tagline">{{ sec.tagline }}</p>
+      {% if sec.title %}<h1 id="home-h" data-e="title">{{ sec.title }}</h1>{% endif %}
+      {% if sec.byline %}<p class="sub" data-e="byline">{{ sec.byline }}</p>{% endif %}
+      {% if sec.tagline %}<p class="tag" data-e="tagline">{{ sec.tagline }}</p>{% endif %}
     </div>
-    <nav class="corner-nav cap" aria-label="Services">
+    <nav class="corner-nav cap" aria-label="Services" data-eg="corner_links">
       {% for l in sec.corner_links %}<a href="{{ l.link }}" data-e="corner_links.{{ forloop.index0 }}.label">{{ l.label | escape }}</a>{% endfor %}
     </nav>
-    <div class="br cap"><span class="dust" data-e="note">{% include fill.html t=sec.note %}</span>{% for l in sec.links %}<a href="{{ l.link }}" data-e="links.{{ forloop.index0 }}.label">{% include fill.html t=l.label %}</a>{% endfor %}</div>
+    <div class="br cap" data-eg="links">{% if sec.note %}<span class="dust" data-e="note">{% include fill.html t=sec.note %}</span>{% endif %}{% for l in sec.links %}<a href="{{ l.link }}" data-e="links.{{ forloop.index0 }}.label">{% include fill.html t=l.label %}</a>{% endfor %}</div>
   </div>
 </section>

@@ -10,18 +10,18 @@
     {% if sec.heading %}{% if closing %}<p class="mark" data-e="heading">{% include fill.html t=sec.heading %}</p>{% else %}<h2 class="mark" id="{{ hid }}" data-e="heading">{% include fill.html t=sec.heading %}</h2>{% endif %}{% endif %}
     {% if closing or sec.stacked %}<div style="align-self:center;display:grid;gap:34px;justify-items:center">{% endif %}
       {% if sec.text %}<div class="letter{% if sec.centred %} center{% endif %}" data-e="text" data-et="rich"{% if sec.text_style %} style="{{ sec.text_style }}"{% elsif closing %} style="width:min(100%,25rem);font-size:clamp(1.2rem,2.2vw,1.55rem)"{% elsif sec.heading == nil or sec.heading == "" %} style="grid-row:2"{% endif %}>{% include fill.html t=sec.text %}</div>{% endif %}
-      {% if sec.buttons and sec.buttons.size > 0 %}<div class="actions">
+      {% if sec.buttons and sec.buttons.size > 0 %}<div class="actions" data-eg="buttons">
         {% for b in sec.buttons %}{% include btn.html b=b path="buttons" i=forloop.index0 %}{% endfor %}
       </div>{% endif %}
     {% if closing or sec.stacked %}</div>{% endif %}
-    {% if sec.card %}{% assign cc = sec.card %}<div class="course-card">
-      <p class="cap" data-e="card.label">{% include fill.html t=cc.label %}</p>
-      <h3 data-e="card.title">{% include fill.html t=cc.title %}</h3>
+    {% if sec.card %}{% assign cc = sec.card %}<div class="course-card" data-eg="card">
+      {% if cc.label %}<p class="cap" data-e="card.label">{% include fill.html t=cc.label %}</p>{% endif %}
+      {% if cc.title %}<h3 data-e="card.title">{% include fill.html t=cc.title %}</h3>{% endif %}
       {% if cc.intro %}<p data-e="card.intro">{% include fill.html t=cc.intro %}</p>{% endif %}
-      {% if cc.items %}<ul>{% for it in cc.items %}<li data-e="card.items.{{ forloop.index0 }}">{% include fill.html t=it %}</li>{% endfor %}</ul>{% endif %}
+      {% if cc.items and cc.items.size > 0 %}<ul data-eg="card.items">{% for it in cc.items %}<li data-e="card.items.{{ forloop.index0 }}">{% include fill.html t=it %}</li>{% endfor %}</ul>{% endif %}
       {% if cc.outro %}<p data-e="card.outro">{% include fill.html t=cc.outro %}</p>{% endif %}
-      <div class="row">{% if cc.price %}<span class="price" data-e="card.price">{% include fill.html t=cc.price %}</span>{% endif %}{% for b in cc.buttons %}{% include btn.html b=b path="card.buttons" i=forloop.index0 %}{% endfor %}</div>
+      <div class="row" data-eg="card.buttons">{% if cc.price %}<span class="price" data-e="card.price">{% include fill.html t=cc.price %}</span>{% endif %}{% for b in cc.buttons %}{% include btn.html b=b path="card.buttons" i=forloop.index0 %}{% endfor %}</div>
     </div>{% endif %}
-    {% if sec.trio and sec.trio.size > 0 %}<div class="trio">{% for t in sec.trio %}<span data-e="trio.{{ forloop.index0 }}" data-et="lines">{% include fill.html t=t br=true %}</span>{% endfor %}</div>{% endif %}
+    {% if sec.trio and sec.trio.size > 0 %}<div class="trio" data-eg="trio">{% for t in sec.trio %}<span data-e="trio.{{ forloop.index0 }}" data-et="lines">{% include fill.html t=t br=true %}</span>{% endfor %}</div>{% endif %}
   </div>
 </section>

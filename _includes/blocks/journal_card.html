@@ -3,8 +3,8 @@
   <div class="wrap">
     <a class="journal-card" href="{{ sec.link }}">
       <p class="cap" data-e="label">{{ sec.label | default: "From the Journal" }}</p>
-      <h2 data-e="title">{{ sec.title }}</h2>
-      <p class="ex" data-e="excerpt">{{ sec.excerpt }}</p>
+      {% if sec.title %}<h2 data-e="title">{{ sec.title }}</h2>{% endif %}
+      {% if sec.excerpt %}<p class="ex" data-e="excerpt">{{ sec.excerpt }}</p>{% endif %}
       <span class="more" data-e="more">{{ sec.more | default: "Read more →" }}</span>
     </a>
   </div>

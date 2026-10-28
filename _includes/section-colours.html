@@ -1,0 +1,6 @@
+{%- comment -%} Per-section colours (section "colours:" in the page file). Set in the editor in each section's Settings. {%- endcomment -%}
+{%- assign any = false -%}{%- for s in page.sections -%}{%- if s.colours -%}{%- assign any = true -%}{%- endif -%}{%- endfor -%}
+{%- if any -%}<style id="sec-colours">{%- for s in page.sections -%}{%- if s.colours -%}{%- assign cs = s.colours -%}{%- assign q = 'main>[data-s="' | append: forloop.index0 | append: '"]' -%}
+{{ q }}{ {%- if cs.background %}background-color:{{ cs.background }}!important;{% endif %}{% if cs.accent %}--terra:{{ cs.accent }};--terra-deep:{{ cs.accent }};{% endif %}{% if cs.text %}color:{{ cs.text }};{% endif -%} }
+{%- if cs.text %}{{ q }} :is(p,li,h1,h3,summary,blockquote,dt,dd,small,.cap,.mark,.sub,.tag,.trio span,.pill,.price,.what):not(.btn){color:{{ cs.text }}!important}{% endif -%}
+{%- endif -%}{%- endfor -%}</style>{%- endif -%}

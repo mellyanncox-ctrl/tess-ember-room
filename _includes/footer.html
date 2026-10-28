@@ -11,7 +11,7 @@
     <form data-signup novalidate>
       <label class="sr" for="free-email">Your email</label>
       <input id="free-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
-      <button class="btn" type="submit">{{ s.signup.button }}</button>
+      <button class="btn" type="submit" data-e="@site:signup.button">{{ s.signup.button }}</button>
       <p class="done" hidden>{% include fill.html t=s.signup.done %}</p>
     </form>
   </div>
@@ -22,12 +22,12 @@
     <div class="cols">
       <div><h2 data-e="@site:footer.about_heading">{{ f.about_heading }}</h2><p data-e="@site:footer.about_text" data-et="inline">{% include fill.html t=f.about_text %}</p></div>
       <div><h2 data-e="@site:footer.visit_heading">{{ f.visit_heading }}</h2><p data-e="@site:footer.visit_text" data-et="inline">{% include fill.html t=f.visit_text %}</p></div>
-      <div><h2 data-e="@site:footer.explore_heading">{{ f.explore_heading }}</h2><ul>{% for l in f.explore_links %}<li><a href="{{ l.link }}" data-e="@site:footer.explore_links.{{ forloop.index0 }}.label">{{ l.label | escape }}</a></li>{% endfor %}</ul></div>
-      <div><h2 data-e="@site:footer.contact_heading">{{ f.contact_heading }}</h2><p data-e="@site:footer.contact_text" data-et="inline">{% include fill.html t=f.contact_text %}</p><p style="margin-top:12px"><a class="btn" href="{{ s.book_link }}">{{ s.book_label }}</a></p></div>
+      <div><h2 data-e="@site:footer.explore_heading">{{ f.explore_heading }}</h2><ul data-eg="@site:footer.explore_links">{% for l in f.explore_links %}<li data-eg="@site:footer.explore_links.{{ forloop.index0 }}"><a href="{{ l.link }}" data-e="@site:footer.explore_links.{{ forloop.index0 }}.label">{{ l.label | escape }}</a></li>{% endfor %}</ul></div>
+      <div><h2 data-e="@site:footer.contact_heading">{{ f.contact_heading }}</h2><p data-e="@site:footer.contact_text" data-et="inline">{% include fill.html t=f.contact_text %}</p><p style="margin-top:12px"><a class="btn" href="{{ s.book_link }}" data-e="@site:book_label">{{ s.book_label }}</a></p></div>
     </div>
     <p class="crisis" data-e="@site:footer.crisis">{{ f.crisis }}</p>
     <p class="ack" data-e="@site:footer.acknowledgement">{{ f.acknowledgement }}</p>
-    <div class="legal">{% for l in f.legal_links %}<a href="{{ l.link }}"{% if l.link contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>{% endfor %}<span>{{ f.copyright }}</span></div>
+    <div class="legal">{% for l in f.legal_links %}<a data-e="@site:footer.legal_links.{{ forloop.index0 }}.label" href="{{ l.link }}"{% if l.link contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>{% endfor %}<span data-e="@site:footer.copyright">{{ f.copyright }}</span></div>
   </div>
 </footer>
 <div class="bookbar"><a class="btn" href="{{ s.book_link }}">{{ s.book_label }}</a></div>

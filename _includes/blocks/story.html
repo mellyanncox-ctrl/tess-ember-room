@@ -5,7 +5,7 @@
   <div class="tint"></div><div class="grain"></div>
   <div class="in">
     <div class="panel">
-      <h2 id="{{ hid }}" data-e="heading">{% include fill.html t=sec.heading %}</h2>
+      {% if sec.heading %}<h2 id="{{ hid }}" data-e="heading">{% include fill.html t=sec.heading %}</h2>{% endif %}
       <div class="prose split-prose" data-e="text" data-et="rich">
       {% include fill.html t=sec.text %}
     </div>

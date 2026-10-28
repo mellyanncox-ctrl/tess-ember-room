@@ -1,7 +1,7 @@
 {%- assign sec = include.s -%}
 <section data-s="{{ include.n | minus: 1 }}" class="booking g" id="book-now" aria-labelledby="book-now-h">
   <div class="wrap">
-    <h2 class="mark" id="book-now-h" data-e="heading">{% include fill.html t=sec.heading %}</h2>
+    {% if sec.heading %}<h2 class="mark" id="book-now-h" data-e="heading">{% include fill.html t=sec.heading %}</h2>{% endif %}
     <div class="cal" data-cal>
       <div class="cal-tabs" role="tablist" aria-label="Choose a session">
         <button class="pill-tab" role="tab" aria-selected="true" data-svc="call">15min Call</button>

@@ -7,7 +7,7 @@
 <title>Website editor | The Ember Room</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="/assets/editor/editor.css?v=1">
+<link rel="stylesheet" href="/assets/editor/editor.css?v=3">
 </head>
 <body>
 <div id="login" class="login" hidden>
@@ -20,6 +20,18 @@
     <button class="ee-btn primary" type="submit">Log in</button>
     <p class="login-msg" id="login-msg" role="alert"></p>
   </form>
+  <form id="setpw-form" class="login-card" hidden>
+    <p class="ee-eyebrow">The Ember Room</p>
+    <h1 id="setpw-title">Create your password</h1>
+    <p id="setpw-intro"></p>
+    <div id="pw-current-wrap" class="pw-field"><label for="pw-current" id="pw-current-label">Your current password</label><input id="pw-current" type="password" autocomplete="current-password"></div>
+    <div class="pw-field"><label for="pw-new">New password</label><input id="pw-new" type="password" autocomplete="new-password" minlength="8" required></div>
+    <div class="pw-field"><label for="pw-confirm">Type it again</label><input id="pw-confirm" type="password" autocomplete="new-password" minlength="8" required></div>
+    <label class="chk"><input id="pw-show" type="checkbox"> Show passwords</label>
+    <button class="ee-btn primary" type="submit">Save my password</button>
+    <button class="ee-btn" type="button" id="setpw-cancel">Cancel</button>
+    <p class="login-msg" id="setpw-msg" role="alert"></p>
+  </form>
 </div>
 
 <div id="app" class="app" hidden>
@@ -28,7 +40,9 @@
     <label class="pick"><span class="sr">Page</span><select id="page-select"></select></label>
     <nav class="tools" aria-label="Editor tools">
       <button class="ee-btn" id="btn-page" type="button">Page settings</button>
+      <button class="ee-btn" id="btn-add" type="button">+ Add section</button>
       <button class="ee-btn" id="btn-new" type="button">New page</button>
+      <button class="ee-btn" id="btn-colours" type="button">Colours</button>
       <button class="ee-btn" id="btn-fees" type="button">Fees &amp; contact</button>
       <button class="ee-btn" id="btn-menu" type="button">Menu &amp; footer</button>
       <button class="ee-btn" id="btn-faq" type="button">FAQ</button>
@@ -37,6 +51,7 @@
     </nav>
     <div class="save">
       <span id="status" class="status" aria-live="polite"></span>
+      <button class="ee-btn" id="btn-undo" type="button" disabled title="Undo (Cmd/Ctrl + Z)">↶ Undo</button>
       <button class="ee-btn primary" id="btn-save" type="button" disabled>Save</button>
     </div>
   </header>
@@ -57,12 +72,15 @@
     <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
     <button type="button" data-cmd="link" title="Add a link">Link</button>
     <button type="button" data-cmd="unlink" title="Remove link">Unlink</button>
+    <button type="button" data-cmd="colour" title="Colour the selected words"><span class="cdot"></span>Colour</button>
   </div>
+  <div id="et" class="et" hidden role="toolbar" aria-label="Selected item"></div>
+  <div id="palette" class="palette" hidden></div>
   <div id="toast" class="toast" hidden></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="/assets/editor/config.js?v=2"></script>
-<script src="/assets/editor/editor.js?v=3"></script>
+<script src="/assets/editor/editor.js?v=4"></script>
 </body>
 </html>

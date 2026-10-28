@@ -1,0 +1,4 @@
+{%- comment -%} Brand colours from _data/site.yml (colours:). Set in the editor under "Brand colours". {%- endcomment -%}
+{%- assign c = site.data.site.colours -%}{%- if c -%}
+<style id="brand-colours">:root{ {%- if c.charcoal %}--char:{{ c.charcoal }};{% endif %}{% if c.plum %}--ink:{{ c.plum }};--ink-2:{{ c.plum }};{% endif %}{% if c.plum_deep %}--plum-deep:{{ c.plum_deep }};{% endif %}{% if c.stone %}--stone:{{ c.stone }};--stone-2:{{ c.stone }};{% endif %}{% if c.terracotta %}--terra:{{ c.terracotta }};{% endif %}{% if c.terracotta_text %}--terra-deep:{{ c.terracotta_text }};{% endif %}{% if c.dust %}--dust:{{ c.dust }};{% endif -%} }</style>
+{%- endif -%}

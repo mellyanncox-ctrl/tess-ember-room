@@ -3,11 +3,11 @@
 <section data-s="{{ include.n | minus: 1 }}" class="poster flat {{ sec.tone | default: 'charcoal' }} g"{% if sec.anchor %} id="{{ sec.anchor }}"{% endif %} aria-labelledby="{{ hid }}">
   <div class="grain"></div>
   <div class="in">
-    <h2 class="mark" id="{{ hid }}" data-e="heading">{% include fill.html t=sec.heading %}</h2>
+    {% if sec.heading %}<h2 class="mark" id="{{ hid }}" data-e="heading">{% include fill.html t=sec.heading %}</h2>{% endif %}
     <div class="sequence-wrap">
       {% if sec.intro %}<p class="sequence-intro" data-e="intro" data-et="inline">{% include fill.html t=sec.intro inline=true %}</p>{% endif %}
-      <ol class="sequence">
-        {% for it in sec.items %}<li><span class="num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><h3 data-e="items.{{ forloop.index0 }}.title">{% include fill.html t=it.title %}</h3><p data-e="items.{{ forloop.index0 }}.text" data-et="inline">{% include fill.html t=it.text inline=true %}</p></li>
+      <ol class="sequence" data-eg="items">
+        {% for it in sec.items %}<li data-eg="items.{{ forloop.index0 }}"><span class="num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><h3 data-e="items.{{ forloop.index0 }}.title">{% include fill.html t=it.title %}</h3><p data-e="items.{{ forloop.index0 }}.text" data-et="inline">{% include fill.html t=it.text inline=true %}</p></li>
         {% endfor %}
       </ol>
       {% if sec.note %}<p class="sequence-note" data-e="note" data-et="inline">{% include fill.html t=sec.note inline=true %}</p>{% endif %}

@@ -5,18 +5,18 @@
   <div class="wrap">
     <div class="lede">
       {% if sec.label and sec.label_above %}<p class="cap" data-e="label">{% include fill.html t=sec.label %}</p>{% endif %}
-      <h2 id="{{ hid }}" data-e="heading">{% include fill.html t=sec.heading %}</h2>
+      {% if sec.heading %}<h2 id="{{ hid }}" data-e="heading">{% include fill.html t=sec.heading %}</h2>{% endif %}
       {% if sec.label and sec.label_above != true %}<p class="cap" data-e="label">{% include fill.html t=sec.label %}</p>{% endif %}
       {% if sec.email_line %}<p class="mail" data-e="email_line">{% include fill.html t=sec.email_line %}</p>{% endif %}
     </div>
     <div class="prose">
       <div class="ed" data-e="intro" data-et="rich">{% include fill.html t=sec.intro %}</div>
-      {% if sec.rows and sec.rows.size > 0 %}<div class="spec">
-        {% for r in sec.rows %}<div class="row{% if r.route %} route{% endif %}"{% if r.anchor %} id="{{ r.anchor }}"{% endif %}><h3 data-e="rows.{{ forloop.index0 }}.title" data-et="inline">{% include fill.html t=r.title %}</h3>{% assign ri = forloop.index0 %}{% capture rt %}{% include fill.html t=r.text %}{% endcapture %}{% if rt contains "<p" %}<div class="what" style="display:grid;gap:.8em"><div class="ed" data-e="rows.{{ ri }}.text" data-et="rich">{{ rt }}</div>{% unless r.route %}{% for b in r.buttons %}<p>{% capture bp %}rows.{{ ri }}.buttons{% endcapture %}{% include btn.html b=b path=bp i=forloop.index0 %}</p>{% endfor %}{% endunless %}</div>{% else %}<p class="what" data-e="rows.{{ ri }}.text" data-et="inline">{{ rt }}</p>{% endif %}<p class="price">{% for pr in r.prices %}<span{% if pr == "❋" %} aria-hidden="true"{% endif %} data-e="rows.{{ ri }}.prices.{{ forloop.index0 }}">{% include fill.html t=pr %}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</p>{% if r.route and r.buttons %}<div class="acts">{% for b in r.buttons %}{% capture bp %}rows.{{ ri }}.buttons{% endcapture %}{% include btn.html b=b path=bp i=forloop.index0 %}{% endfor %}</div>{% endif %}</div>
+      {% if sec.rows and sec.rows.size > 0 %}<div class="spec" data-eg="rows">
+        {% for r in sec.rows %}<div class="row{% if r.route %} route{% endif %}" data-eg="rows.{{ forloop.index0 }}"{% if r.anchor %} id="{{ r.anchor }}"{% endif %}><h3 data-e="rows.{{ forloop.index0 }}.title" data-et="inline">{% include fill.html t=r.title %}</h3>{% assign ri = forloop.index0 %}{% capture rt %}{% include fill.html t=r.text %}{% endcapture %}{% if rt contains "<p" %}<div class="what" style="display:grid;gap:.8em"><div class="ed" data-e="rows.{{ ri }}.text" data-et="rich">{{ rt }}</div>{% unless r.route %}{% for b in r.buttons %}<p>{% capture bp %}rows.{{ ri }}.buttons{% endcapture %}{% include btn.html b=b path=bp i=forloop.index0 %}</p>{% endfor %}{% endunless %}</div>{% else %}<p class="what" data-e="rows.{{ ri }}.text" data-et="inline">{{ rt }}</p>{% endif %}<p class="price" data-eg="rows.{{ ri }}.prices">{% for pr in r.prices %}<span{% if pr == "❋" %} aria-hidden="true"{% endif %} data-e="rows.{{ ri }}.prices.{{ forloop.index0 }}">{% include fill.html t=pr %}</span>{% unless forloop.last %} {% endunless %}{% endfor %}</p>{% if r.route and r.buttons %}<div class="acts">{% for b in r.buttons %}{% capture bp %}rows.{{ ri }}.buttons{% endcapture %}{% include btn.html b=b path=bp i=forloop.index0 %}{% endfor %}</div>{% endif %}</div>
         {% endfor %}
       </div>{% endif %}
-      {% if sec.questions and sec.questions.size > 0 %}<div class="course-faq">
-        {% for q in sec.questions %}<div><h3 data-e="questions.{{ forloop.index0 }}.question">{% include fill.html t=q.question %}</h3><p data-e="questions.{{ forloop.index0 }}.answer" data-et="inline">{% include fill.html t=q.answer inline=true %}</p></div>
+      {% if sec.questions and sec.questions.size > 0 %}<div class="course-faq" data-eg="questions">
+        {% for q in sec.questions %}<div data-eg="questions.{{ forloop.index0 }}"><h3 data-e="questions.{{ forloop.index0 }}.question">{% include fill.html t=q.question %}</h3><p data-e="questions.{{ forloop.index0 }}.answer" data-et="inline">{% include fill.html t=q.answer inline=true %}</p></div>
         {% endfor %}
       </div>{% endif %}
       <div class="ed" data-e="outro" data-et="rich">{% include fill.html t=sec.outro %}</div>

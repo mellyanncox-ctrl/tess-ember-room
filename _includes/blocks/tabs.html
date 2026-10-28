@@ -4,14 +4,14 @@
   <div class="tint"{% if sec.tint %} style="--tint:{{ sec.tint }}"{% endif %}></div><div class="grain"></div>
   <div class="in" data-tabs>
     <div class="tabs" role="tablist" aria-label="{{ sec.label | escape }}">
-      {% for t in sec.tabs %}{% if t.id %}{% assign tid = t.id %}{% else %}{% assign tid = "s" | append: include.n | append: "-" | append: forloop.index %}{% endif %}<button class="tab" role="tab" id="t-{{ tid }}" aria-controls="p-{{ tid }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ t.tab | escape }}</button>
+      {% for t in sec.tabs %}{% if t.id %}{% assign tid = t.id %}{% else %}{% assign tid = "s" | append: include.n | append: "-" | append: forloop.index %}{% endif %}<button class="tab" role="tab" data-eg="tabs.{{ forloop.index0 }}" data-e="tabs.{{ forloop.index0 }}.tab" id="t-{{ tid }}" aria-controls="p-{{ tid }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ t.tab | escape }}</button>
       {% endfor %}
     </div>
     {% for t in sec.tabs %}{% if t.id %}{% assign tid = t.id %}{% else %}{% assign tid = "s" | append: include.n | append: "-" | append: forloop.index %}{% endif %}
-    <div class="panel" role="tabpanel" id="p-{{ tid }}" aria-labelledby="t-{{ tid }}"{% if sec.numbered %} data-n="{{ forloop.index }}"{% endif %}{% unless forloop.first %} hidden{% endunless %}>
-      <h2 data-e="tabs.{{ forloop.index0 }}.heading">{% include fill.html t=t.heading %}</h2>
+    <div class="panel" role="tabpanel" data-eg="tabs.{{ forloop.index0 }}" id="p-{{ tid }}" aria-labelledby="t-{{ tid }}"{% if sec.numbered %} data-n="{{ forloop.index }}"{% endif %}{% unless forloop.first %} hidden{% endunless %}>
+      {% if t.heading %}<h2 data-e="tabs.{{ forloop.index0 }}.heading">{% include fill.html t=t.heading %}</h2>{% endif %}
       <div class="ed" data-e="tabs.{{ forloop.index0 }}.body" data-et="rich">{% capture tb %}{% include fill.html t=t.body %}{% endcapture %}{{ tb | replace: "<p>", '<p class="body">' }}</div>
-      {% if t.pills and t.pills.size > 0 %}<div class="pills">{% assign ti = forloop.index0 %}{% for pl in t.pills %}<span class="pill" data-e="tabs.{{ ti }}.pills.{{ forloop.index0 }}">{% include fill.html t=pl %}</span>{% endfor %}</div>{% endif %}
+      {% if t.pills and t.pills.size > 0 %}<div class="pills" data-eg="tabs.{{ forloop.index0 }}.pills">{% assign ti = forloop.index0 %}{% for pl in t.pills %}<span class="pill" data-e="tabs.{{ ti }}.pills.{{ forloop.index0 }}">{% include fill.html t=pl %}</span>{% endfor %}</div>{% endif %}
       {% if t.meta %}<div class="meta">{% include fill.html t=t.meta %}</div>{% endif %}
     </div>
     {% endfor %}

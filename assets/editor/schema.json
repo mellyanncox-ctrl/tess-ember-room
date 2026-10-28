@@ -480,6 +480,29 @@
 "type": "string"
 }
 ]
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -710,6 +733,29 @@
 "label": "Advanced: section link name (for #links)",
 "type": "string",
 "hidden": true
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1083,6 +1129,29 @@
 "label": "Advanced: section link name (for #links)",
 "type": "string",
 "hidden": true
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1160,6 +1229,29 @@
 "label": "Advanced: section link name (for #links)",
 "type": "string",
 "hidden": true
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1336,6 +1428,29 @@
 "label": "Advanced: section link name (for #links)",
 "type": "string",
 "hidden": true
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1536,6 +1651,29 @@
 "label": "Advanced: section link name (for #links)",
 "type": "string",
 "hidden": true
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1597,6 +1735,29 @@
 "label": "Advanced: section link name (for #links)",
 "type": "string",
 "hidden": true
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1725,6 +1886,29 @@
 "label": "Advanced: section link name (for #links)",
 "type": "string",
 "hidden": true
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1736,6 +1920,29 @@
 "name": "heading",
 "label": "Heading",
 "type": "string"
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1767,6 +1974,29 @@
 "name": "more",
 "label": "Link text",
 "type": "string"
+},
+{
+"name": "colours",
+"label": "Colours for this section",
+"type": "object",
+"description": "Leave blank to use your brand colours.",
+"fields": [
+{
+"name": "background",
+"label": "Background",
+"type": "color"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "color"
+},
+{
+"name": "accent",
+"label": "Accent (bold words, big headings, buttons)",
+"type": "color"
+}
+]
 }
 ]
 },
@@ -1781,5 +2011,52 @@
 }
 ]
 }
+},
+"colours": {
+"label": "Brand colours",
+"fields": [
+{
+"name": "plum",
+"label": "Plum (main dark colour)",
+"type": "color",
+"default": "#5B2A38"
+},
+{
+"name": "plum_deep",
+"label": "Deep plum (editor bar, dark buttons text)",
+"type": "color",
+"default": "#3A1621"
+},
+{
+"name": "charcoal",
+"label": "Charcoal",
+"type": "color",
+"default": "#303636"
+},
+{
+"name": "stone",
+"label": "Stone (light background)",
+"type": "color",
+"default": "#E5E3DC"
+},
+{
+"name": "terracotta",
+"label": "Terracotta (buttons and accents)",
+"type": "color",
+"default": "#D4967D"
+},
+{
+"name": "terracotta_text",
+"label": "Terracotta for text on light backgrounds",
+"type": "color",
+"default": "#A35A40"
+},
+{
+"name": "dust",
+"label": "Dusty pink",
+"type": "color",
+"default": "#D9C3C0"
+}
+]
 }
 }

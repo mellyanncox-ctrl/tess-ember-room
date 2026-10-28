@@ -2,11 +2,11 @@
 <section data-s="{{ include.n | minus: 1 }}" class="poster faqs g" id="{{ sec.anchor | default: 'faq' }}" aria-labelledby="faq-h">
   {% include bg.html g=sec.background %}<div class="grain"></div>
   <div class="in">
-    <h2 class="mark" id="faq-h" data-e="heading">{% include fill.html t=sec.heading %}</h2>
+    {% if sec.heading %}<h2 class="mark" id="faq-h" data-e="heading">{% include fill.html t=sec.heading %}</h2>{% endif %}
     <div class="card">
       {% if sec.subheading %}<p class="card-sub" data-e="subheading">{% include fill.html t=sec.subheading %}</p>{% endif %}
-      <div class="faq">
-        {% for q in site.data.faq.questions %}<details id="faq-{{ forloop.index }}"><summary><span><span class="no">No.{{ forloop.index }}</span><span class="ed" data-e="@faq:questions.{{ forloop.index0 }}.question">{{ q.question }}</span></span></summary><div class="a" data-e="@faq:questions.{{ forloop.index0 }}.answer" data-et="rich">{% include fill.html t=q.answer %}</div></details>
+      <div class="faq" data-eg="@faq:questions">
+        {% for q in site.data.faq.questions %}<details id="faq-{{ forloop.index }}" data-eg="@faq:questions.{{ forloop.index0 }}"><summary><span><span class="no">No.{{ forloop.index }}</span><span class="ed" data-e="@faq:questions.{{ forloop.index0 }}.question">{{ q.question }}</span></span></summary><div class="a" data-e="@faq:questions.{{ forloop.index0 }}.answer" data-et="rich">{% include fill.html t=q.answer %}</div></details>
         {% endfor %}
       </div>
       {% if sec.footnote %}<div class="card-foot" data-e="footnote" data-et="rich">

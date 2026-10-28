@@ -6,11 +6,11 @@
     {% if sec.top_left %}<p class="tl cap" data-e="top_left" data-et="lines">{% include fill.html t=sec.top_left br=true %}</p>{% endif %}
     {% if sec.top_right %}<p class="tr cap" data-e="top_right" data-et="lines">{% include fill.html t=sec.top_right br=true %}</p>{% endif %}
     <div class="mid">
-      <h1 data-e="title">{% include fill.html t=sec.title %}</h1>
+      {% if sec.title %}<h1 data-e="title">{% include fill.html t=sec.title %}</h1>{% endif %}
       {% if sec.subtitle %}<p class="sub" data-e="subtitle">{% include fill.html t=sec.subtitle %}</p>{% endif %}
     </div>
     {% if sec.facts %}<p class="facts cap" data-e="facts" data-et="lines">{% include fill.html t=sec.facts br=true %}</p>{% endif %}
-    {% if sec.buttons and sec.buttons.size > 0 %}<div class="br">
+    {% if sec.buttons and sec.buttons.size > 0 %}<div class="br" data-eg="buttons">
       {% for b in sec.buttons %}{% include btn.html b=b path="buttons" i=forloop.index0 %}{% endfor %}
     </div>{% endif %}
   </div>

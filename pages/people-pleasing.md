@@ -146,7 +146,7 @@ sections:
     text: <p>The Full NOvember journey allows you to learn and experience with structure and embodied practice. You’ll receive a workbook/journal to fill out as you go, extra bonus video content and a collection of guided audio practices alongside the daily email letters, to help you integrate the work into your everyday life, not just understand it intellectually.</p><p>All materials will be given to you with life time access so you can move through the course in real time or at your own pace and revisit the lessons later down the track.</p>
     buttons:
     - label: Purchase Full Journey
-      link: https://www.tessfowler.com.au/novemberjourney
+      link: https://buy.stripe.com/aFaeV50Vz387eUJ6SgeAg06
       new_tab: true
     prices:
     - $[course]
@@ -154,7 +154,7 @@ sections:
     text: <p>For those ready to take the leap and have a more personalised experience, this option offers 2× 90m psychotherapy sessions at reduced rates ($30 off each session), to give you greater individual insight and professional expertise in exploring the specific patterns underneath your people-pleasing and apply the work to your real life with tailored 1:1 support.</p><p>Sessions to be booked within six weeks of starting. Online or in person at The Ember Room - Adelaide.</p>
     buttons:
     - label: Purchase Full Journey with 2x Private Sessions
-      link: https://www.tessfowler.com.au/novemberjourney
+      link: https://buy.stripe.com/7sYcMXdIlcIH27X5OceAg05
       new_tab: true
       wrap: true
     prices:

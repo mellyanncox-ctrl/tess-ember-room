@@ -1,0 +1,15 @@
+# Free Supabase projects pause after a week of no activity.
+# This pings the editor backend every 3 days so Tess's editor never goes to sleep.
+name: Keep editor awake
+on:
+  schedule:
+    - cron: "17 2 */3 * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping editor function
+        run: curl -fsS -X POST -H "Content-Type: application/json" -d '{"action":"ping"}' https://qcwrwsxxlilxtnchqfqz.supabase.co/functions/v1/site-editor
+      - name: Ping database API
+        run: curl -sS -o /dev/null -w "%{http_code}\n" -H "apikey: sb_publishable_-rwOebhJHdo8e5fH_ac4EQ_ZDXHUN0l" https://qcwrwsxxlilxtnchqfqz.supabase.co/rest/v1/

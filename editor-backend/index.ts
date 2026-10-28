@@ -1,7 +1,18 @@
 // Ember Room editor backend (Supabase Edge Function "site-editor").
 // Checks the editor password, then reads and writes page content in the GitHub repo.
 // Secrets (set in Supabase): GITHUB_TOKEN (fine-grained, Contents read/write on the repo), EDITOR_PASSWORD.
-import { encodeBase64, decodeBase64 } from "jsr:@std/encoding@1/base64";
+// built-in base64 helpers (no outside libraries)
+function encodeBase64(bytes: Uint8Array) {
+  let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+function decodeBase64(b64: string) {
+  const bin = atob(b64);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
 
 const REPO = Deno.env.get("GITHUB_REPO") ?? "mellyanncox-ctrl/tess-ember-room";
 const BRANCH = Deno.env.get("GITHUB_BRANCH") ?? "main";

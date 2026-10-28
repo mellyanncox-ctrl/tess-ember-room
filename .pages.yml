@@ -12,7 +12,7 @@ media:
   output: /assets/journal
 content:
 - name: pages
-  label: Pages
+  label: Website pages
   type: collection
   path: pages
   format: yaml-frontmatter
@@ -24,12 +24,13 @@ content:
     - title
   fields:
   - name: title
-    label: Browser tab and Google title
+    label: Page name (shows in the browser tab and on Google)
     type: string
     required: true
   - name: description
-    label: Google description
+    label: Short description for Google
     type: text
+    description: One or two sentences. Shown under your page name in Google results.
   - name: signup
     label: Show the free week-one sign-up band
     type: boolean
@@ -94,6 +95,7 @@ content:
         label: Page heading
         type: string
         required: true
+        description: The big heading on the photo banner.
       - name: subtitle
         label: Line under the heading
         type: text
@@ -136,12 +138,14 @@ content:
               label: Couples
             - name: rest
               label: Guided Rest
+          hidden: true
         - name: new_tab
           label: Open in a new tab
           type: boolean
         - name: wrap
           label: Let long button text wrap
           type: boolean
+          hidden: true
       - name: background
         label: Background photo
         type: object
@@ -157,6 +161,7 @@ content:
               label: Moving portrait of Tess
             - name: none
               label: No photo
+          hidden: true
         - name: preset
           label: Photo
           type: select
@@ -183,17 +188,21 @@ content:
         - name: style
           label: 'Advanced: focus point, blur and brightness'
           type: string
+          hidden: true
         - name: image
           label: 'Moving portrait: photo'
           type: image
           options:
             media: images
+          hidden: true
         - name: fx
           label: 'Moving portrait: focus across (0 to 1)'
           type: string
+          hidden: true
         - name: fy
           label: 'Moving portrait: focus down (0 to 1)'
           type: string
+          hidden: true
       - name: photo
         label: Use a portrait photo instead (optional)
         type: image
@@ -205,16 +214,20 @@ content:
       - name: photo_width
         label: 'Advanced: portrait width'
         type: string
+        hidden: true
       - name: photo_height
         label: 'Advanced: portrait height'
         type: string
+        hidden: true
       - name: extra_class
         label: 'Advanced: extra style'
         type: string
+        hidden: true
       - &id002
         name: anchor
         label: 'Advanced: section link name (for #links)'
         type: string
+        hidden: true
     - name: panel
       label: Text panel
       fields:
@@ -235,6 +248,7 @@ content:
             label: Closing panel with photo
           - name: charcoal-close
             label: Closing panel, charcoal
+        description: Closing panels are the wattle photo panel at the bottom of a page.
       - name: heading
         label: Heading
         type: string
@@ -243,6 +257,7 @@ content:
         type: rich-text
         options:
           format: html
+        description: Select words to make them bold. Prices fill in with codes like $[individual-60].
       - name: centred
         label: Centre the text
         type: boolean
@@ -274,6 +289,7 @@ content:
               label: Moving portrait of Tess
             - name: none
               label: No photo
+          hidden: true
         - name: preset
           label: Photo
           type: select
@@ -300,17 +316,21 @@ content:
         - name: style
           label: 'Advanced: focus point, blur and brightness'
           type: string
+          hidden: true
         - name: image
           label: 'Moving portrait: photo'
           type: image
           options:
             media: images
+          hidden: true
         - name: fx
           label: 'Moving portrait: focus across (0 to 1)'
           type: string
+          hidden: true
         - name: fy
           label: 'Moving portrait: focus down (0 to 1)'
           type: string
+          hidden: true
       - name: label
         label: Section name (only if there is no heading)
         type: string
@@ -341,16 +361,20 @@ content:
       - name: stacked
         label: 'Advanced: centre text vertically'
         type: boolean
+        hidden: true
       - name: tint
         label: 'Advanced: photo shading'
         type: string
+        hidden: true
       - name: text_style
         label: 'Advanced: text style'
         type: string
+        hidden: true
       - &id003
         name: heading_id
         label: 'Advanced: heading link name'
         type: string
+        hidden: true
       - *id002
     - name: numbered
       label: Numbered list
@@ -421,15 +445,18 @@ content:
         - name: meta
           label: 'Advanced: prices and link line (HTML)'
           type: text
+          hidden: true
         - name: id
           label: 'Advanced: tab link name'
           type: string
+          hidden: true
       - name: sign
         label: Sign-off in the corner
         type: string
       - name: numbered
         label: 'Advanced: number the tabs'
         type: boolean
+        hidden: true
       - name: background
         label: Background photo
         type: object
@@ -445,6 +472,7 @@ content:
               label: Moving portrait of Tess
             - name: none
               label: No photo
+          hidden: true
         - name: preset
           label: Photo
           type: select
@@ -471,20 +499,25 @@ content:
         - name: style
           label: 'Advanced: focus point, blur and brightness'
           type: string
+          hidden: true
         - name: image
           label: 'Moving portrait: photo'
           type: image
           options:
             media: images
+          hidden: true
         - name: fx
           label: 'Moving portrait: focus across (0 to 1)'
           type: string
+          hidden: true
         - name: fy
           label: 'Moving portrait: focus down (0 to 1)'
           type: string
+          hidden: true
       - name: tint
         label: 'Advanced: photo shading'
         type: string
+        hidden: true
       - *id002
     - name: prose
       label: Text section
@@ -539,9 +572,11 @@ content:
         - name: route
           label: 'Advanced: booking row layout'
           type: boolean
+          hidden: true
         - name: anchor
           label: 'Advanced: row link name'
           type: string
+          hidden: true
       - name: questions
         label: Short questions and answers
         type: object
@@ -588,9 +623,11 @@ content:
       - name: photo_width
         label: 'Advanced: photo width'
         type: string
+        hidden: true
       - name: photo_height
         label: 'Advanced: photo height'
         type: string
+        hidden: true
       - *id003
       - *id002
     - name: faq
@@ -622,6 +659,7 @@ content:
               label: Moving portrait of Tess
             - name: none
               label: No photo
+          hidden: true
         - name: preset
           label: Photo
           type: select
@@ -648,17 +686,21 @@ content:
         - name: style
           label: 'Advanced: focus point, blur and brightness'
           type: string
+          hidden: true
         - name: image
           label: 'Moving portrait: photo'
           type: image
           options:
             media: images
+          hidden: true
         - name: fx
           label: 'Moving portrait: focus across (0 to 1)'
           type: string
+          hidden: true
         - name: fy
           label: 'Moving portrait: focus down (0 to 1)'
           type: string
+          hidden: true
       - *id002
     - name: booking
       label: Booking calendar
@@ -690,17 +732,21 @@ content:
       - name: html
         label: HTML
         type: text
+    description: Each item is one section of the page, top to bottom. Drag to reorder, or add a new one.
   - name: schema
     label: 'Advanced: search data file'
     type: string
+    hidden: true
   - name: head_extra
     label: 'Advanced: extra styles file'
     type: string
+    hidden: true
   - name: data_page
     label: 'Advanced: page key'
     type: string
+    hidden: true
 - name: site
-  label: Menu, footer and sign-up
+  label: Menu and footer
   type: file
   path: _data/site.yml
   format: yaml

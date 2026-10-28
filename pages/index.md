@@ -37,7 +37,7 @@ sections:
     heading: Welcome to The Ember Room Private Practice
     heading_id: why-h
     text: |-
-      <p>THIS IS A TEST. 9 times out of 10, people don't have problems needing to be solved, <b>they have feelings needing to be felt.</b></p>
+      <p>9 times out of 10, people don't have problems needing to be solved, <b>they have feelings needing to be felt.</b></p>
       <p>I'm Tess Fowler, a counsellor and somatic therapist (MCouns&amp;Psych) on Kaurna Land, South Australia. <b>Based in the leafy green suburb of Norwood, in the Eastern suburbs of Adelaide, I offer in person and online individual therapy and couples therapy sessions.</b></p>
     trio:
       - Inner Work

@@ -1,0 +1,34 @@
+{%- assign s = site.data.site -%}{%- assign f = s.footer -%}
+<!-- FOOTER (shared) -->
+{%- if include.signup %}
+<section class="signup g" id="free" aria-labelledby="free-h">
+  <div class="in">
+    <div>
+      <p class="cap">{{ s.signup.label }}</p>
+      <h2 id="free-h">{{ s.signup.heading }}</h2>
+      <p>{{ s.signup.text }}</p>
+    </div>
+    <form data-signup novalidate>
+      <label class="sr" for="free-email">Your email</label>
+      <input id="free-email" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+      <button class="btn" type="submit">{{ s.signup.button }}</button>
+      <p class="done" hidden>{% include fill.html t=s.signup.done %}</p>
+    </form>
+  </div>
+</section>
+{%- endif %}
+<footer class="site-foot g">
+  <div class="wrap">
+    <div class="cols">
+      <div><h2>{{ f.about_heading }}</h2><p>{% include fill.html t=f.about_text %}</p></div>
+      <div><h2>{{ f.visit_heading }}</h2><p>{% include fill.html t=f.visit_text %}</p></div>
+      <div><h2>{{ f.explore_heading }}</h2><ul>{% for l in f.explore_links %}<li><a href="{{ l.link }}">{{ l.label | escape }}</a></li>{% endfor %}</ul></div>
+      <div><h2>{{ f.contact_heading }}</h2><p>{% include fill.html t=f.contact_text %}</p><p style="margin-top:12px"><a class="btn" href="{{ s.book_link }}">{{ s.book_label }}</a></p></div>
+    </div>
+    <p class="crisis">{{ f.crisis }}</p>
+    <p class="ack">{{ f.acknowledgement }}</p>
+    <div class="legal">{% for l in f.legal_links %}<a href="{{ l.link }}"{% if l.link contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ l.label }}</a>{% endfor %}<span>{{ f.copyright }}</span></div>
+  </div>
+</footer>
+<div class="bookbar"><a class="btn" href="{{ s.book_link }}">{{ s.book_label }}</a></div>
+<!-- /FOOTER -->

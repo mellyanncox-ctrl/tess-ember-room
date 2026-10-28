@@ -1,0 +1,17 @@
+{%- assign sec = include.s -%}
+<section class="poster faqs g" id="{{ sec.anchor | default: 'faq' }}" aria-labelledby="faq-h">
+  {% include bg.html g=sec.background %}<div class="grain"></div>
+  <div class="in">
+    <h2 class="mark" id="faq-h">{% include fill.html t=sec.heading %}</h2>
+    <div class="card">
+      {% if sec.subheading %}<p class="card-sub">{% include fill.html t=sec.subheading %}</p>{% endif %}
+      <div class="faq">
+        {% for q in site.data.faq.questions %}<details id="faq-{{ forloop.index }}"><summary><span><span class="no">No.{{ forloop.index }}</span>{{ q.question }}</span></summary><div class="a">{% include fill.html t=q.answer %}</div></details>
+        {% endfor %}
+      </div>
+      {% if sec.footnote %}<div class="card-foot">
+        {% include fill.html t=sec.footnote %}
+      </div>{% endif %}
+    </div>
+  </div>
+</section>

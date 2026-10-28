@@ -1,0 +1,6 @@
+{%- assign bgx = include.g -%}{%- if bgx.kind == "portrait" -%}
+<canvas class="bg" data-paint="motion" data-src="{{ bgx.image | default: 'assets/img/tess.jpg' }}"{% if bgx.fx %} data-fx="{{ bgx.fx }}"{% endif %}{% if bgx.fy %} data-fy="{{ bgx.fy }}"{% endif %}{% if bgx.label %} role="img" aria-label="{{ bgx.label }}"{% else %} aria-hidden="true"{% endif %}></canvas>
+{%- elsif bgx.kind != "none" -%}
+{%- assign bgcls = "" -%}{%- if bgx.preset == "forest-path" %}{% assign bgcls = " img-path" %}{% elsif bgx.preset == "forest-light" %}{% assign bgcls = " img-light" %}{% elsif bgx.preset == "wattle" %}{% assign bgcls = " img-wattle" %}{% elsif bgx.preset == "tess" %}{% assign bgcls = " img-tess" %}{% endif -%}
+<div class="bg{{ bgcls }}"{% if bgx.style or bgx.upload %} style="{% if bgx.upload %}background-image:url('{{ bgx.upload }}');{% endif %}{{ bgx.style }}"{% endif %}{% if bgx.label %} role="img" aria-label="{{ bgx.label }}"{% endif %}></div>
+{%- endif -%}

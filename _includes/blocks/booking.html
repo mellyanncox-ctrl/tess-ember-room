@@ -1,0 +1,18 @@
+{%- assign sec = include.s -%}
+<section class="booking g" id="book-now" aria-labelledby="book-now-h">
+  <div class="wrap">
+    <h2 class="mark" id="book-now-h">{% include fill.html t=sec.heading %}</h2>
+    <div class="cal" data-cal>
+      <div class="cal-tabs" role="tablist" aria-label="Choose a session">
+        <button class="pill-tab" role="tab" aria-selected="true" data-svc="call">15min Call</button>
+        <button class="pill-tab" role="tab" aria-selected="false" data-svc="individual">Individual</button>
+        <button class="pill-tab" role="tab" aria-selected="false" data-svc="couples">Couples</button>
+        <button class="pill-tab" role="tab" aria-selected="false" data-svc="rest">Guided Rest</button>
+      </div>
+      <div class="cal-lengths" aria-label="Session length"></div>
+      <p class="cal-note"></p>
+      <div class="cal-frame"><iframe title="Book with Tess Fowler on Calendly" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      <p class="cal-fallback">Booking calendar not loading? <a href="https://calendly.com/tess-fowler" target="_blank" rel="noopener">Open it on Calendly</a></p>
+    </div>
+  </div>
+</section>

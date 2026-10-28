@@ -1,0 +1,17 @@
+{%- assign sec = include.s -%}
+<section class="page-hero{% if sec.photo %} with-photo{% endif %}{% if sec.extra_class %} {{ sec.extra_class }}{% endif %} g"{% if sec.anchor %} id="{{ sec.anchor }}"{% endif %}>
+  {% if sec.photo %}<img class="photo" src="{{ sec.photo }}"{% if sec.photo_width %} width="{{ sec.photo_width }}" height="{{ sec.photo_height }}"{% endif %} fetchpriority="high" alt="{{ sec.photo_alt }}">
+  <div class="grain"></div>{% else %}{% include bg.html g=sec.background %}<div class="tint"></div><div class="grain"></div>{% endif %}
+  <div class="layer">
+    {% if sec.top_left %}<p class="tl cap">{% include fill.html t=sec.top_left br=true %}</p>{% endif %}
+    {% if sec.top_right %}<p class="tr cap">{% include fill.html t=sec.top_right br=true %}</p>{% endif %}
+    <div class="mid">
+      <h1>{% include fill.html t=sec.title %}</h1>
+      {% if sec.subtitle %}<p class="sub">{% include fill.html t=sec.subtitle %}</p>{% endif %}
+    </div>
+    {% if sec.facts %}<p class="facts cap">{% include fill.html t=sec.facts br=true %}</p>{% endif %}
+    {% if sec.buttons and sec.buttons.size > 0 %}<div class="br">
+      {% for b in sec.buttons %}{% include btn.html b=b %}{% endfor %}
+    </div>{% endif %}
+  </div>
+</section>

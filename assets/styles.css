@@ -442,3 +442,11 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .course-faq h3{font-family:var(--mont);font-weight:500;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin:0 0 .25rem}
 .course-faq p{margin:0}
 @media (max-width:760px){.signup .in{grid-template-columns:1fr}}
+
+/* ---- page builder: the editor saves bold as <strong>; match the <b> styles ---- */
+.letter strong{font-weight:700;color:var(--terra)}
+.poster.stone .letter strong{color:var(--terra-deep)}
+.sequence-intro strong{font-weight:700;color:var(--terra-deep)}
+.poster.charcoal .sequence-intro strong{color:var(--terra)}
+.poster.faqs .card-foot strong{color:var(--ink)}
+.panel .body+.body{margin-top:1em}

@@ -8,6 +8,11 @@ exclude:
   - Gemfile.lock
 defaults:
   - scope:
+      path: "pages"
+    values:
+      layout: page
+      permalink: /:basename.html
+  - scope:
       path: ""
       type: posts
     values:

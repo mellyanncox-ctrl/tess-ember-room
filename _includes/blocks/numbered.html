@@ -1,0 +1,16 @@
+{%- assign sec = include.s -%}
+{%- if sec.heading_id %}{% assign hid = sec.heading_id %}{% else %}{% assign hid = "s" | append: include.n | append: "-h" %}{% endif -%}
+<section class="poster flat {{ sec.tone | default: 'charcoal' }} g"{% if sec.anchor %} id="{{ sec.anchor }}"{% endif %} aria-labelledby="{{ hid }}">
+  <div class="grain"></div>
+  <div class="in">
+    <h2 class="mark" id="{{ hid }}">{% include fill.html t=sec.heading %}</h2>
+    <div class="sequence-wrap">
+      {% if sec.intro %}<p class="sequence-intro">{% include fill.html t=sec.intro inline=true %}</p>{% endif %}
+      <ol class="sequence">
+        {% for it in sec.items %}<li><span class="num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><h3>{% include fill.html t=it.title %}</h3><p>{% include fill.html t=it.text inline=true %}</p></li>
+        {% endfor %}
+      </ol>
+      {% if sec.note %}<p class="sequence-note">{% include fill.html t=sec.note inline=true %}</p>{% endif %}
+    </div>
+  </div>
+</section>

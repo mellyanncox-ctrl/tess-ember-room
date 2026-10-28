@@ -1,0 +1,19 @@
+{%- assign sec = include.s -%}
+<section class="hero" aria-labelledby="home-h">
+  <div class="bg" role="img" aria-label="{{ sec.image_label }}"{% if sec.image %} style="background-image:url('{{ sec.image }}')"{% endif %}></div>
+  <div class="shade"></div>
+  <div class="grain"></div>
+  <div class="layer g">
+    <button class="tl cap hero-menu" type="button" data-open-drawer aria-controls="drawer" aria-expanded="false">Menu</button>
+    <p class="tr cap">{% include fill.html t=sec.top_right br=true %}</p>
+    <div class="mid">
+      <h1 id="home-h">{{ sec.title }}</h1>
+      <p class="sub">{{ sec.byline }}</p>
+      <p class="tag">{{ sec.tagline }}</p>
+    </div>
+    <nav class="corner-nav cap" aria-label="Services">
+      {% for l in sec.corner_links %}<a href="{{ l.link }}">{{ l.label | escape }}</a>{% endfor %}
+    </nav>
+    <div class="br cap"><span class="dust">{% include fill.html t=sec.note %}</span>{% for l in sec.links %}<a href="{{ l.link }}">{% include fill.html t=l.label %}</a>{% endfor %}</div>
+  </div>
+</section>

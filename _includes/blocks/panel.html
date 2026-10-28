@@ -1,0 +1,27 @@
+{%- assign sec = include.s -%}
+{%- assign tone = sec.tone | default: "stone" -%}
+{%- case tone -%}{%- when "stone" %}{% assign pcls = "poster flat stone" %}{%- when "charcoal" %}{% assign pcls = "poster flat charcoal" %}{%- when "plum" %}{% assign pcls = "poster flat plum-band" %}{%- when "photo" %}{% assign pcls = "poster" %}{%- when "close" %}{% assign pcls = "poster close" %}{%- when "charcoal-close" %}{% assign pcls = "poster flat charcoal close" %}{%- endcase -%}
+{%- assign closing = false -%}{%- if tone == "close" or tone == "charcoal-close" %}{% assign closing = true %}{% endif -%}
+{%- if sec.heading_id %}{% assign hid = sec.heading_id %}{% else %}{% assign hid = "s" | append: include.n | append: "-h" %}{% endif -%}
+<section class="{{ pcls }} g{% if sec.portrait %} has-portrait{% endif %}"{% if sec.anchor %} id="{{ sec.anchor }}"{% endif %}{% if sec.heading and closing == false %} aria-labelledby="{{ hid }}"{% else %} aria-label="{{ sec.heading | default: sec.label | strip_html | escape }}"{% endif %}>
+  {% if sec.portrait %}<figure class="portrait-arch"><img src="{{ sec.portrait }}" width="420" height="552" alt="{{ sec.portrait_alt }}"></figure>{% endif %}
+  {% if tone == "photo" or tone == "close" %}{% include bg.html g=sec.background %}<div class="tint"{% if sec.tint %} style="--tint:{{ sec.tint }}"{% endif %}></div>{% endif %}<div class="grain"></div>
+  <div class="in">
+    {% if sec.heading %}{% if closing %}<p class="mark">{% include fill.html t=sec.heading %}</p>{% else %}<h2 class="mark" id="{{ hid }}">{% include fill.html t=sec.heading %}</h2>{% endif %}{% endif %}
+    {% if closing or sec.stacked %}<div style="align-self:center;display:grid;gap:34px;justify-items:center">{% endif %}
+      {% if sec.text %}<div class="letter{% if sec.centred %} center{% endif %}"{% if sec.text_style %} style="{{ sec.text_style }}"{% elsif closing %} style="width:min(100%,25rem);font-size:clamp(1.2rem,2.2vw,1.55rem)"{% elsif sec.heading == nil or sec.heading == "" %} style="grid-row:2"{% endif %}>{% include fill.html t=sec.text %}</div>{% endif %}
+      {% if sec.buttons and sec.buttons.size > 0 %}<div class="actions">
+        {% for b in sec.buttons %}{% include btn.html b=b %}{% endfor %}
+      </div>{% endif %}
+    {% if closing or sec.stacked %}</div>{% endif %}
+    {% if sec.card %}{% assign cc = sec.card %}<div class="course-card">
+      <p class="cap">{% include fill.html t=cc.label %}</p>
+      <h3>{% include fill.html t=cc.title %}</h3>
+      {% if cc.intro %}<p>{% include fill.html t=cc.intro %}</p>{% endif %}
+      {% if cc.items %}<ul>{% for it in cc.items %}<li>{% include fill.html t=it %}</li>{% endfor %}</ul>{% endif %}
+      {% if cc.outro %}<p>{% include fill.html t=cc.outro %}</p>{% endif %}
+      <div class="row">{% if cc.price %}<span class="price">{% include fill.html t=cc.price %}</span>{% endif %}{% for b in cc.buttons %}{% include btn.html b=b %}{% endfor %}</div>
+    </div>{% endif %}
+    {% if sec.trio and sec.trio.size > 0 %}<div class="trio">{% for t in sec.trio %}<span>{% include fill.html t=t br=true %}</span>{% endfor %}</div>{% endif %}
+  </div>
+</section>

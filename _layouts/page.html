@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ page.seo_title | default: page.title | escape }}</title>
+<meta name="description" content="{{ page.description | escape }}">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
+<link rel="stylesheet" href="assets/styles.css?v=202610281500">
+{%- assign key = page.name | remove: ".html" | remove: ".md" %}
+{%- if page.schema %}
+{% include schema/{{ page.schema }}.html %}{% endif %}
+{%- if page.head_extra %}
+{% include head/{{ page.head_extra }}.html %}{% endif %}
+</head>
+<body{% if key == "index" %} class="home"{% endif %} data-page="{{ page.data_page | default: key }}">
+<a class="skip" href="#main">Skip to content</a>
+
+{% include header.html %}
+
+<main id="main">
+{% for s in page.sections %}
+{%- assign n = forloop.index -%}
+{%- include blocks/{{ s.type }}.html s=s n=n -%}
+{% endfor %}
+</main>
+
+{% include footer.html signup=page.signup %}
+
+<script src="assets/site.js?v=202610281500"></script>
+</body>
+</html>

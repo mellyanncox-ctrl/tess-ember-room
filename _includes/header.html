@@ -1,0 +1,24 @@
+{%- assign s = site.data.site -%}{%- assign here = page.url | remove_first: "/" -%}{%- if here == "" %}{% assign here = "index.html" %}{% endif -%}{%- if page.collection == "posts" %}{% assign here = "journal/" %}{% endif -%}
+<!-- HEADER (shared) -->
+<header class="site-head g">
+  <div class="wrap">
+    <a class="wordmark" href="index.html">{{ s.brand }}<span>{{ s.brand_sub }}</span></a>
+    <nav class="nav" aria-label="Main">
+{%- for m in s.menu %}
+      <a href="{{ m.link }}"{% if m.link == here %} aria-current="page"{% endif %}>{{ m.label | escape }}</a>
+{%- endfor %}
+    </nav>
+    <a class="btn" href="{{ s.book_link }}">{{ s.book_label }}</a>
+    <button class="menu-btn" type="button" data-open-drawer aria-controls="drawer" aria-expanded="false">Menu</button>
+  </div>
+</header>
+<div class="drawer" id="drawer" hidden role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="top"><a class="wordmark" href="index.html">{{ s.brand }}<span>{{ s.brand_sub }}</span></a><button class="menu-btn" type="button" data-close-drawer style="display:inline-flex">Close</button></div>
+  <nav aria-label="Mobile">
+{%- for m in s.mobile_menu %}
+    <a href="{{ m.link }}"{% if m.link == here %} aria-current="page"{% endif %}>{{ m.label | escape }}</a>
+{%- endfor %}
+  </nav>
+  <a class="btn" href="{{ s.book_link }}">{{ s.book_label }}</a>
+</div>
+<!-- /HEADER -->

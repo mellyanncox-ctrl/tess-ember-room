@@ -5,7 +5,7 @@ description: Embers represent transformation. They burn softly with warmth,
 signup: false
 sections:
   - type: page_hero
-    title: About Tess TEST
+    title: About Tess
     subtitle: 9 times out of 10, people don’t have problems needing to be solved,
       they have feelings needing to be felt.
     top_left: About

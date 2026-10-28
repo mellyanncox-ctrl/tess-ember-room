@@ -13,8 +13,6 @@ menu:
     link: fees-faq.html
   - label: Journal
     link: journal/
-  - label: Testting
-    link: testting.html
   - label: About
     link: about.html
 mobile_menu:
@@ -32,8 +30,6 @@ mobile_menu:
     link: fees-faq.html
   - label: Journal
     link: journal/
-  - label: Testting
-    link: testting.html
   - label: About Tess
     link: about.html
 footer:

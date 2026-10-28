@@ -54,6 +54,11 @@
     const done=f.querySelector('.done');f.querySelectorAll('input,select,button').forEach(el=>el.disabled=true);if(done)done.hidden=false;}));
 
 
+  /* ---- free first week: no email platform connected yet ---- */
+  $$('form[data-signup]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();
+    if(!f.reportValidity())return;track('email_signup',{page:document.body.dataset.page||''});
+    const done=f.querySelector('.done');f.querySelectorAll('input,button').forEach(el=>el.disabled=true);if(done)done.hidden=false;}));
+
   /* ---- booking widget: Calendly inline, one event type at a time ---- */
   const cal=$('[data-cal]');
   if(cal){

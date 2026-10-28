@@ -1,0 +1,1785 @@
+{
+"pages": {
+"label": "Website pages",
+"path": "pages",
+"fields": [
+{
+"name": "title",
+"label": "Page name (shows in the browser tab and on Google)",
+"type": "string",
+"required": true
+},
+{
+"name": "description",
+"label": "Short description for Google",
+"type": "text",
+"description": "One or two sentences. Shown under your page name in Google results."
+},
+{
+"name": "signup",
+"label": "Show the free week-one sign-up band",
+"type": "boolean"
+},
+{
+"name": "schema",
+"label": "Advanced: search data file",
+"type": "string",
+"hidden": true
+},
+{
+"name": "head_extra",
+"label": "Advanced: extra styles file",
+"type": "string",
+"hidden": true
+},
+{
+"name": "data_page",
+"label": "Advanced: page key",
+"type": "string",
+"hidden": true
+}
+]
+},
+"site": {
+"label": "Menu and footer",
+"path": "_data/site.yml",
+"fields": [
+{
+"name": "brand",
+"label": "Name in the header",
+"type": "string"
+},
+{
+"name": "brand_sub",
+"label": "Small name under it",
+"type": "string"
+},
+{
+"name": "book_label",
+"label": "Header booking button text",
+"type": "string"
+},
+{
+"name": "book_link",
+"label": "Header booking button link",
+"type": "string"
+},
+{
+"name": "menu",
+"label": "Top menu (desktop)",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Text",
+"type": "string"
+},
+{
+"name": "link",
+"label": "Link",
+"type": "string"
+}
+]
+},
+{
+"name": "mobile_menu",
+"label": "Phone menu",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Text",
+"type": "string"
+},
+{
+"name": "link",
+"label": "Link",
+"type": "string"
+}
+]
+},
+{
+"name": "footer",
+"label": "Footer",
+"type": "object",
+"fields": [
+{
+"name": "about_heading",
+"label": "Column 1 heading",
+"type": "string"
+},
+{
+"name": "about_text",
+"label": "Column 1 text (HTML)",
+"type": "text"
+},
+{
+"name": "visit_heading",
+"label": "Column 2 heading",
+"type": "string"
+},
+{
+"name": "visit_text",
+"label": "Column 2 text (HTML)",
+"type": "text"
+},
+{
+"name": "explore_heading",
+"label": "Column 3 heading",
+"type": "string"
+},
+{
+"name": "explore_links",
+"label": "Column 3 links",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Text",
+"type": "string"
+},
+{
+"name": "link",
+"label": "Link",
+"type": "string"
+}
+]
+},
+{
+"name": "contact_heading",
+"label": "Column 4 heading",
+"type": "string"
+},
+{
+"name": "contact_text",
+"label": "Column 4 text (HTML)",
+"type": "text"
+},
+{
+"name": "crisis",
+"label": "Crisis line",
+"type": "text"
+},
+{
+"name": "acknowledgement",
+"label": "Acknowledgement of Country",
+"type": "string"
+},
+{
+"name": "legal_links",
+"label": "Bottom links",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Text",
+"type": "string"
+},
+{
+"name": "link",
+"label": "Link",
+"type": "string"
+}
+]
+},
+{
+"name": "copyright",
+"label": "Copyright",
+"type": "string"
+}
+]
+},
+{
+"name": "signup",
+"label": "Free week-one sign-up band",
+"type": "object",
+"fields": [
+{
+"name": "label",
+"label": "Small label",
+"type": "string"
+},
+{
+"name": "heading",
+"label": "Heading",
+"type": "string"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "text"
+},
+{
+"name": "button",
+"label": "Button text",
+"type": "string"
+},
+{
+"name": "done",
+"label": "Message after signing up",
+"type": "text"
+}
+]
+}
+]
+},
+"journal": {
+"label": "Journal",
+"path": "_posts",
+"fields": [
+{
+"name": "title",
+"label": "Title",
+"type": "string",
+"required": true
+},
+{
+"name": "date",
+"label": "Date",
+"type": "date",
+"required": true
+},
+{
+"name": "excerpt",
+"label": "Short summary (shows on the Journal page)",
+"type": "text"
+},
+{
+"name": "image",
+"label": "Cover image (optional)",
+"type": "image",
+"options": {
+"media": "journal"
+}
+},
+{
+"name": "body",
+"label": "Post",
+"type": "rich-text"
+}
+]
+},
+"practice": {
+"label": "Fees, days and contact",
+"path": "_data/practice.yml",
+"fields": [
+{
+"name": "days",
+"label": "Days you see clients",
+"type": "string",
+"required": true
+},
+{
+"name": "street",
+"label": "Street address",
+"type": "string",
+"required": true
+},
+{
+"name": "email",
+"label": "Email address",
+"type": "string",
+"required": true
+},
+{
+"name": "fees",
+"label": "Session fees (dollars, numbers only)",
+"type": "object",
+"fields": [
+{
+"name": "individual_60",
+"label": "Individual, 60 minutes",
+"type": "number",
+"options": {
+"min": 0
+}
+},
+{
+"name": "individual_90",
+"label": "Individual, 90 minutes",
+"type": "number",
+"options": {
+"min": 0
+}
+},
+{
+"name": "couples_60",
+"label": "Couples, 60 minutes",
+"type": "number",
+"options": {
+"min": 0
+}
+},
+{
+"name": "couples_90",
+"label": "Couples, 90 minutes",
+"type": "number",
+"options": {
+"min": 0
+}
+},
+{
+"name": "rest_60",
+"label": "Guided Rest, 60 minutes",
+"type": "number",
+"options": {
+"min": 0
+}
+},
+{
+"name": "rest_90",
+"label": "Guided Rest, 90 minutes",
+"type": "number",
+"options": {
+"min": 0
+}
+}
+]
+},
+{
+"name": "course",
+"label": "Find Your No prices (dollars, numbers only)",
+"type": "object",
+"fields": [
+{
+"name": "price",
+"label": "Full journey",
+"type": "number",
+"options": {
+"min": 0
+}
+},
+{
+"name": "with_sessions",
+"label": "Full journey with 2 sessions",
+"type": "number",
+"options": {
+"min": 0
+}
+},
+{
+"name": "sessions_value",
+"label": "Usual value of the 2 sessions",
+"type": "number",
+"options": {
+"min": 0
+}
+}
+]
+}
+]
+},
+"faq": {
+"label": "Fees & FAQ questions",
+"path": "_data/faq.yml",
+"fields": [
+{
+"name": "questions",
+"label": "Questions (shown in this order)",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "question",
+"label": "Question",
+"type": "string",
+"required": true
+},
+{
+"name": "answer",
+"label": "Answer",
+"type": "rich-text",
+"required": true,
+"options": {
+"format": "html"
+}
+}
+]
+}
+]
+},
+"blocks": {
+"home_hero": {
+"name": "home_hero",
+"label": "Home page header",
+"fields": [
+{
+"name": "title",
+"label": "Title",
+"type": "string"
+},
+{
+"name": "byline",
+"label": "Byline",
+"type": "string"
+},
+{
+"name": "tagline",
+"label": "Tagline",
+"type": "string"
+},
+{
+"name": "top_right",
+"label": "Top right text",
+"type": "text"
+},
+{
+"name": "image",
+"label": "Background photo (optional, replaces the forest)",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "image_label",
+"label": "Describe the photo",
+"type": "string"
+},
+{
+"name": "corner_links",
+"label": "Bottom left links",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Text",
+"type": "string"
+},
+{
+"name": "link",
+"label": "Link",
+"type": "string"
+}
+]
+},
+{
+"name": "note",
+"label": "Bottom right small text",
+"type": "string"
+},
+{
+"name": "links",
+"label": "Bottom right links",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Text",
+"type": "string"
+},
+{
+"name": "link",
+"label": "Link",
+"type": "string"
+}
+]
+}
+]
+},
+"page_hero": {
+"name": "page_hero",
+"label": "Page header (photo banner)",
+"fields": [
+{
+"name": "title",
+"label": "Page heading",
+"type": "string",
+"required": true,
+"description": "The big heading on the photo banner."
+},
+{
+"name": "subtitle",
+"label": "Line under the heading",
+"type": "text"
+},
+{
+"name": "top_left",
+"label": "Top left label",
+"type": "text"
+},
+{
+"name": "top_right",
+"label": "Top right label",
+"type": "text"
+},
+{
+"name": "facts",
+"label": "Details, bottom left",
+"type": "text"
+},
+{
+"name": "buttons",
+"label": "Buttons",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Button text",
+"type": "string",
+"required": true
+},
+{
+"name": "link",
+"label": "Link (page, #section or full web address)",
+"type": "string",
+"required": true
+},
+{
+"name": "ghost",
+"label": "Outline style (instead of filled)",
+"type": "boolean"
+},
+{
+"name": "calendar",
+"label": "Booking page only: open this calendar",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "call",
+"label": "15min Call"
+},
+{
+"name": "individual",
+"label": "Individual"
+},
+{
+"name": "couples",
+"label": "Couples"
+},
+{
+"name": "rest",
+"label": "Guided Rest"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "new_tab",
+"label": "Open in a new tab",
+"type": "boolean"
+},
+{
+"name": "wrap",
+"label": "Let long button text wrap",
+"type": "boolean",
+"hidden": true
+}
+]
+},
+{
+"name": "background",
+"label": "Background photo",
+"type": "object",
+"fields": [
+{
+"name": "kind",
+"label": "Type",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "photo",
+"label": "Photo"
+},
+{
+"name": "portrait",
+"label": "Moving portrait of Tess"
+},
+{
+"name": "none",
+"label": "No photo"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "preset",
+"label": "Photo",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "default",
+"label": "Forest (standard)"
+},
+{
+"name": "forest-path",
+"label": "Forest path"
+},
+{
+"name": "forest-light",
+"label": "Forest light"
+},
+{
+"name": "wattle",
+"label": "Wattle"
+},
+{
+"name": "tess",
+"label": "Tess"
+}
+]
+}
+},
+{
+"name": "upload",
+"label": "Or use your own photo",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "label",
+"label": "Describe the photo (for screen readers)",
+"type": "string"
+},
+{
+"name": "style",
+"label": "Advanced: focus point, blur and brightness",
+"type": "string",
+"hidden": true
+},
+{
+"name": "image",
+"label": "Moving portrait: photo",
+"type": "image",
+"options": {
+"media": "images"
+},
+"hidden": true
+},
+{
+"name": "fx",
+"label": "Moving portrait: focus across (0 to 1)",
+"type": "string",
+"hidden": true
+},
+{
+"name": "fy",
+"label": "Moving portrait: focus down (0 to 1)",
+"type": "string",
+"hidden": true
+}
+]
+},
+{
+"name": "photo",
+"label": "Use a portrait photo instead (optional)",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "photo_alt",
+"label": "Describe the portrait photo",
+"type": "string"
+},
+{
+"name": "photo_width",
+"label": "Advanced: portrait width",
+"type": "string",
+"hidden": true
+},
+{
+"name": "photo_height",
+"label": "Advanced: portrait height",
+"type": "string",
+"hidden": true
+},
+{
+"name": "extra_class",
+"label": "Advanced: extra style",
+"type": "string",
+"hidden": true
+},
+{
+"name": "anchor",
+"label": "Advanced: section link name (for #links)",
+"type": "string",
+"hidden": true
+}
+]
+},
+"panel": {
+"name": "panel",
+"label": "Text panel",
+"fields": [
+{
+"name": "tone",
+"label": "Colour",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "stone",
+"label": "Stone"
+},
+{
+"name": "charcoal",
+"label": "Charcoal"
+},
+{
+"name": "plum",
+"label": "Plum"
+},
+{
+"name": "photo",
+"label": "Photo background"
+},
+{
+"name": "close",
+"label": "Closing panel with photo"
+},
+{
+"name": "charcoal-close",
+"label": "Closing panel, charcoal"
+}
+]
+},
+"description": "Closing panels are the wattle photo panel at the bottom of a page."
+},
+{
+"name": "heading",
+"label": "Heading",
+"type": "string"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "rich-text",
+"options": {
+"format": "html"
+},
+"description": "Select words to make them bold. Prices fill in with codes like $[individual-60]."
+},
+{
+"name": "centred",
+"label": "Centre the text",
+"type": "boolean"
+},
+{
+"name": "buttons",
+"label": "Buttons",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Button text",
+"type": "string",
+"required": true
+},
+{
+"name": "link",
+"label": "Link (page, #section or full web address)",
+"type": "string",
+"required": true
+},
+{
+"name": "ghost",
+"label": "Outline style (instead of filled)",
+"type": "boolean"
+},
+{
+"name": "calendar",
+"label": "Booking page only: open this calendar",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "call",
+"label": "15min Call"
+},
+{
+"name": "individual",
+"label": "Individual"
+},
+{
+"name": "couples",
+"label": "Couples"
+},
+{
+"name": "rest",
+"label": "Guided Rest"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "new_tab",
+"label": "Open in a new tab",
+"type": "boolean"
+},
+{
+"name": "wrap",
+"label": "Let long button text wrap",
+"type": "boolean",
+"hidden": true
+}
+]
+},
+{
+"name": "trio",
+"label": "Three small labels along the bottom",
+"type": "string",
+"list": true
+},
+{
+"name": "portrait",
+"label": "Arch photo above (optional)",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "portrait_alt",
+"label": "Describe the arch photo",
+"type": "string"
+},
+{
+"name": "background",
+"label": "Background photo (photo and closing panels)",
+"type": "object",
+"fields": [
+{
+"name": "kind",
+"label": "Type",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "photo",
+"label": "Photo"
+},
+{
+"name": "portrait",
+"label": "Moving portrait of Tess"
+},
+{
+"name": "none",
+"label": "No photo"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "preset",
+"label": "Photo",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "default",
+"label": "Forest (standard)"
+},
+{
+"name": "forest-path",
+"label": "Forest path"
+},
+{
+"name": "forest-light",
+"label": "Forest light"
+},
+{
+"name": "wattle",
+"label": "Wattle"
+},
+{
+"name": "tess",
+"label": "Tess"
+}
+]
+}
+},
+{
+"name": "upload",
+"label": "Or use your own photo",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "label",
+"label": "Describe the photo (for screen readers)",
+"type": "string"
+},
+{
+"name": "style",
+"label": "Advanced: focus point, blur and brightness",
+"type": "string",
+"hidden": true
+},
+{
+"name": "image",
+"label": "Moving portrait: photo",
+"type": "image",
+"options": {
+"media": "images"
+},
+"hidden": true
+},
+{
+"name": "fx",
+"label": "Moving portrait: focus across (0 to 1)",
+"type": "string",
+"hidden": true
+},
+{
+"name": "fy",
+"label": "Moving portrait: focus down (0 to 1)",
+"type": "string",
+"hidden": true
+}
+]
+},
+{
+"name": "label",
+"label": "Section name (only if there is no heading)",
+"type": "string"
+},
+{
+"name": "card",
+"label": "Course card (optional)",
+"type": "object",
+"fields": [
+{
+"name": "label",
+"label": "Small label",
+"type": "string"
+},
+{
+"name": "title",
+"label": "Title",
+"type": "string"
+},
+{
+"name": "intro",
+"label": "Intro line",
+"type": "text"
+},
+{
+"name": "items",
+"label": "List items",
+"type": "string",
+"list": true
+},
+{
+"name": "outro",
+"label": "Closing line",
+"type": "text"
+},
+{
+"name": "price",
+"label": "Price (e.g. $[course])",
+"type": "string"
+},
+{
+"name": "buttons",
+"label": "Buttons",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Button text",
+"type": "string",
+"required": true
+},
+{
+"name": "link",
+"label": "Link (page, #section or full web address)",
+"type": "string",
+"required": true
+},
+{
+"name": "ghost",
+"label": "Outline style (instead of filled)",
+"type": "boolean"
+},
+{
+"name": "calendar",
+"label": "Booking page only: open this calendar",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "call",
+"label": "15min Call"
+},
+{
+"name": "individual",
+"label": "Individual"
+},
+{
+"name": "couples",
+"label": "Couples"
+},
+{
+"name": "rest",
+"label": "Guided Rest"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "new_tab",
+"label": "Open in a new tab",
+"type": "boolean"
+},
+{
+"name": "wrap",
+"label": "Let long button text wrap",
+"type": "boolean",
+"hidden": true
+}
+]
+}
+]
+},
+{
+"name": "stacked",
+"label": "Advanced: centre text vertically",
+"type": "boolean",
+"hidden": true
+},
+{
+"name": "tint",
+"label": "Advanced: photo shading",
+"type": "string",
+"hidden": true
+},
+{
+"name": "text_style",
+"label": "Advanced: text style",
+"type": "string",
+"hidden": true
+},
+{
+"name": "heading_id",
+"label": "Advanced: heading link name",
+"type": "string",
+"hidden": true
+},
+{
+"name": "anchor",
+"label": "Advanced: section link name (for #links)",
+"type": "string",
+"hidden": true
+}
+]
+},
+"numbered": {
+"name": "numbered",
+"label": "Numbered list",
+"fields": [
+{
+"name": "tone",
+"label": "Colour",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "charcoal",
+"label": "Charcoal"
+},
+{
+"name": "stone",
+"label": "Stone"
+}
+]
+}
+},
+{
+"name": "heading",
+"label": "Heading",
+"type": "string"
+},
+{
+"name": "intro",
+"label": "Intro",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "items",
+"label": "Items (numbered automatically)",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "title",
+"label": "Title",
+"type": "string"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+}
+]
+},
+{
+"name": "note",
+"label": "Closing note",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "heading_id",
+"label": "Advanced: heading link name",
+"type": "string",
+"hidden": true
+},
+{
+"name": "anchor",
+"label": "Advanced: section link name (for #links)",
+"type": "string",
+"hidden": true
+}
+]
+},
+"tabs": {
+"name": "tabs",
+"label": "Tabs",
+"fields": [
+{
+"name": "label",
+"label": "Section name",
+"type": "string"
+},
+{
+"name": "tabs",
+"label": "Tabs",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "tab",
+"label": "Tab label",
+"type": "string"
+},
+{
+"name": "heading",
+"label": "Heading",
+"type": "string"
+},
+{
+"name": "body",
+"label": "Text",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "pills",
+"label": "Small labels",
+"type": "string",
+"list": true
+},
+{
+"name": "meta",
+"label": "Advanced: prices and link line (HTML)",
+"type": "text",
+"hidden": true
+},
+{
+"name": "id",
+"label": "Advanced: tab link name",
+"type": "string",
+"hidden": true
+}
+]
+},
+{
+"name": "sign",
+"label": "Sign-off in the corner",
+"type": "string"
+},
+{
+"name": "numbered",
+"label": "Advanced: number the tabs",
+"type": "boolean",
+"hidden": true
+},
+{
+"name": "background",
+"label": "Background photo",
+"type": "object",
+"fields": [
+{
+"name": "kind",
+"label": "Type",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "photo",
+"label": "Photo"
+},
+{
+"name": "portrait",
+"label": "Moving portrait of Tess"
+},
+{
+"name": "none",
+"label": "No photo"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "preset",
+"label": "Photo",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "default",
+"label": "Forest (standard)"
+},
+{
+"name": "forest-path",
+"label": "Forest path"
+},
+{
+"name": "forest-light",
+"label": "Forest light"
+},
+{
+"name": "wattle",
+"label": "Wattle"
+},
+{
+"name": "tess",
+"label": "Tess"
+}
+]
+}
+},
+{
+"name": "upload",
+"label": "Or use your own photo",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "label",
+"label": "Describe the photo (for screen readers)",
+"type": "string"
+},
+{
+"name": "style",
+"label": "Advanced: focus point, blur and brightness",
+"type": "string",
+"hidden": true
+},
+{
+"name": "image",
+"label": "Moving portrait: photo",
+"type": "image",
+"options": {
+"media": "images"
+},
+"hidden": true
+},
+{
+"name": "fx",
+"label": "Moving portrait: focus across (0 to 1)",
+"type": "string",
+"hidden": true
+},
+{
+"name": "fy",
+"label": "Moving portrait: focus down (0 to 1)",
+"type": "string",
+"hidden": true
+}
+]
+},
+{
+"name": "tint",
+"label": "Advanced: photo shading",
+"type": "string",
+"hidden": true
+},
+{
+"name": "anchor",
+"label": "Advanced: section link name (for #links)",
+"type": "string",
+"hidden": true
+}
+]
+},
+"prose": {
+"name": "prose",
+"label": "Text section",
+"fields": [
+{
+"name": "tone",
+"label": "Colour",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "light",
+"label": "Light"
+},
+{
+"name": "dark",
+"label": "Plum"
+},
+{
+"name": "char",
+"label": "Charcoal"
+}
+]
+}
+},
+{
+"name": "label",
+"label": "Small label",
+"type": "string"
+},
+{
+"name": "label_above",
+"label": "Show small label above the heading",
+"type": "boolean"
+},
+{
+"name": "heading",
+"label": "Heading",
+"type": "string",
+"required": true
+},
+{
+"name": "email_line",
+"label": "Large email line (optional)",
+"type": "string"
+},
+{
+"name": "intro",
+"label": "Text",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "rows",
+"label": "Rows (services, prices, options)",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "title",
+"label": "Title",
+"type": "string"
+},
+{
+"name": "text",
+"label": "Description",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "prices",
+"label": "Prices or labels (right side)",
+"type": "string",
+"list": true
+},
+{
+"name": "buttons",
+"label": "Buttons",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "label",
+"label": "Button text",
+"type": "string",
+"required": true
+},
+{
+"name": "link",
+"label": "Link (page, #section or full web address)",
+"type": "string",
+"required": true
+},
+{
+"name": "ghost",
+"label": "Outline style (instead of filled)",
+"type": "boolean"
+},
+{
+"name": "calendar",
+"label": "Booking page only: open this calendar",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "call",
+"label": "15min Call"
+},
+{
+"name": "individual",
+"label": "Individual"
+},
+{
+"name": "couples",
+"label": "Couples"
+},
+{
+"name": "rest",
+"label": "Guided Rest"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "new_tab",
+"label": "Open in a new tab",
+"type": "boolean"
+},
+{
+"name": "wrap",
+"label": "Let long button text wrap",
+"type": "boolean",
+"hidden": true
+}
+]
+},
+{
+"name": "route",
+"label": "Advanced: booking row layout",
+"type": "boolean",
+"hidden": true
+},
+{
+"name": "anchor",
+"label": "Advanced: row link name",
+"type": "string",
+"hidden": true
+}
+]
+},
+{
+"name": "questions",
+"label": "Short questions and answers",
+"type": "object",
+"list": true,
+"fields": [
+{
+"name": "question",
+"label": "Question",
+"type": "string"
+},
+{
+"name": "answer",
+"label": "Answer",
+"type": "text"
+}
+]
+},
+{
+"name": "outro",
+"label": "Text after rows",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "small_print",
+"label": "Small print",
+"type": "string"
+},
+{
+"name": "heading_id",
+"label": "Advanced: heading link name",
+"type": "string",
+"hidden": true
+},
+{
+"name": "anchor",
+"label": "Advanced: section link name (for #links)",
+"type": "string",
+"hidden": true
+}
+]
+},
+"story": {
+"name": "story",
+"label": "Story with photo",
+"fields": [
+{
+"name": "heading",
+"label": "Heading",
+"type": "string"
+},
+{
+"name": "text",
+"label": "Text",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "photo",
+"label": "Photo",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "photo_alt",
+"label": "Describe the photo",
+"type": "string"
+},
+{
+"name": "photo_right",
+"label": "Photo on the right",
+"type": "boolean"
+},
+{
+"name": "photo_width",
+"label": "Advanced: photo width",
+"type": "string",
+"hidden": true
+},
+{
+"name": "photo_height",
+"label": "Advanced: photo height",
+"type": "string",
+"hidden": true
+},
+{
+"name": "heading_id",
+"label": "Advanced: heading link name",
+"type": "string",
+"hidden": true
+},
+{
+"name": "anchor",
+"label": "Advanced: section link name (for #links)",
+"type": "string",
+"hidden": true
+}
+]
+},
+"faq": {
+"name": "faq",
+"label": "Questions (from \"Fees & FAQ questions\")",
+"fields": [
+{
+"name": "heading",
+"label": "Heading",
+"type": "string"
+},
+{
+"name": "subheading",
+"label": "Small line under the heading",
+"type": "string"
+},
+{
+"name": "footnote",
+"label": "Text under the questions",
+"type": "rich-text",
+"options": {
+"format": "html"
+}
+},
+{
+"name": "background",
+"label": "Background photo",
+"type": "object",
+"fields": [
+{
+"name": "kind",
+"label": "Type",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "photo",
+"label": "Photo"
+},
+{
+"name": "portrait",
+"label": "Moving portrait of Tess"
+},
+{
+"name": "none",
+"label": "No photo"
+}
+]
+},
+"hidden": true
+},
+{
+"name": "preset",
+"label": "Photo",
+"type": "select",
+"options": {
+"values": [
+{
+"name": "default",
+"label": "Forest (standard)"
+},
+{
+"name": "forest-path",
+"label": "Forest path"
+},
+{
+"name": "forest-light",
+"label": "Forest light"
+},
+{
+"name": "wattle",
+"label": "Wattle"
+},
+{
+"name": "tess",
+"label": "Tess"
+}
+]
+}
+},
+{
+"name": "upload",
+"label": "Or use your own photo",
+"type": "image",
+"options": {
+"media": "images"
+}
+},
+{
+"name": "label",
+"label": "Describe the photo (for screen readers)",
+"type": "string"
+},
+{
+"name": "style",
+"label": "Advanced: focus point, blur and brightness",
+"type": "string",
+"hidden": true
+},
+{
+"name": "image",
+"label": "Moving portrait: photo",
+"type": "image",
+"options": {
+"media": "images"
+},
+"hidden": true
+},
+{
+"name": "fx",
+"label": "Moving portrait: focus across (0 to 1)",
+"type": "string",
+"hidden": true
+},
+{
+"name": "fy",
+"label": "Moving portrait: focus down (0 to 1)",
+"type": "string",
+"hidden": true
+}
+]
+},
+{
+"name": "anchor",
+"label": "Advanced: section link name (for #links)",
+"type": "string",
+"hidden": true
+}
+]
+},
+"booking": {
+"name": "booking",
+"label": "Booking calendar",
+"fields": [
+{
+"name": "heading",
+"label": "Heading",
+"type": "string"
+}
+]
+},
+"journal_card": {
+"name": "journal_card",
+"label": "Journal post link",
+"fields": [
+{
+"name": "label",
+"label": "Small label",
+"type": "string"
+},
+{
+"name": "title",
+"label": "Title",
+"type": "string"
+},
+{
+"name": "excerpt",
+"label": "Short summary",
+"type": "text"
+},
+{
+"name": "link",
+"label": "Link",
+"type": "string"
+},
+{
+"name": "more",
+"label": "Link text",
+"type": "string"
+}
+]
+},
+"custom": {
+"name": "custom",
+"label": "Custom HTML (advanced)",
+"fields": [
+{
+"name": "html",
+"label": "HTML",
+"type": "text"
+}
+]
+}
+}
+}

@@ -1,11 +1,11 @@
 {%- assign sec = include.s -%}
-<section class="journal-list g" aria-label="{{ sec.label | default: 'From the Journal' | escape }}">
+<section data-s="{{ include.n | minus: 1 }}" class="journal-list g" aria-label="{{ sec.label | default: 'From the Journal' | escape }}">
   <div class="wrap">
     <a class="journal-card" href="{{ sec.link }}">
-      <p class="cap">{{ sec.label | default: "From the Journal" }}</p>
-      <h2>{{ sec.title }}</h2>
-      <p class="ex">{{ sec.excerpt }}</p>
-      <span class="more">{{ sec.more | default: "Read more →" }}</span>
+      <p class="cap" data-e="label">{{ sec.label | default: "From the Journal" }}</p>
+      <h2 data-e="title">{{ sec.title }}</h2>
+      <p class="ex" data-e="excerpt">{{ sec.excerpt }}</p>
+      <span class="more" data-e="more">{{ sec.more | default: "Read more →" }}</span>
     </a>
   </div>
 </section>

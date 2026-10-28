@@ -1,15 +1,15 @@
 {%- assign sec = include.s -%}
-<section class="poster faqs g" id="{{ sec.anchor | default: 'faq' }}" aria-labelledby="faq-h">
+<section data-s="{{ include.n | minus: 1 }}" class="poster faqs g" id="{{ sec.anchor | default: 'faq' }}" aria-labelledby="faq-h">
   {% include bg.html g=sec.background %}<div class="grain"></div>
   <div class="in">
-    <h2 class="mark" id="faq-h">{% include fill.html t=sec.heading %}</h2>
+    <h2 class="mark" id="faq-h" data-e="heading">{% include fill.html t=sec.heading %}</h2>
     <div class="card">
-      {% if sec.subheading %}<p class="card-sub">{% include fill.html t=sec.subheading %}</p>{% endif %}
+      {% if sec.subheading %}<p class="card-sub" data-e="subheading">{% include fill.html t=sec.subheading %}</p>{% endif %}
       <div class="faq">
-        {% for q in site.data.faq.questions %}<details id="faq-{{ forloop.index }}"><summary><span><span class="no">No.{{ forloop.index }}</span>{{ q.question }}</span></summary><div class="a">{% include fill.html t=q.answer %}</div></details>
+        {% for q in site.data.faq.questions %}<details id="faq-{{ forloop.index }}"><summary><span><span class="no">No.{{ forloop.index }}</span><span class="ed" data-e="@faq:questions.{{ forloop.index0 }}.question">{{ q.question }}</span></span></summary><div class="a" data-e="@faq:questions.{{ forloop.index0 }}.answer" data-et="rich">{% include fill.html t=q.answer %}</div></details>
         {% endfor %}
       </div>
-      {% if sec.footnote %}<div class="card-foot">
+      {% if sec.footnote %}<div class="card-foot" data-e="footnote" data-et="rich">
         {% include fill.html t=sec.footnote %}
       </div>{% endif %}
     </div>

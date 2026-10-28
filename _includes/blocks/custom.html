@@ -1,2 +1,2 @@
 {%- assign sec = include.s -%}
-{% include fill.html t=sec.html %}
+<div class="ed" data-s="{{ include.n | minus: 1 }}" data-custom>{% include fill.html t=sec.html %}</div>

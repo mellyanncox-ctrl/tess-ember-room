@@ -450,3 +450,4 @@ mark.confirm{background:transparent;color:inherit;border:1px dashed var(--terra)
 .poster.charcoal .sequence-intro strong{color:var(--terra)}
 .poster.faqs .card-foot strong{color:var(--ink)}
 .panel .body+.body{margin-top:1em}
+.ed{display:contents}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website editor | The Ember Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="/assets/editor/editor.css?v=1">
+</head>
+<body>
+<div id="login" class="login" hidden>
+  <form id="login-form" class="login-card">
+    <p class="ee-eyebrow">The Ember Room</p>
+    <h1>Website editor</h1>
+    <p>Enter your editor password to start.</p>
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" required>
+    <button class="ee-btn primary" type="submit">Log in</button>
+    <p class="login-msg" id="login-msg" role="alert"></p>
+  </form>
+</div>
+
+<div id="app" class="app" hidden>
+  <header class="bar">
+    <div class="brand">The Ember Room <span>Website editor</span></div>
+    <label class="pick"><span class="sr">Page</span><select id="page-select"></select></label>
+    <nav class="tools" aria-label="Editor tools">
+      <button class="ee-btn" id="btn-page" type="button">Page settings</button>
+      <button class="ee-btn" id="btn-new" type="button">New page</button>
+      <button class="ee-btn" id="btn-fees" type="button">Fees &amp; contact</button>
+      <button class="ee-btn" id="btn-menu" type="button">Menu &amp; footer</button>
+      <button class="ee-btn" id="btn-faq" type="button">FAQ</button>
+      <button class="ee-btn" id="btn-journal" type="button">Journal</button>
+      <button class="ee-btn" id="btn-help" type="button">Help</button>
+    </nav>
+    <div class="save">
+      <span id="status" class="status" aria-live="polite"></span>
+      <button class="ee-btn primary" id="btn-save" type="button" disabled>Save</button>
+    </div>
+  </header>
+  <div class="stage">
+    <div id="banner" class="banner" hidden></div>
+    <iframe id="frame" title="Your website, ready to edit"></iframe>
+    <div id="placeholder" class="placeholder" hidden></div>
+  </div>
+  <aside id="panel" class="panel" hidden aria-label="Settings">
+    <div class="panel-head"><h2 id="panel-title">Settings</h2><button class="ee-btn" id="panel-close" type="button">Done</button></div>
+    <div id="panel-body" class="panel-body"></div>
+  </aside>
+  <div id="modal" class="modal" hidden role="dialog" aria-modal="true">
+    <div class="modal-card"><div id="modal-body"></div></div>
+  </div>
+  <div id="rt" class="rt" hidden>
+    <button type="button" data-cmd="bold" title="Bold"><b>B</b></button>
+    <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
+    <button type="button" data-cmd="link" title="Add a link">Link</button>
+    <button type="button" data-cmd="unlink" title="Remove link">Unlink</button>
+  </div>
+  <div id="toast" class="toast" hidden></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="/assets/editor/config.js?v=1"></script>
+<script src="/assets/editor/editor.js?v=2"></script>
+</body>
+</html>

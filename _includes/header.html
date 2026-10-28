@@ -5,7 +5,7 @@
     <a class="wordmark" href="index.html">{{ s.brand }}<span>{{ s.brand_sub }}</span></a>
     <nav class="nav" aria-label="Main">
 {%- for m in s.menu %}
-      <a href="{{ m.link }}"{% if m.link == here %} aria-current="page"{% endif %}>{{ m.label | escape }}</a>
+      <a href="{{ m.link }}"{% if m.link == here %} aria-current="page"{% endif %} data-e="@site:menu.{{ forloop.index0 }}.label">{{ m.label | escape }}</a>
 {%- endfor %}
     </nav>
     <a class="btn" href="{{ s.book_link }}">{{ s.book_label }}</a>

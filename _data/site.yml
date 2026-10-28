@@ -1,4 +1,3 @@
-# Site-wide settings: menu, footer, free sign-up band. Edited in Pages CMS under "Menu, footer and sign-up".
 brand: The Ember Room
 brand_sub: Tess Fowler
 book_label: Book a 15min Call
@@ -14,6 +13,8 @@ menu:
     link: fees-faq.html
   - label: Journal
     link: journal/
+  - label: Testting
+    link: testting.html
   - label: About
     link: about.html
 mobile_menu:
@@ -31,13 +32,15 @@ mobile_menu:
     link: fees-faq.html
   - label: Journal
     link: journal/
+  - label: Testting
+    link: testting.html
   - label: About Tess
     link: about.html
 footer:
   about_heading: The Ember Room
-  about_text: "Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)"
+  about_text: Tess Fowler<br>counsellor and somatic therapist (MCouns&amp;Psych)
   visit_heading: Visit
-  visit_text: "The Ember Room:<br>[days]<br>[street], Norwood, SA"
+  visit_text: The Ember Room:<br>[days]<br>[street], Norwood, SA
   explore_heading: Explore
   explore_links:
     - label: Individual therapy
@@ -55,18 +58,18 @@ footer:
     - label: About Tess
       link: about.html
   contact_heading: Contact
-  contact_text: "If you have any questions, please don't hesitate to reach out.<br>[email]"
-  crisis: "The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14."
-  acknowledgement: "Based on Kaurna Land / Adelaide, South Australia"
+  contact_text: If you have any questions, please don't hesitate to reach out.<br>[email]
+  crisis: The Ember Room isn't a crisis service. If you're in danger, call 000. For 24/7 support, call Lifeline on 13 11 14.
+  acknowledgement: Based on Kaurna Land / Adelaide, South Australia
   legal_links:
     - label: Privacy
       link: privacy.html
     - label: SA Code of Conduct for health care workers
       link: https://www.hcscc.sa.gov.au/
-  copyright: "© The Ember Room"
+  copyright: © The Ember Room
 signup:
-  label: "Find Your No · free"
-  heading: "Try week one, free"
-  text: "Five daily letters to help you start noticing yourself."
-  button: "Send me week one"
-  done: "Thank you. Sign-ups open shortly. Until then, email [email] and I’ll send week one to you."
+  label: Find Your No · free
+  heading: Try week one, free
+  text: Five daily letters to help you start noticing yourself.
+  button: Send me week one
+  done: Thank you. Sign-ups open shortly. Until then, email [email] and I’ll send week one to you.

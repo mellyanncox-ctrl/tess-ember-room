@@ -17,7 +17,12 @@
   const TEXT_SEL = ':is(p,li,h1,h3,summary,blockquote,dt,dd,small,.cap,.mark,.sub,.tag,.trio span,.pill,.price,.what):not(.btn)';
   const LIB_GROUPS = ['All', 'Headers', 'Text', 'Images', 'Lists & tabs', 'Offers & prices', 'Journal', 'Closing'];
 
-  /* ---------- icons (line icons, drawn inline) ---------- */
+  /* ---------- icons (line icons, drawn inline) ----------
+     Icon shapes adapted from Lucide (https://lucide.dev), ISC License.
+     Copyright (c) Lucide Contributors. Permission to use, copy, modify, and/or distribute this software
+     for any purpose with or without fee is hereby granted, provided that the above copyright notice and
+     this permission notice appear in all copies. THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS
+     ALL WARRANTIES WITH REGARD TO THIS SOFTWARE. */
   const P = {
     plus: '<path d="M12 5v14M5 12h14"/>', gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
     undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/>', redo: '<path d="m15 14 5-5-5-5"/><path d="M20 9H9a5 5 0 0 0 0 10h3"/>',
@@ -521,11 +526,11 @@
   /* ---------- sections and the editing overlay ---------- */
   const TOOLS_CSS = `
     body.ee-edit [data-e],body.ee-edit [data-eb]{cursor:text}
-    body.ee-edit [data-e]:hover,body.ee-edit [data-eb]:hover,body.ee-edit .ed[data-e]:hover>*{outline:1px solid rgba(47,111,235,.7);outline-offset:3px}
-    .ee-editing,.ed.ee-editing>*{outline:2px solid #2F6FEB!important;outline-offset:3px}
-    .ee-sel,.ed.ee-sel>*{outline:2px solid #2F6FEB!important;outline-offset:4px}
+    body.ee-edit [data-e]:hover,body.ee-edit [data-eb]:hover,body.ee-edit .ed[data-e]:hover>*{outline:1px dashed rgba(26,26,26,.7);outline-offset:3px;box-shadow:0 0 0 3px rgba(255,255,255,.35)}
+    .ee-editing,.ed.ee-editing>*{outline:2px solid #1A1A1A!important;outline-offset:3px;box-shadow:0 0 0 5px rgba(255,255,255,.85)!important}
+    .ee-sel,.ed.ee-sel>*{outline:2px solid #1A1A1A!important;outline-offset:4px;box-shadow:0 0 0 6px rgba(255,255,255,.85)}
     body.ee-edit [data-ei]{cursor:pointer}
-    body.ee-edit [data-ei]:hover{outline:2px solid rgba(47,111,235,.8);outline-offset:3px}
+    body.ee-edit [data-ei]:hover{outline:2px solid #1A1A1A;outline-offset:3px;box-shadow:0 0 0 5px rgba(255,255,255,.85)}
     main>[data-s]{position:relative}
     body.ee-edit main>[data-s]:has([data-ebg]){cursor:copy}
     body.ee-edit main>[data-s]:has([data-ebg]) :is([data-e],[data-eb]){cursor:text}

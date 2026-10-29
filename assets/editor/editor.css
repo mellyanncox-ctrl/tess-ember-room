@@ -1,7 +1,7 @@
 /* The Ember Room website editor: a clean, Squarespace-style back office */
 :root{
   --ink:#1A1A1A;--ink-2:#4A4A4A;--quiet:#767676;--line:#E4E4E4;--line-2:#D2D2D2;--soft:#F6F6F6;--soft-2:#EFEFEF;
-  --brand:#5B2A38;--terra:#D4967D;--focus:#2F6FEB;--danger:#C4352B;--ok:#1E7F4F;
+  --brand:#5B2A38;--terra:#D4967D;--focus:#1A1A1A;--danger:#C4352B;--ok:#1E7F4F;
   --r:8px;--shadow:0 12px 40px rgba(0,0,0,.14),0 2px 6px rgba(0,0,0,.06);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
 }
@@ -94,7 +94,7 @@ svg{display:block}
 
 /* editing overlay */
 .ov{position:absolute;inset:0;pointer-events:none;z-index:5}
-.ov-box{position:absolute;border:2px solid var(--focus);border-radius:2px;display:none}
+.ov-box{position:absolute;border:2px solid #1A1A1A;box-shadow:0 0 0 1px rgba(255,255,255,.85),inset 0 0 0 1px rgba(255,255,255,.85);border-radius:2px;display:none}
 .ov-tools{position:absolute;display:none;align-items:center;gap:2px;background:#fff;border-radius:8px;padding:3px;box-shadow:var(--shadow);pointer-events:auto}
 .ov-tools .lbl{font-size:12px;font-weight:600;padding:0 10px 0 8px;color:var(--ink-2);white-space:nowrap}
 .ov-tools button{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 8px;border:0;background:transparent;border-radius:6px;cursor:pointer;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
@@ -102,8 +102,8 @@ svg{display:block}
 .ov-tools button.danger:hover{color:var(--danger);background:#FDF1F0}
 .ov-tools svg{width:16px;height:16px}
 .ov-tools .sep{width:1px;height:20px;background:var(--line);margin:0 2px}
-.ov-add{position:absolute;display:none;transform:translate(-50%,-50%);height:30px;padding:0 16px;border-radius:999px;border:0;background:var(--focus);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;pointer-events:auto;box-shadow:0 4px 14px rgba(47,111,235,.35)}
-.ov-add:hover{background:#2459C4}
+.ov-add{position:absolute;display:none;transform:translate(-50%,-50%);height:30px;padding:0 16px;border-radius:999px;border:0;background:#1A1A1A;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;pointer-events:auto;box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.3)}
+.ov-add:hover{background:#3A3A3A}
 
 /* add section drawer */
 .lib{position:fixed;top:56px;left:0;bottom:0;width:min(760px,100vw);background:#fff;z-index:40;box-shadow:var(--shadow);display:grid;grid-template-rows:auto 1fr;border-right:1px solid var(--line)}
@@ -116,7 +116,7 @@ svg{display:block}
 .lib-cats button.on{background:var(--soft-2);font-weight:600}
 .lib-grid{overflow:auto;padding:16px;display:grid;gap:16px;align-content:start;grid-auto-rows:max-content}
 .lib-item{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;cursor:pointer;text-align:left;padding:0;transition:box-shadow .15s,border-color .15s}
-.lib-item:hover{border-color:var(--focus);box-shadow:0 0 0 2px var(--focus)}
+.lib-item:hover{border-color:#1A1A1A;box-shadow:0 0 0 1px #1A1A1A}
 .lib-item img{display:block;width:100%;max-height:300px;object-fit:cover;object-position:top;background:var(--soft)}
 .lib-item span{display:block;padding:10px 12px;font-size:13px;font-weight:500;border-top:1px solid var(--line)}
 .lib-where{font-size:12px;color:var(--quiet);padding:0 2px;margin:0}

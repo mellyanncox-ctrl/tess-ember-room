@@ -114,7 +114,7 @@ svg{display:block}
 .lib-cats button{display:block;width:100%;text-align:left;border:0;background:transparent;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:14px}
 .lib-cats button:hover{background:var(--soft)}
 .lib-cats button.on{background:var(--soft-2);font-weight:600}
-.lib-grid{overflow:auto;padding:16px;display:grid;gap:16px;align-content:start}
+.lib-grid{overflow:auto;padding:16px;display:grid;gap:16px;align-content:start;grid-auto-rows:max-content}
 .lib-item{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;cursor:pointer;text-align:left;padding:0;transition:box-shadow .15s,border-color .15s}
 .lib-item:hover{border-color:var(--focus);box-shadow:0 0 0 2px var(--focus)}
 .lib-item img{display:block;width:100%;max-height:300px;object-fit:cover;object-position:top;background:var(--soft)}
@@ -191,3 +191,40 @@ svg{display:block}
 
 @media (max-width:900px){.app{grid-template-columns:240px 1fr}.top{grid-template-columns:auto auto 1fr}.page-name{display:none}}
 .page-list .row,.page-list>button{min-height:38px;padding-top:4px;padding-bottom:4px}
+
+/* ---------- phones: works like the Squarespace app ---------- */
+.icon-btn.back{display:none}
+@media (max-width:760px){
+  body{font-size:15px}
+  .app,.app.editing{grid-template-columns:1fr}
+  .app:not(.m-page) .main{display:none}
+  .app.m-page .side{display:none}
+  .side{border-right:0}
+  .side-scroll{padding-bottom:60px}
+  .page-list .row .gear{opacity:1}
+  .main{grid-template-rows:52px 1fr}
+  .top{grid-template-columns:auto 1fr auto;gap:6px;padding:0 8px}
+  .top-c,.status{display:none}
+  .icon-btn.back{display:inline-grid}
+  .app.editing .icon-btn.back{display:none}
+  .top-l{gap:4px;min-width:0}
+  .page-name{display:block;font-size:13px;max-width:30vw;margin-left:2px}
+  .top-r{gap:2px}
+  .btn{height:32px;padding:0 13px}
+  .icon-btn{width:32px;height:32px}
+  .frame-wrap.mobile{padding:0}
+  .frame-wrap.mobile iframe{width:100%;border-radius:0;box-shadow:none}
+  .panel{top:52px;left:0;right:0;bottom:0;width:auto;border-radius:0;box-shadow:none}
+  .lib{top:52px;width:100vw}
+  .lib-body{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .lib-cats{display:flex;gap:4px;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px}
+  .lib-cats button{width:auto;white-space:nowrap;padding:7px 12px}
+  .lib-grid{padding:12px}
+  .ov-tools .lbl{display:none}
+  .ov-tools button{padding:0 7px}
+  .ov-add{height:28px;padding:0 12px;font-size:10px}
+  .et,.rt{max-width:calc(100vw - 12px)}
+  .modal{padding:12px;align-items:end}
+  .modal-card{width:100%;border-radius:16px 16px 12px 12px}
+  .toast{bottom:16px}
+}

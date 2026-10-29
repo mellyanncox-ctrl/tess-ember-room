@@ -34,13 +34,15 @@
     image: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>',
     link: '<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',
     unlink: '<path d="m18.8 13.4 1.7-1.7a5 5 0 0 0-7-7l-1.7 1.7M5.2 10.6l-1.7 1.7a5 5 0 0 0 7 7l1.7-1.7M8 2v3M2 8h3M16 22v-3M22 16h-3"/>',
+    back: '<path d="m15 18-6-6 6-6"/>',
     select: '<path d="M5 3a2 2 0 0 0-2 2M19 3a2 2 0 0 1 2 2M21 19a2 2 0 0 1-2 2M5 21a2 2 0 0 1-2-2M9 3h1M9 21h1M14 3h1M14 21h1M3 9v1M21 9v1M3 14v1M21 14v1"/>',
   };
   const icon = (n) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n] || ''}</svg>`;
   const setIcon = (el, n, label) => { el.innerHTML = icon(n) + (label ? '<span>' + label + '</span>' : ''); };
-  [['#btn-new', 'plus'], ['#btn-page', 'gear'], ['#btn-undo', 'undo'], ['#btn-redo', 'redo'], ['#btn-styles', 'palette'], ['#dev-desktop', 'monitor'], ['#dev-mobile', 'phone'], ['#lib-close', 'x'], ['#panel-close', 'x']].forEach(([s, n]) => setIcon($(s), n));
+  [['#btn-back', 'back'], ['#btn-new', 'plus'], ['#btn-page', 'gear'], ['#btn-undo', 'undo'], ['#btn-redo', 'redo'], ['#btn-styles', 'palette'], ['#dev-desktop', 'monitor'], ['#dev-mobile', 'phone'], ['#lib-close', 'x'], ['#panel-close', 'x']].forEach(([s, n]) => setIcon($(s), n));
   $$('[data-icon]').forEach((b) => { const t = b.textContent; b.innerHTML = '<span class="ic">' + icon(b.dataset.icon) + '</span>' + (t ? '<span class="nm">' + t + '</span>' : ''); });
 
+  const phone = () => matchMedia('(max-width: 760px)').matches;
   let token = null; try { token = localStorage.getItem(TOKEN_KEY); } catch (e) {}
   const st = { files: {}, orig: {}, dirty: new Set(), uploads: {}, page: null, schema: null, pages: [], doc: null, editing: null, sel: null, undo: [], redo: [], loginPw: null, mode: 'browse', hover: null, libDoc: null, ready: false };
 
@@ -548,7 +550,7 @@
     Object.assign(box.style, { display: 'block', left: o.x + r.left + 'px', top: o.y + top + 'px', width: r.width + 'px', height: bot - top + 'px' });
     if (tools.__for !== st.hover) buildTools(st.hover);
     tools.style.display = 'flex';
-    tools.style.top = o.y + top + 12 + 'px';
+    tools.style.top = o.y + Math.max(top, Math.min(Math.max(r.top, 22), o.h - 70) - 22) + (phone() ? 40 : 12) + 'px';
     tools.style.left = Math.max(o.x + 8, o.x + Math.min(r.right, o.w) - tools.offsetWidth - 12) + 'px';
     const cx = o.x + r.left + r.width / 2 + 'px';
     // keep both buttons on screen, even when the section is taller than the window
@@ -569,7 +571,12 @@
   }
   $('#ov-add-top').onclick = () => st.hover && openLibrary(st.hover, 'before');
   $('#ov-add-bot').onclick = () => st.hover && openLibrary(st.hover, 'after');
-  $('#stage').addEventListener('mouseleave', () => { if ($('#lib').hidden) { st.hover = null; drawOverlay(); } });
+  $('#stage').addEventListener('mouseleave', (e) => {
+    // moving into the page frame also counts as "leaving", so only clear when the pointer is really outside
+    const r = $('#stage').getBoundingClientRect();
+    const inside = e.clientX > r.left && e.clientX < r.right && e.clientY > r.top && e.clientY < r.bottom;
+    if (!inside && $('#lib').hidden && !phone()) { st.hover = null; drawOverlay(); }
+  });
   async function sectionAction(node, act) {
     finishEdit(); clearSel();
     const nodes = sectionNodes(); const i = nodes.indexOf(node);
@@ -790,6 +797,7 @@
     nodes.forEach((n, i) => { n.__sec = secs[i]; });
     d.body.classList.toggle('ee-edit', st.mode === 'edit');
     refreshAll();
+    d.addEventListener('touchstart', (e) => { if (st.mode !== 'edit') return; const n = e.target.closest && e.target.closest('main > [data-s]'); if (n && n !== st.hover) { st.hover = n; $('#ov-tools').__for = null; drawOverlay(); } }, { passive: true });
     d.addEventListener('mousemove', (e) => { if (st.mode !== 'edit') return; const n = e.target.closest && e.target.closest('main > [data-s]'); if (n && n !== st.hover) { st.hover = n; drawOverlay(); } });
     d.addEventListener('click', (e) => (st.mode === 'edit' ? editClick(e) : browseClick(e)), true);
     d.addEventListener('submit', (e) => e.preventDefault(), true);
@@ -859,7 +867,7 @@
     if (m !== 'edit') { finishEdit(); clearSel(); hideLib(); closePanel(); st.hover = null; }
     drawOverlay(); updateBar();
   }
-  $('#btn-edit').onclick = () => { if (!st.ready) return; setMode('edit'); toast('Click anything on the page to change it. Hover a section for its tools.'); };
+  $('#btn-edit').onclick = () => { if (!st.ready) return; setMode('edit'); toast(phone() ? 'Tap anything on the page to change it. Tap a section for its tools.' : 'Click anything on the page to change it. Hover a section for its tools.'); };
   $('#btn-exit').onclick = async () => {
     finishEdit();
     if (hasChanges()) {
@@ -892,16 +900,16 @@
       const r = document.createElement('div'); r.className = 'row' + (st.page && st.page.name === name ? ' on' : ''); r.tabIndex = 0; r.setAttribute('role', 'button');
       r.innerHTML = `<span class="ic">${icon(ic)}</span><span class="nm"></span>`; $('.nm', r).textContent = label;
       const g = document.createElement('button'); g.type = 'button'; g.className = 'icon-btn gear'; g.title = 'Page settings'; g.setAttribute('aria-label', 'Page settings for ' + label); g.innerHTML = icon('gear');
-      g.onclick = (e) => { e.stopPropagation(); if (st.page && st.page.name === name) pageSettings(); else openPage(name, pageSettings); };
+      g.onclick = (e) => { e.stopPropagation(); $('#app').classList.add('m-page'); if (st.page && st.page.name === name) pageSettings(); else openPage(name, pageSettings); };
       r.append(g);
-      r.onclick = () => openPage(name); r.onkeydown = (e) => { if (e.key === 'Enter') openPage(name); };
+      r.onclick = () => { $('#app').classList.add('m-page'); openPage(name); }; r.onkeydown = (e) => { if (e.key === 'Enter') { $('#app').classList.add('m-page'); openPage(name); } };
       box.append(r);
     };
     row('index', 'Home', 'home', main); inMenu.add('index');
     menu.forEach((m) => {
       const mm = (m.link || '').match(/^\/?([a-z0-9-]+)\.html$/);
       if (mm && st.pages.includes(mm[1])) { row(mm[1], unesc(m.label), 'file', main); inMenu.add(mm[1]); }
-      else if (/^\/?journal\/?$/.test(m.link || '')) { const r = document.createElement('div'); r.className = 'row'; r.innerHTML = `<span class="ic">${icon('journal')}</span><span class="nm"></span>`; $('.nm', r).textContent = unesc(m.label); r.onclick = journal; main.append(r); }
+      else if (/^\/?journal\/?$/.test(m.link || '')) { const r = document.createElement('div'); r.className = 'row'; r.innerHTML = `<span class="ic">${icon('journal')}</span><span class="nm"></span>`; $('.nm', r).textContent = unesc(m.label); r.onclick = sideTool(journal); main.append(r); }
     });
     st.pages.filter((n) => !inMenu.has(n)).sort((a, b) => pageLabel(a).localeCompare(pageLabel(b))).forEach((n) => row(n, pageLabel(n), 'file', other));
     if (!other.children.length) other.innerHTML = '<p class="hint" style="padding:4px 8px">Every page is in your menu.</p>';
@@ -1185,12 +1193,15 @@
     } catch (er) { $('#login-msg').textContent = er.message; }
   });
   $('#btn-page').onclick = () => st.page && pageSettings();
+  $('#btn-back').onclick = () => { if (st.mode === 'edit') return $('#btn-exit').click(); closePanel(); $('#app').classList.remove('m-page'); };
+  // panels opened from the Pages list on a phone show over the list
+  const sideTool = (fn) => () => { if (phone()) $('#app').classList.add('m-page'); fn(); };
   $('#btn-new').onclick = newPage;
-  $('#btn-colours').onclick = siteStyles; $('#btn-styles').onclick = siteStyles;
-  $('#btn-fees').onclick = () => dataForm('practice', 'Business info', 'Your prices, days, address and email. Change them once here and they update on every page.');
-  $('#btn-menu').onclick = () => dataForm('site', 'Navigation & footer', 'Your menu, footer and the free sign-up band. In Edit mode you can also click them right on the page.');
-  $('#btn-faq').onclick = () => dataForm('faq', 'FAQs', 'The numbered questions on your Fees & FAQ page.');
-  $('#btn-journal').onclick = journal;
+  $('#btn-colours').onclick = sideTool(siteStyles); $('#btn-styles').onclick = siteStyles;
+  $('#btn-fees').onclick = sideTool(() => dataForm('practice', 'Business info', 'Your prices, days, address and email. Change them once here and they update on every page.'));
+  $('#btn-menu').onclick = sideTool(() => dataForm('site', 'Navigation & footer', 'Your menu, footer and the free sign-up band. In Edit mode you can also click them right on the page.'));
+  $('#btn-faq').onclick = sideTool(() => dataForm('faq', 'FAQs', 'The numbered questions on your Fees & FAQ page.'));
+  $('#btn-journal').onclick = sideTool(journal);
   $('#btn-help').onclick = help;
   $('#btn-save').onclick = save;
   $('#btn-undo').onclick = undo; $('#btn-redo').onclick = redo;

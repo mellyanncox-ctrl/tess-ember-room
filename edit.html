@@ -4,75 +4,127 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Website editor | The Ember Room</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
-<link rel="stylesheet" href="/assets/editor/editor.css?v=3">
+<title>Website | The Ember Room</title>
+<link rel="stylesheet" href="/assets/editor/editor.css?v=10">
 </head>
 <body>
+
+<!-- log in / create password -->
 <div id="login" class="login" hidden>
   <form id="login-form" class="login-card">
-    <p class="ee-eyebrow">The Ember Room</p>
-    <h1>Website editor</h1>
-    <p>Enter your editor password to start.</p>
+    <div class="login-mark">TER</div>
+    <h1>The Ember Room</h1>
+    <p>Log in to edit your website.</p>
     <label for="pw">Password</label>
     <input id="pw" type="password" autocomplete="current-password" required>
-    <button class="ee-btn primary" type="submit">Log in</button>
+    <button class="btn dark wide" type="submit">Log in</button>
     <p class="login-msg" id="login-msg" role="alert"></p>
   </form>
   <form id="setpw-form" class="login-card" hidden>
-    <p class="ee-eyebrow">The Ember Room</p>
+    <div class="login-mark">TER</div>
     <h1 id="setpw-title">Create your password</h1>
     <p id="setpw-intro"></p>
     <div id="pw-current-wrap" class="pw-field"><label for="pw-current" id="pw-current-label">Your current password</label><input id="pw-current" type="password" autocomplete="current-password"></div>
     <div class="pw-field"><label for="pw-new">New password</label><input id="pw-new" type="password" autocomplete="new-password" minlength="8" required></div>
     <div class="pw-field"><label for="pw-confirm">Type it again</label><input id="pw-confirm" type="password" autocomplete="new-password" minlength="8" required></div>
     <label class="chk"><input id="pw-show" type="checkbox"> Show passwords</label>
-    <button class="ee-btn primary" type="submit">Save my password</button>
-    <button class="ee-btn" type="button" id="setpw-cancel">Cancel</button>
+    <button class="btn dark wide" type="submit">Save my password</button>
+    <button class="btn wide" type="button" id="setpw-cancel">Cancel</button>
     <p class="login-msg" id="setpw-msg" role="alert"></p>
   </form>
 </div>
 
 <div id="app" class="app" hidden>
-  <header class="bar">
-    <div class="brand">The Ember Room <span>Website editor</span></div>
-    <label class="pick"><span class="sr">Page</span><select id="page-select"></select></label>
-    <nav class="tools" aria-label="Editor tools">
-      <button class="ee-btn" id="btn-page" type="button">Page settings</button>
-      <button class="ee-btn" id="btn-add" type="button">+ Add section</button>
-      <button class="ee-btn" id="btn-new" type="button">New page</button>
-      <button class="ee-btn" id="btn-colours" type="button">Colours</button>
-      <button class="ee-btn" id="btn-fees" type="button">Fees &amp; contact</button>
-      <button class="ee-btn" id="btn-menu" type="button">Menu &amp; footer</button>
-      <button class="ee-btn" id="btn-faq" type="button">FAQ</button>
-      <button class="ee-btn" id="btn-journal" type="button">Journal</button>
-      <button class="ee-btn" id="btn-help" type="button">Help</button>
-    </nav>
-    <div class="save">
-      <span id="status" class="status" aria-live="polite"></span>
-      <button class="ee-btn" id="btn-undo" type="button" disabled title="Undo (Cmd/Ctrl + Z)">↶ Undo</button>
-      <button class="ee-btn primary" id="btn-save" type="button" disabled>Save</button>
+  <!-- left sidebar (browse mode) -->
+  <aside id="side" class="side" aria-label="Website">
+    <div class="side-head">
+      <div class="site-name"><span class="dot"></span><div><b>The Ember Room</b><small>Website</small></div></div>
     </div>
-  </header>
-  <div class="stage">
-    <div id="banner" class="banner" hidden></div>
-    <iframe id="frame" title="Your website, ready to edit"></iframe>
-    <div id="placeholder" class="placeholder" hidden></div>
-  </div>
-  <aside id="panel" class="panel" hidden aria-label="Settings">
-    <div class="panel-head"><h2 id="panel-title">Settings</h2><button class="ee-btn" id="panel-close" type="button">Done</button></div>
-    <div id="panel-body" class="panel-body"></div>
+    <div class="side-scroll">
+      <div class="side-title"><span>Pages</span><button class="icon-btn" id="btn-new" type="button" title="Add a page" aria-label="Add a page"></button></div>
+      <p class="side-group">Main navigation</p>
+      <nav id="nav-main" class="page-list"></nav>
+      <p class="side-group">Not linked</p>
+      <nav id="nav-other" class="page-list"></nav>
+      <div class="side-rule"></div>
+      <nav class="page-list tools">
+        <button type="button" id="btn-journal" data-icon="journal">Journal</button>
+        <button type="button" id="btn-fees" data-icon="info">Business info</button>
+        <button type="button" id="btn-faq" data-icon="faq">FAQs</button>
+        <button type="button" id="btn-menu" data-icon="menu">Navigation &amp; footer</button>
+        <button type="button" id="btn-colours" data-icon="palette">Site styles</button>
+        <button type="button" id="btn-help" data-icon="help">Help</button>
+      </nav>
+    </div>
   </aside>
+
+  <main class="main">
+    <!-- top bar -->
+    <header class="top" id="top">
+      <div class="top-l">
+        <button class="btn dark" id="btn-edit" type="button">Edit</button>
+        <button class="btn" id="btn-exit" type="button" hidden>Exit</button>
+        <span class="page-name" id="page-name"></span>
+        <button class="icon-btn" id="btn-page" type="button" title="Page settings" aria-label="Page settings"></button>
+      </div>
+      <div class="top-c">
+        <div class="seg" role="group" aria-label="Preview size">
+          <button type="button" id="dev-desktop" class="on" title="Desktop" aria-label="Desktop view"></button>
+          <button type="button" id="dev-mobile" title="Mobile" aria-label="Mobile view"></button>
+        </div>
+      </div>
+      <div class="top-r">
+        <span id="status" class="status" aria-live="polite"></span>
+        <span class="edit-only" hidden>
+          <button class="icon-btn" id="btn-undo" type="button" title="Undo (Cmd/Ctrl + Z)" aria-label="Undo" disabled></button>
+          <button class="icon-btn" id="btn-redo" type="button" title="Redo (Cmd/Ctrl + Shift + Z)" aria-label="Redo" disabled></button>
+          <button class="icon-btn" id="btn-styles" type="button" title="Site styles" aria-label="Site styles"></button>
+        </span>
+        <button class="btn dark" id="btn-save" type="button" disabled>Save</button>
+      </div>
+    </header>
+
+    <div class="stage" id="stage">
+      <div id="banner" class="banner" hidden></div>
+      <div class="frame-wrap" id="frame-wrap"><iframe id="frame" title="Your website"></iframe></div>
+      <div id="placeholder" class="placeholder" hidden></div>
+      <!-- editing overlay drawn over the page -->
+      <div id="ov" class="ov" hidden>
+        <div id="ov-box" class="ov-box"></div>
+        <div id="ov-tools" class="ov-tools"></div>
+        <button id="ov-add-top" class="ov-add" type="button">Add Section</button>
+        <button id="ov-add-bot" class="ov-add" type="button">Add Section</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- add section drawer -->
+  <aside id="lib" class="lib" hidden aria-label="Add a section">
+    <div class="lib-head"><h2>Add Section</h2><button class="icon-btn" id="lib-close" type="button" aria-label="Close"></button></div>
+    <div class="lib-body">
+      <nav id="lib-cats" class="lib-cats"></nav>
+      <div id="lib-grid" class="lib-grid"></div>
+    </div>
+  </aside>
+
+  <!-- right panel -->
+  <aside id="panel" class="panel" hidden aria-label="Settings">
+    <div class="panel-head"><h2 id="panel-title">Settings</h2><button class="icon-btn" id="panel-close" type="button" aria-label="Close"></button></div>
+    <div id="panel-tabs" class="tabs" hidden></div>
+    <div id="panel-body" class="panel-body"></div>
+    <div class="panel-foot"><button class="btn dark" id="panel-done" type="button">Done</button></div>
+  </aside>
+
   <div id="modal" class="modal" hidden role="dialog" aria-modal="true">
     <div class="modal-card"><div id="modal-body"></div></div>
   </div>
+
   <div id="rt" class="rt" hidden>
     <button type="button" data-cmd="bold" title="Bold"><b>B</b></button>
     <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
-    <button type="button" data-cmd="link" title="Add a link">Link</button>
-    <button type="button" data-cmd="unlink" title="Remove link">Unlink</button>
-    <button type="button" data-cmd="colour" title="Colour the selected words"><span class="cdot"></span>Colour</button>
+    <button type="button" data-cmd="link" title="Add a link" data-icon="link"></button>
+    <button type="button" data-cmd="unlink" title="Remove link" data-icon="unlink"></button>
+    <button type="button" data-cmd="colour" title="Text colour"><span class="cdot"></span></button>
   </div>
   <div id="et" class="et" hidden role="toolbar" aria-label="Selected item"></div>
   <div id="palette" class="palette" hidden></div>
@@ -81,6 +133,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="/assets/editor/config.js?v=2"></script>
-<script src="/assets/editor/editor.js?v=4"></script>
+<script src="/assets/editor/editor.js?v=10"></script>
 </body>
 </html>

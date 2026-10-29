@@ -21,16 +21,19 @@ sections:
   - label: Book a 15min Call
     link: book.html?s=individual#book-now
   library_label: Page header
+  library_group: Headers
 - type: panel
   tone: stone
   heading: Relationship Counselling and Somatic Therapy
   text: <p>Relationship Counselling and Somatic Therapy Sessions offer the opportunity to address struggles within your relationship that cause tension and disconnection, and find ways to establish healthy new ways of relating to each other that result in <b>better intimacy, connection and companionship and helps your love reignite.</b></p>
   library_label: Text panel, stone
+  library_group: Text
 - type: panel
   tone: charcoal
   heading: Who is this for?
   text: <p>Couples who are struggling with communication, conflict or intimacy, or who feel stuck, knowing there is <b>much more pleasure, safety, connection and satisfaction to be felt within their relationship.</b></p>
   library_label: Text panel, charcoal
+  library_group: Text
 - type: panel
   tone: plum
   heading: About The Ember Room.
@@ -42,6 +45,7 @@ sections:
   - Resilience
   - Community
   library_label: Text panel, plum
+  library_group: Text
 - type: panel
   tone: photo
   background:
@@ -51,6 +55,7 @@ sections:
   heading: A beautiful dance
   text: <p>Relationship therapy is a beautiful dance, learning the steps can feel clunky at times, but when you start seeing the changes in yourselves and in each other, <b>feeling listened to, understood and clear on the future of your direction as a team,</b> and connecting more intimately, you won’t want to stop!</p>
   library_label: Text panel over a photo
+  library_group: Images
 - type: panel
   tone: stone
   portrait: assets/img/tess-arch.jpg
@@ -64,6 +69,7 @@ sections:
   - Resilience
   - Community
   library_label: Text panel with arch photo
+  library_group: Images
 - type: panel
   tone: stone
   heading: Find Your No · Live Your Yes
@@ -88,6 +94,7 @@ sections:
       link: '#free'
       ghost: true
   library_label: Text panel with course card
+  library_group: Offers & prices
 - type: numbered
   tone: charcoal
   heading: 5 areas I tend to gravitate towards
@@ -105,6 +112,7 @@ sections:
     text: Recognising the patterns you and your partner are repeating is the best way to break free of unhealthy relationships.
   note: Somatic therapies are how you incorporate the physical body, the nervous system and the emotional body to make a difference and move out from where you’re stuck.
   library_label: Numbered list
+  library_group: Lists & tabs
 - type: tabs
   label: THE JOURNEY
   background:
@@ -143,6 +151,7 @@ sections:
   numbered: true
   sign: THE JOURNEY
   library_label: Tabs
+  library_group: Lists & tabs
 - type: prose
   tone: dark
   heading: No session is the same
@@ -152,6 +161,7 @@ sections:
     <p>Beliefs from our childhood, adolescence and beyond are embedded in our unconscious and dictate our behaviour and relationship to ourselves and to others.</p>
     <p>In my sessions, we don’t view anxiety or depression as a disorder that must be ‘fixed’. The uncomfortable feelings and sensations that come with emotion are not treated as something to avoid, instead we increase your capacity to sit with the discomfort long enough to listen to the wisdom beneath, and allow the body and mind to connect and truly communicate as one.</p>
   library_label: Text section
+  library_group: Text
 - type: prose
   tone: light
   heading: Private health rebates
@@ -166,6 +176,7 @@ sections:
     text: ''
   outro: <p>I am registered with Bupa to offer private health rebates for members with mental health cover (counselling)</p>
   library_label: Text section with price rows
+  library_group: Offers & prices
 - type: story
   photo: assets/img/tess-garden.jpg
   photo_width: '933'
@@ -182,6 +193,7 @@ sections:
     <p>I’m an artist, a seeker, and a work in progress. Life is a constant evolution of learning, unlearning, and growing - and I’m thrilled to have you here for the journey.</p>
     <p>Tess x</p>
   library_label: Story with photo
+  library_group: Images
 - type: journal_card
   label: From the Journal
   title: 'Beyond Boundaries: The Missing Piece in Healing People Pleasing'
@@ -189,6 +201,7 @@ sections:
   link: journal/people-pleasing-beyond-boundaries/
   more: Read more →
   library_label: Journal post link
+  library_group: Journal
 - type: panel
   tone: close
   background:
@@ -202,4 +215,5 @@ sections:
   - label: Book a session here
     link: book.html?s=couples#book-now
   library_label: Closing panel
+  library_group: Closing
 ---

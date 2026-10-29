@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Website | The Ember Room</title>
-<link rel="stylesheet" href="/assets/editor/editor.css?v=12">
+<link rel="stylesheet" href="/assets/editor/editor.css?v=13">
 </head>
 <body>
 
@@ -42,9 +42,9 @@
     </div>
     <div class="side-scroll">
       <div class="side-title"><span>Pages</span><button class="icon-btn" id="btn-new" type="button" title="Add a page" aria-label="Add a page"></button></div>
-      <p class="side-group">Main navigation</p>
+      <p class="side-group">In your menu</p>
       <nav id="nav-main" class="page-list"></nav>
-      <p class="side-group">Not linked</p>
+      <p class="side-group">Other pages</p>
       <nav id="nav-other" class="page-list"></nav>
       <div class="side-rule"></div>
       <nav class="page-list tools">
@@ -52,7 +52,7 @@
         <button type="button" id="btn-fees" data-icon="info">Business info</button>
         <button type="button" id="btn-faq" data-icon="faq">FAQs</button>
         <button type="button" id="btn-menu" data-icon="menu">Navigation &amp; footer</button>
-        <button type="button" id="btn-colours" data-icon="palette">Site styles</button>
+        <button type="button" id="btn-colours" data-icon="palette">Brand colours</button>
         <button type="button" id="btn-help" data-icon="help">Help</button>
       </nav>
     </div>
@@ -79,7 +79,7 @@
         <span class="edit-only" hidden>
           <button class="icon-btn" id="btn-undo" type="button" title="Undo (Cmd/Ctrl + Z)" aria-label="Undo" disabled></button>
           <button class="icon-btn" id="btn-redo" type="button" title="Redo (Cmd/Ctrl + Shift + Z)" aria-label="Redo" disabled></button>
-          <button class="icon-btn" id="btn-styles" type="button" title="Site styles" aria-label="Site styles"></button>
+          <button class="icon-btn" id="btn-styles" type="button" title="Brand colours" aria-label="Brand colours"></button>
         </span>
         <button class="btn dark" id="btn-save" type="button" disabled>Save</button>
       </div>
@@ -93,15 +93,15 @@
       <div id="ov" class="ov" hidden>
         <div id="ov-box" class="ov-box"></div>
         <div id="ov-tools" class="ov-tools"></div>
-        <button id="ov-add-top" class="ov-add" type="button">Add Section</button>
-        <button id="ov-add-bot" class="ov-add" type="button">Add Section</button>
+        <button id="ov-add-top" class="ov-add" type="button">+ Add a section</button>
+        <button id="ov-add-bot" class="ov-add" type="button">+ Add a section</button>
       </div>
     </div>
   </main>
 
   <!-- add section drawer -->
   <aside id="lib" class="lib" hidden aria-label="Add a section">
-    <div class="lib-head"><h2>Add Section</h2><button class="icon-btn" id="lib-close" type="button" aria-label="Close"></button></div>
+    <div class="lib-head"><h2>Add a section</h2><button class="icon-btn" id="lib-close" type="button" aria-label="Close"></button></div>
     <div class="lib-body">
       <nav id="lib-cats" class="lib-cats"></nav>
       <div id="lib-grid" class="lib-grid"></div>
@@ -134,6 +134,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="/assets/editor/config.js?v=2"></script>
-<script src="/assets/editor/editor.js?v=12"></script>
+<script src="/assets/editor/editor.js?v=13"></script>
 </body>
 </html>

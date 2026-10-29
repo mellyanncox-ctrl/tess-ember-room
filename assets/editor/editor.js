@@ -1,7 +1,7 @@
 /* The Ember Room website editor, laid out like the Squarespace back office.
    Browse mode: a Pages sidebar and a live preview you can click around.
    Edit mode: click anything on the page to change it. Hover a section for its toolbar and
-   the "Add Section" buttons. Undo/redo, Save, Exit. */
+   the "+ Add a section" buttons. Undo/redo, Save, Exit. */
 (() => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -993,7 +993,7 @@
   function needSave() { if (st.mode !== 'edit') toast('After making changes here, press Save at the top right.', 5000); }
   function siteStyles() {
     const s = st.files[DATA.site].data;
-    openPanel('Site styles', [
+    openPanel('Brand colours', [
       { name: 'Colours', build: (b) => {
         const prev = document.createElement('div'); prev.className = 'palette-preview';
         const drawPrev = () => { prev.innerHTML = ''; Object.values(brandValues()).forEach((c) => { const sp = document.createElement('span'); sp.style.background = c; prev.append(sp); }); };
@@ -1101,7 +1101,7 @@
       <p><b>Pages</b> are on the left. Click one to see it. Click <b>Edit</b> at the top to change it, then <b>Save</b>, and <b>Exit</b> when you're done.</p>
       <p><b>Words:</b> click any words and type. To make words bold, a link or a colour, select them and use the small toolbar.</p>
       <p><b>Anything else:</b> click it for its toolbar: delete, move, duplicate, change its link, or select the whole card or list it sits in.</p>
-      <p><b>Sections:</b> hover over a section. Use <b>Edit section</b> for its content, design and background, the arrows to move it, or <b>Add Section</b> on its top or bottom edge for a new one.</p>
+      <p><b>Sections:</b> hover over a section. Use <b>Edit section</b> for its content, design and background, the arrows to move it, or <b>+ Add a section</b> on its top or bottom edge for a new one.</p>
       <p><b>Photos:</b> click a photo to change it. For a photo behind words, click an empty part of the section.</p>
       <p><b>Undo</b> and <b>Redo</b> are at the top right (or Cmd/Ctrl + Z). After saving, a page's <b>Versions</b> tab (⚙ next to the page) can put it back.</p>
       <div class="row"><button class="btn" type="button" data-pw>Change my password</button><button class="btn dark" type="button" data-x>Got it</button></div>`;

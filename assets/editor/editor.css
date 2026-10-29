@@ -102,7 +102,7 @@ svg{display:block}
 .ov-tools button.danger:hover{color:var(--danger);background:#FDF1F0}
 .ov-tools svg{width:16px;height:16px}
 .ov-tools .sep{width:1px;height:20px;background:var(--line);margin:0 2px}
-.ov-add{position:absolute;display:none;transform:translate(-50%,-50%);height:30px;padding:0 16px;border-radius:999px;border:0;background:#1A1A1A;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;pointer-events:auto;box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.3)}
+.ov-add{position:absolute;display:none;transform:translate(-50%,-50%);height:30px;padding:0 16px;border-radius:999px;border:0;background:#1A1A1A;color:#fff;font-size:12.5px;font-weight:600;letter-spacing:0;cursor:pointer;pointer-events:auto;box-shadow:0 0 0 1.5px rgba(255,255,255,.9),0 4px 14px rgba(0,0,0,.3)}
 .ov-add:hover{background:#3A3A3A}
 
 /* add section drawer */
@@ -222,7 +222,7 @@ svg{display:block}
   .lib-grid{padding:12px}
   .ov-tools .lbl{display:none}
   .ov-tools button{padding:0 7px}
-  .ov-add{height:28px;padding:0 12px;font-size:10px}
+  .ov-add{height:28px;padding:0 12px;font-size:12px}
   .et,.rt{max-width:calc(100vw - 12px)}
   .modal{padding:12px;align-items:end}
   .modal-card{width:100%;border-radius:16px 16px 12px 12px}
